@@ -23,11 +23,12 @@ struct CJRepateDateGetter {
     ///   - selectedDate: 当前日期（公历）
     ///   - calendar: 使用的农历 `Calendar`
     ///   - cycleType: 周期类型（按月 or 按年）
-    ///   - comparisonDate: 用于比较的指定日期（农历）
-    /// - Returns: 下一个周期的日期（公历）
-    static func nextLunarCycleDate(from selectedDate: Date, using calendar: Calendar = Calendar(identifier: .chinese), cycleType: CycleType, comparisonDate: Date) -> Date? {
-        print("\n要计算的农历日期：\(CJDateFormatterUtil.formatLunarDate(from: selectedDate, using: calendar))【\(CJDateFormatterUtil.formatGregorianDate(from: selectedDate))】")
-        print("比较当前农历日期：\(CJDateFormatterUtil.formatLunarDate(from: comparisonDate, using: calendar))【\(CJDateFormatterUtil.formatGregorianDate(from: comparisonDate))】")
+    ///   - comparisonDate: 用于比较的指定日期（公历）
+    ///   - shouldFlyback: 当前为1月31号，则点击每月时候，为每月31号，当到2月的时候是否需要回退到月末
+    /// - Returns: 下一个重复周期的日期（公历）
+    static func nextLunarCycleDate(from selectedDate: Date, using calendar: Calendar = Calendar(identifier: .chinese), cycleType: CycleType, comparisonDate: Date, shouldFlyback: Bool) -> Date? {
+        print("\n要计算的日期：\(CJDateFormatterUtil.formatLunarDate(from: selectedDate, using: calendar))【\(CJDateFormatterUtil.formatGregorianDate(from: selectedDate))】")
+        print("比较当前日期：\(CJDateFormatterUtil.formatLunarDate(from: comparisonDate, using: calendar))【\(CJDateFormatterUtil.formatGregorianDate(from: comparisonDate))】")
         
         // 获取当前日期和指定比较日期的农历信息
         var selectedComponents = calendar.dateComponents([.year, .month, .day], from: selectedDate)
@@ -68,6 +69,20 @@ struct CJRepateDateGetter {
             
         }
         
+        if shouldFlyback { // 当前为1月31号，则点击每月时候，为每月31号，当到2月的时候是否需要回退到月末
+            var nextMonthComponents = selectedComponents
+            nextMonthComponents.day = 1
+            if let nextMonthDate = calendar.date(from: nextMonthComponents) {
+                let range = calendar.range(of: .day, in: .month, for: nextMonthDate)
+                let daysInNextMonth = range?.count ?? 0 // 最后一天是几号
+                if selectedDay > daysInNextMonth {
+                    let selectedDateRange = calendar.range(of: .day, in: .month, for: selectedDate)
+                    let daysInSelectedDate = selectedDateRange?.count ?? 0
+                    selectedComponents.day = daysInNextMonth // 让其为最后一天
+                }
+            }
+        }
+        
         // 确保下一个周期的日期存在，处理农历月份天数不一致的问题
         if let nextDate = calendar.date(from: selectedComponents) {
             print("\(cycleTypeString)：<\(compareResultString)>的日期存在：\(CJDateFormatterUtil.formatLunarDate(from: nextDate, using: calendar))【\(CJDateFormatterUtil.formatGregorianDate(from: nextDate))】")
@@ -87,6 +102,33 @@ struct CJRepateDateGetter {
             return nil
         }
     }
+}
+
+struct CJDateIntervalUtil {
+    /// 获取指定日期所在月份的所有天数
+    /// - Parameter date: 输入的日期
+    /// - Returns: 包含所有天数的数组
+    static func getDaysInMonth(for date: Date) -> [Date] {
+        let calendar = Calendar.current
+        
+        // 获取当前月份的范围
+        guard let monthRange = calendar.range(of: .day, in: .month, for: date) else {
+            return []
+        }
+        
+        // 获取当前月份的开始日期
+        guard let monthStart = calendar.date(from: calendar.dateComponents([.year, .month], from: date)) else {
+            return []
+        }
+        
+        // 遍历范围并生成每一天的 Date
+        return monthRange.compactMap { day -> Date? in
+            var components = calendar.dateComponents([.year, .month], from: monthStart)
+            components.day = day
+            return calendar.date(from: components)
+        }
+    }
+
 }
 
 struct CJDateFormatterUtil {

@@ -27,10 +27,16 @@ class TestSwift1: NSObject {
         // 按月计算下一个周期
         checkNearbyMonth(isLunarCalendar: false, selectedDateString: "2024-03-19", currentDateString: "2024-03-09", correctResultDateString: "2024-03-19")
         checkNearbyMonth(isLunarCalendar: false, selectedDateString: "2024-04-08", currentDateString: "2024-11-29", correctResultDateString: "2024-12-08")
+        checkNearbyMonth(isLunarCalendar: false, selectedDateString: "2024-01-31", currentDateString: "2024-02-02", shouldFlyback: false, correctResultDateString: "2024-03-02")
+        checkNearbyMonth(isLunarCalendar: false, selectedDateString: "2024-01-31", currentDateString: "2024-02-02", shouldFlyback: true, correctResultDateString: "2024-02-29")
+        checkNearbyMonth(isLunarCalendar: false, selectedDateString: "2025-01-31", currentDateString: "2025-02-02", shouldFlyback: false, correctResultDateString: "2025-03-03")
+        checkNearbyMonth(isLunarCalendar: false, selectedDateString: "2025-01-31", currentDateString: "2025-02-02", shouldFlyback: true, correctResultDateString: "2025-02-28")
 
         // 按年计算下一个周期
         checkNearbyYear(isLunarCalendar: false, selectedDateString: "2024-02-29", currentDateString: "2024-11-29", correctResultDateString: "2025-03-01")
-        
+        checkNearbyYear(isLunarCalendar: false, selectedDateString: "2024-02-29", currentDateString: "2024-10-02", shouldFlyback: false, correctResultDateString: "2025-03-01")
+        checkNearbyYear(isLunarCalendar: false, selectedDateString: "2024-02-29", currentDateString: "2024-10-02", shouldFlyback: true, correctResultDateString: "2025-02-28")
+
         
         // 农历
         // 按月计算下一个周期
@@ -45,12 +51,12 @@ class TestSwift1: NSObject {
     }
     
     
-    func checkNearbyMonth(isLunarCalendar: Bool, selectedDateString: String, currentDateString: String, correctResultDateString: String) {
+    func checkNearbyMonth(isLunarCalendar: Bool, selectedDateString: String, currentDateString: String, shouldFlyback: Bool = false, correctResultDateString: String) {
         let selectedDate = dateFromYYYYMMDDString(dateString: selectedDateString)
         let comparisonDate = dateFromYYYYMMDDString(dateString: currentDateString)
         
         let lunarCalendar = Calendar(identifier: isLunarCalendar ? .chinese : .gregorian)
-        if let nextMonthDate = CJRepateDateGetter.nextLunarCycleDate(from: selectedDate, using: lunarCalendar, cycleType: .month, comparisonDate: comparisonDate) {
+        if let nextMonthDate = CJRepateDateGetter.nextLunarCycleDate(from: selectedDate, using: lunarCalendar, cycleType: .month, comparisonDate: comparisonDate, shouldFlyback: shouldFlyback) {
 //            print("按月计算下一个农历日期为：\(formatLunarDate(from: nextMonthDate, using: lunarCalendar))【\(formatGregorianDate(from: nextMonthDate))】")
             let correctResultDate = dateFromYYYYMMDDString(dateString: correctResultDateString)
             if !CJDateCompareUtil.areDatesEqualIgnoringTime(nextMonthDate, correctResultDate) {
@@ -60,12 +66,12 @@ class TestSwift1: NSObject {
     }
     
     // 按年计算下一个周期
-    func checkNearbyYear(isLunarCalendar: Bool, selectedDateString: String, currentDateString: String, correctResultDateString: String) {
+    func checkNearbyYear(isLunarCalendar: Bool, selectedDateString: String, currentDateString: String, shouldFlyback: Bool = false, correctResultDateString: String) {
         let selectedDate = dateFromYYYYMMDDString(dateString: selectedDateString)
         let comparisonDate = dateFromYYYYMMDDString(dateString: currentDateString)
         
         let lunarCalendar = Calendar(identifier: isLunarCalendar ? .chinese : .gregorian)
-        if let nextYearDate = CJRepateDateGetter.nextLunarCycleDate(from: selectedDate, using: lunarCalendar, cycleType: .year, comparisonDate: comparisonDate) {
+        if let nextYearDate = CJRepateDateGetter.nextLunarCycleDate(from: selectedDate, using: lunarCalendar, cycleType: .year, comparisonDate: comparisonDate, shouldFlyback: shouldFlyback) {
 //            print("按年计算下一个农历日期为：\(formatLunarDate(from: nextYearDate, using: lunarCalendar))【\(formatGregorianDate(from: nextYearDate))】")
             let correctResultDate = dateFromYYYYMMDDString(dateString: correctResultDateString)
             if !CJDateCompareUtil.areDatesEqualIgnoringTime(nextYearDate, correctResultDate) {
