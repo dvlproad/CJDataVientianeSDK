@@ -15,7 +15,7 @@
 		156AC8D82406DBBE00A5A23D /* badgeButton_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 156AC8D42406DBBE00A5A23D /* badgeButton_highlighted@2x.png */; };
 		156AC8D92406DBBE00A5A23D /* badgeButton_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 156AC8D52406DBBE00A5A23D /* badgeButton_normal@3x.png */; };
 		15A7680C23FD966B00358B42 /* TSButtonFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A7680523FD966A00358B42 /* TSButtonFactory.m */; };
-		574EAE025E3036E31623A125 /* libPods-CJUIKitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F010C33DEBAF70AA8E83ACAA /* libPods-CJUIKitDemo.a */; };
+		70674BB59EACDE35A60B0967 /* libPods-CJUIKitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52CB3BBEF80D62B3BC58888A /* libPods-CJUIKitDemo.a */; };
 		7802490F25828D4C00C7DBAD /* TextViewPlaceholderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7802490925828D4A00C7DBAD /* TextViewPlaceholderViewController.m */; };
 		7802491025828D4C00C7DBAD /* TextViewAutoHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7802490C25828D4B00C7DBAD /* TextViewAutoHeightViewController.m */; };
 		7803DAAE22F7D519001E06B7 /* MJExtensionToModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7803DAAC22F7D519001E06B7 /* MJExtensionToModelViewController.m */; };
@@ -328,6 +328,7 @@
 		80FF919D1FC5682B00E437CF /* CountDownTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF91861FC5682A00E437CF /* CountDownTimeViewController.xib */; };
 		80FF919E1FC5682B00E437CF /* OtherHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91881FC5682A00E437CF /* OtherHomeViewController.m */; };
 		80FF91C51FC581DD00E437CF /* UtilHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */; };
+		9702123B2CFA283400C62F50 /* TestSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9702123A2CFA283400C62F50 /* TestSwift.swift */; };
 		9725C153261DA4D80021D5D9 /* TSLayoutPriorityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9725C152261DA4D80021D5D9 /* TSLayoutPriorityViewController.m */; };
 		9725C159261DA5930021D5D9 /* TSLayoutPriorityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9725C158261DA5930021D5D9 /* TSLayoutPriorityView.m */; };
 		9725C15F261DA7680021D5D9 /* recognize_icon_pass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9725C15D261DA7680021D5D9 /* recognize_icon_pass@2x.png */; };
@@ -388,6 +389,7 @@
 		15A7680523FD966A00358B42 /* TSButtonFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSButtonFactory.m; sourceTree = "<group>"; };
 		15A7680623FD966A00358B42 /* TSButtonFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSButtonFactory.h; sourceTree = "<group>"; };
 		3132573BFCFBEA8B4F3BB86F /* Pods-CJUIKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemo/Pods-CJUIKitDemo.release.xcconfig"; sourceTree = "<group>"; };
+		52CB3BBEF80D62B3BC58888A /* libPods-CJUIKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68D73B38201AA01727123963 /* Pods-CJUIKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemo/Pods-CJUIKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		7802490925828D4A00C7DBAD /* TextViewPlaceholderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewPlaceholderViewController.m; sourceTree = "<group>"; };
 		7802490A25828D4B00C7DBAD /* TextViewAutoHeightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewAutoHeightViewController.h; sourceTree = "<group>"; };
@@ -951,6 +953,8 @@
 		80FF91891FC5682A00E437CF /* OtherHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherHomeViewController.h; sourceTree = "<group>"; };
 		80FF91BE1FC581DD00E437CF /* UtilHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilHomeViewController.h; sourceTree = "<group>"; };
 		80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilHomeViewController.m; sourceTree = "<group>"; };
+		970212392CFA283400C62F50 /* CJUIKitDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CJUIKitDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		9702123A2CFA283400C62F50 /* TestSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSwift.swift; sourceTree = "<group>"; };
 		9725C151261DA4D80021D5D9 /* TSLayoutPriorityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSLayoutPriorityViewController.h; sourceTree = "<group>"; };
 		9725C152261DA4D80021D5D9 /* TSLayoutPriorityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSLayoutPriorityViewController.m; sourceTree = "<group>"; };
 		9725C157261DA5930021D5D9 /* TSLayoutPriorityView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSLayoutPriorityView.h; sourceTree = "<group>"; };
@@ -996,7 +1000,6 @@
 		97A9191D25AFE8510051B902 /* TwoImageCompareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoImageCompareView.h; sourceTree = "<group>"; };
 		97EB21D825ABFEC2008CDC13 /* BIndexSubStringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIndexSubStringViewController.h; sourceTree = "<group>"; };
 		97EB21D925ABFEC2008CDC13 /* BIndexSubStringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIndexSubStringViewController.m; sourceTree = "<group>"; };
-		F010C33DEBAF70AA8E83ACAA /* libPods-CJUIKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1004,7 +1007,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				574EAE025E3036E31623A125 /* libPods-CJUIKitDemo.a in Frameworks */,
+				70674BB59EACDE35A60B0967 /* libPods-CJUIKitDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1030,6 +1033,7 @@
 			children = (
 				1562F38223FD2FC70009FCEA /* AppDelegate.h */,
 				1562F38623FD2FC70009FCEA /* AppDelegate.m */,
+				9702123A2CFA283400C62F50 /* TestSwift.swift */,
 				97578AB025590F7100249AD6 /* UIWindow+RootSetting.h */,
 				97578AB125590F7100249AD6 /* UIWindow+RootSetting.m */,
 				97578AAA25590E9300249AD6 /* MainViewController.h */,
@@ -1038,6 +1042,7 @@
 				78A99267257958CB00B54E30 /* UIScrollView+CJTouch.m */,
 				1562F38423FD2FC70009FCEA /* APPUIKitSetting.h */,
 				1562F38123FD2FC70009FCEA /* APPUIKitSetting.m */,
+				970212392CFA283400C62F50 /* CJUIKitDemo-Bridging-Header.h */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -2755,7 +2760,7 @@
 		FD668169D5A770806E672CEE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F010C33DEBAF70AA8E83ACAA /* libPods-CJUIKitDemo.a */,
+				52CB3BBEF80D62B3BC58888A /* libPods-CJUIKitDemo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2771,7 +2776,7 @@
 				780E45FC1E5DF87B00980127 /* Sources */,
 				780E45FD1E5DF87B00980127 /* Frameworks */,
 				780E45FE1E5DF87B00980127 /* Resources */,
-				75AE8FEC88578E2AC9773C37 /* [CP] Copy Pods Resources */,
+				6553315EA9AE56F1D5FD7DC3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2830,6 +2835,7 @@
 					780E45FF1E5DF87B00980127 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 8285LLMDV3;
+						LastSwiftMigration = 1520;
 						ProvisioningStyle = Automatic;
 					};
 					780E46181E5DF87B00980127 = {
@@ -2991,7 +2997,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		75AE8FEC88578E2AC9773C37 /* [CP] Copy Pods Resources */ = {
+		6553315EA9AE56F1D5FD7DC3 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -3219,6 +3225,7 @@
 				80500388211C3A29002A2306 /* PresentBaseViewController.m in Sources */,
 				78778E29272AB18200576853 /* UIViewController+CJSystemBackButtonHandler.m in Sources */,
 				80D0120A210336B900D1EDF0 /* BeChangeViewController.m in Sources */,
+				9702123B2CFA283400C62F50 /* TestSwift.swift in Sources */,
 				80FF909F1FC5649F00E437CF /* NestedXibViewController.m in Sources */,
 				80FF91941FC5682B00E437CF /* TypeConvertViewController.m in Sources */,
 				78778E02272AB18200576853 /* CJButton.m in Sources */,
@@ -3450,6 +3457,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8285LLMDV3;
@@ -3461,6 +3469,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "CJUIKitDemo/AppDelegate/CJUIKitDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -3470,6 +3481,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8285LLMDV3;
@@ -3481,12 +3493,15 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "CJUIKitDemo/AppDelegate/CJUIKitDemo-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
 		780E46311E5DF87B00980127 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = CJUIKitDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -3499,6 +3514,7 @@
 		780E46321E5DF87B00980127 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = CJUIKitDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -3511,6 +3527,7 @@
 		780E46341E5DF87B00980127 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = CJUIKitDemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dvlproad.CJUIKitDemoUITests;
@@ -3522,6 +3539,7 @@
 		780E46351E5DF87B00980127 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = CJUIKitDemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dvlproad.CJUIKitDemoUITests;

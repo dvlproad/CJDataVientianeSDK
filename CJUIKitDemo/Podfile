@@ -59,7 +59,6 @@ target 'CJUIKitDemo' do
     pod 'IQKeyboardManager'
     pod 'UINavigation-SXFixSpace'
     
-    pod 'AFNetworking/Reachability'
 end
 
 #target 'CJUIKitDemoTests' do

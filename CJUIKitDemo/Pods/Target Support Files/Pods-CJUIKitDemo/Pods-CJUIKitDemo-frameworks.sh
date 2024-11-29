@@ -18,7 +18,7 @@ echo "mkdir -p ${CONFIGURATION_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
 mkdir -p "${CONFIGURATION_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
 
 COCOAPODS_PARALLEL_CODE_SIGN="${COCOAPODS_PARALLEL_CODE_SIGN:-false}"
-SWIFT_STDLIB_PATH="${DT_TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}"
+SWIFT_STDLIB_PATH="${TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}"
 BCSYMBOLMAP_DIR="BCSymbolMaps"
 
 
@@ -41,7 +41,7 @@ install_framework()
 
   if [ -L "${source}" ]; then
     echo "Symlinked..."
-    source="$(readlink "${source}")"
+    source="$(readlink -f "${source}")"
   fi
 
   if [ -d "${source}/${BCSYMBOLMAP_DIR}" ]; then
@@ -113,6 +113,7 @@ install_dsym() {
       rsync --delete -av "${RSYNC_PROTECT_TMP_FILES[@]}" --links --filter "- CVS/" --filter "- .svn/" --filter "- .git/" --filter "- .hg/" --filter "- Headers" --filter "- PrivateHeaders" --filter "- Modules" "${DERIVED_FILES_DIR}/${basename}.dSYM" "${DWARF_DSYM_FOLDER_PATH}"
     else
       # The dSYM was not stripped at all, in this case touch a fake folder so the input/output paths from Xcode do not reexecute this script because the file is missing.
+      mkdir -p "${DWARF_DSYM_FOLDER_PATH}"
       touch "${DWARF_DSYM_FOLDER_PATH}/${basename}.dSYM"
     fi
   fi
@@ -181,7 +182,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/CJBaseUtil/CJBaseUtil.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJFile/CJFile.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJFoundation/CJFoundation.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/CJPicker/CJPicker.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CJFoundation-Swift/CJFoundation_Swift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJPopupView/CJPopupView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CQDemoKit/CQDemoKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework"
@@ -190,7 +191,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PinYin4Objc/PinYin4Objc.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Shimmer/Shimmer.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/UINavigation-SXFixSpace/UINavigation_SXFixSpace.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YYText/YYText.framework"
@@ -202,7 +202,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/CJBaseUtil/CJBaseUtil.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJFile/CJFile.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJFoundation/CJFoundation.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/CJPicker/CJPicker.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CJFoundation-Swift/CJFoundation_Swift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJPopupView/CJPopupView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CQDemoKit/CQDemoKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework"
@@ -211,7 +211,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PinYin4Objc/PinYin4Objc.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Shimmer/Shimmer.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/UINavigation-SXFixSpace/UINavigation_SXFixSpace.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YYText/YYText.framework"

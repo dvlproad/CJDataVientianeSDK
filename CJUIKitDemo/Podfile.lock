@@ -1,5 +1,4 @@
 PODS:
-  - AFNetworking/Reachability (4.0.1)
   - CJBaseEffectKit/CJScaleHeadView (0.2.0)
   - CJBaseHelper (0.1.7):
     - CJBaseHelper/AppInfoCJHelper (= 0.1.7)
@@ -117,7 +116,6 @@ PODS:
   - YYText (1.0.7)
 
 DEPENDENCIES:
-  - AFNetworking/Reachability
   - CJBaseEffectKit/CJScaleHeadView
   - CJBaseHelper (from `../`)
   - CJBaseUtil (from `../`)
@@ -142,7 +140,6 @@ SPEC REPOS:
   https://gitee.com/dvlproad/dvlproadSpecs:
     - CJBaseEffectKit
   https://github.com/CocoaPods/Specs.git:
-    - AFNetworking
     - CJFile
     - CJPopupView
     - CQDemoKit
@@ -165,7 +162,6 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   CJBaseEffectKit: 8640801fa272a1d96a6edce2c994652ced0e519f
   CJBaseHelper: 71c9d695c76736b2fc66123157d5626da4556177
   CJBaseUtil: 1bbf8d5f831dc12ae4bb06c8b5326bd39f3522e1
@@ -183,6 +179,6 @@ SPEC CHECKSUMS:
   UINavigation-SXFixSpace: 10f223253ebff2ceefa26694e23b7694269763c4
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 3c283e42074160bf913a1616af1f298c810b0853
+PODFILE CHECKSUM: 8099bbb1ee3b42e86c3c1ec499de6c2591db6229
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.16.2
