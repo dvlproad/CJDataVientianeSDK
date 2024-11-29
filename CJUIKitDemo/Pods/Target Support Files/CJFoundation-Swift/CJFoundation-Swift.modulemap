@@ -1,0 +1,6 @@
+framework module CJFoundation_Swift {
+  umbrella header "CJFoundation-Swift-umbrella.h"
+
+  export *
+  module * { export * }
+}

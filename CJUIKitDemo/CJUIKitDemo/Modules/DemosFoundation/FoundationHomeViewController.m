@@ -14,6 +14,8 @@
 #import "DateViewController.h"
 #import "TypeConvertViewController.h"
 
+#import "CJUIKitDemo-Swift.h"
+
 
 @interface FoundationHomeViewController ()
 
@@ -51,6 +53,15 @@
             CQDMModuleModel *NSDateModule = [[CQDMModuleModel alloc] init];
             NSDateModule.title = @"NSDate";
             NSDateModule.classEntry = [DateViewController class];
+            [sectionDataModel.values addObject:NSDateModule];
+        }
+        
+        {
+            CQDMModuleModel *NSDateModule = [[CQDMModuleModel alloc] init];
+            NSDateModule.title = @"NSDate下个周期";
+            NSDateModule.actionBlock = ^{
+                [[TestSwift1 new] printDate];
+            };
             [sectionDataModel.values addObject:NSDateModule];
         }
         

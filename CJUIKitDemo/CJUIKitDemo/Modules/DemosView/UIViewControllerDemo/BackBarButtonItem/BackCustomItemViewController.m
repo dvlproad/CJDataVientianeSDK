@@ -12,7 +12,7 @@
 
 #import "UIViewController+CJCustomBackBarButtonItem.h"
 
-#import <UINavigation-SXFixSpace/UINavigationSXFixSpace.h>
+#import <UINavigation_SXFixSpace/UINavigationSXFixSpace.h>
 
 @interface BackCustomItemViewController ()
 

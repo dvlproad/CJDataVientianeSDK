@@ -13,6 +13,7 @@
 #import "UtilHomeViewController.h"
 #import "HelperHomeViewController.h"
 #import "MoreHomeViewController.h"
+#import "CJUIKitDemo-Swift.h"
 
 
 @interface MainViewController ()

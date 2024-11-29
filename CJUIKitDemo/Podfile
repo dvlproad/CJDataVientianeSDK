@@ -1,5 +1,5 @@
 platform :ios, '9.0'
-#use_frameworks!
+use_frameworks!
 inhibit_all_warnings!
 # pod的本地索引文件：~/Library/Caches/CocoaPods/search_index.json
 
@@ -59,6 +59,8 @@ target 'CJUIKitDemo' do
     pod 'IQKeyboardManager'
     pod 'UINavigation-SXFixSpace'
     
+#    pod 'SwiftExtraCJHelper',   :path => '../'
+    pod 'CJFoundation-Swift',   :path => '../'
 end
 
 #target 'CJUIKitDemoTests' do

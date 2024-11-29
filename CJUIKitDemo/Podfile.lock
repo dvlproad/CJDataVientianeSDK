@@ -61,6 +61,9 @@ PODS:
     - CJFoundation/NSDictionary (= 0.1.3)
     - CJFoundation/NSJSONSerialization (= 0.1.3)
     - CJFoundation/NSString (= 0.1.3)
+  - CJFoundation-Swift (0.1.1):
+    - CJFoundation-Swift/Base (= 0.1.1)
+  - CJFoundation-Swift/Base (0.1.1)
   - CJFoundation/NSDictionary (0.1.3)
   - CJFoundation/NSJSONSerialization (0.1.3)
   - CJFoundation/NSString (0.1.3)
@@ -122,6 +125,7 @@ DEPENDENCIES:
   - CJFile/CJFileManager
   - CJFile/CJFileModel
   - CJFoundation (from `../`)
+  - CJFoundation-Swift (from `../`)
   - CJPopupView/CJPopoverView
   - CQDemoKit/BaseUIKit (~> 0.6.8)
   - CQDemoKit/BaseUtil (~> 0.6.8)
@@ -160,6 +164,8 @@ EXTERNAL SOURCES:
     :path: "../"
   CJFoundation:
     :path: "../"
+  CJFoundation-Swift:
+    :path: "../"
 
 SPEC CHECKSUMS:
   CJBaseEffectKit: 8640801fa272a1d96a6edce2c994652ced0e519f
@@ -167,6 +173,7 @@ SPEC CHECKSUMS:
   CJBaseUtil: 1bbf8d5f831dc12ae4bb06c8b5326bd39f3522e1
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
   CJFoundation: 53b4df7152c6d6fd776f55f387c67f431b8574bd
+  CJFoundation-Swift: ee85ffcaf2d0031cc55fec3e46abbd86cb7597e7
   CJPopupView: c7685f6a0225a89c72d97ea946f2816b5442abaf
   CQDemoKit: 1c320796bdcd9b6047887b67ebd29bb8366a361b
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
@@ -179,6 +186,6 @@ SPEC CHECKSUMS:
   UINavigation-SXFixSpace: 10f223253ebff2ceefa26694e23b7694269763c4
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 8099bbb1ee3b42e86c3c1ec499de6c2591db6229
+PODFILE CHECKSUM: 048f14e30753c2c957a3906914aa4b4cfc8acf8d
 
 COCOAPODS: 1.16.2

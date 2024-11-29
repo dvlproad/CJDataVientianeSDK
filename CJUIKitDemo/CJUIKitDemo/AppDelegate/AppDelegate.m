@@ -14,7 +14,7 @@
 #import "CJAppLastUtil.h"
 #import <IQKeyboardManager/IQKeyboardManager.h>
 
-#import <UINavigation-SXFixSpace/UINavigationSXFixSpace.h>
+#import <UINavigation_SXFixSpace/UINavigationSXFixSpace.h>
 
 #import <CJFoundation/NSString+CJCut.h>
 #import <CJFoundation/NSString+CJAttributedString.h>
