@@ -89,7 +89,7 @@ class TestSwift1: NSObject {
         let comparisonDate = dateFromYYYYMMDDString(dateString: currentDateString)
         
         let lunarCalendar = Calendar(identifier: isLunarCalendar ? .chinese : .gregorian)
-        if let nextMonthDate = CJRepateDateGetter.nextLunarCycleDate(from: selectedDate, using: lunarCalendar, cycleType: .week, comparisonDate: comparisonDate, shouldFlyback: shouldFlyback) {
+        if let nextMonthDate = selectedDate.closestCommemorationDate(commemorationCycleType: .week, afterDate: comparisonDate, shouldFlyback: shouldFlyback, calendar: lunarCalendar) {
 //            print("按周计算下一个日期为：\(lunarStringForDate(from: nextMonthDate, using: lunarCalendar))【\(formatGregorianDate(from: nextMonthDate))】")
             let correctResultDate = dateFromYYYYMMDDString(dateString: correctResultDateString)
             if !CJDateCompareUtil.areDatesEqualIgnoringTime(nextMonthDate, correctResultDate) {
@@ -104,7 +104,7 @@ class TestSwift1: NSObject {
         let comparisonDate = dateFromYYYYMMDDString(dateString: currentDateString)
         
         let lunarCalendar = Calendar(identifier: isLunarCalendar ? .chinese : .gregorian)
-        if let nextMonthDate = CJRepateDateGetter.nextLunarCycleDate(from: selectedDate, using: lunarCalendar, cycleType: .month, comparisonDate: comparisonDate, shouldFlyback: shouldFlyback) {
+        if let nextMonthDate = selectedDate.closestCommemorationDate(commemorationCycleType: .month, afterDate: comparisonDate, shouldFlyback: shouldFlyback, calendar: lunarCalendar) {
 //            print("按月计算下一个日期为：\(lunarStringForDate(from: nextMonthDate, using: lunarCalendar))【\(formatGregorianDate(from: nextMonthDate))】")
             let correctResultDate = dateFromYYYYMMDDString(dateString: correctResultDateString)
             if !CJDateCompareUtil.areDatesEqualIgnoringTime(nextMonthDate, correctResultDate) {
@@ -119,7 +119,7 @@ class TestSwift1: NSObject {
         let comparisonDate = dateFromYYYYMMDDString(dateString: currentDateString)
         
         let lunarCalendar = Calendar(identifier: isLunarCalendar ? .chinese : .gregorian)
-        if let nextYearDate = CJRepateDateGetter.nextLunarCycleDate(from: selectedDate, using: lunarCalendar, cycleType: .year, comparisonDate: comparisonDate, shouldFlyback: shouldFlyback) {
+        if let nextYearDate = selectedDate.closestCommemorationDate(commemorationCycleType: .year, afterDate: comparisonDate, shouldFlyback: shouldFlyback, calendar: lunarCalendar) {
 //            print("按年计算下一个日期为：\(lunarStringForDate(from: nextYearDate, using: lunarCalendar))【\(formatGregorianDate(from: nextYearDate))】")
             let correctResultDate = dateFromYYYYMMDDString(dateString: correctResultDateString)
             if !CJDateCompareUtil.areDatesEqualIgnoringTime(nextYearDate, correctResultDate) {

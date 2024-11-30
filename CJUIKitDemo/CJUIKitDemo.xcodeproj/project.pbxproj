@@ -329,7 +329,7 @@
 		80FF919E1FC5682B00E437CF /* OtherHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91881FC5682A00E437CF /* OtherHomeViewController.m */; };
 		80FF91C51FC581DD00E437CF /* UtilHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */; };
 		9702123B2CFA283400C62F50 /* TestSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9702123A2CFA283400C62F50 /* TestSwift.swift */; };
-		9702123D2CFA2EC000C62F50 /* CJRepateDateGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9702123C2CFA2EC000C62F50 /* CJRepateDateGetter.swift */; };
+		9702123D2CFA2EC000C62F50 /* CJClosestCommemorationDateGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9702123C2CFA2EC000C62F50 /* CJClosestCommemorationDateGetter.swift */; };
 		9725C153261DA4D80021D5D9 /* TSLayoutPriorityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9725C152261DA4D80021D5D9 /* TSLayoutPriorityViewController.m */; };
 		9725C159261DA5930021D5D9 /* TSLayoutPriorityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9725C158261DA5930021D5D9 /* TSLayoutPriorityView.m */; };
 		9725C15F261DA7680021D5D9 /* recognize_icon_pass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9725C15D261DA7680021D5D9 /* recognize_icon_pass@2x.png */; };
@@ -956,7 +956,7 @@
 		8387796C9091D0E618AB7637 /* Pods_CJUIKitDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CJUIKitDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		970212392CFA283400C62F50 /* CJUIKitDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CJUIKitDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		9702123A2CFA283400C62F50 /* TestSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSwift.swift; sourceTree = "<group>"; };
-		9702123C2CFA2EC000C62F50 /* CJRepateDateGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJRepateDateGetter.swift; sourceTree = "<group>"; };
+		9702123C2CFA2EC000C62F50 /* CJClosestCommemorationDateGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJClosestCommemorationDateGetter.swift; sourceTree = "<group>"; };
 		9725C151261DA4D80021D5D9 /* TSLayoutPriorityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSLayoutPriorityViewController.h; sourceTree = "<group>"; };
 		9725C152261DA4D80021D5D9 /* TSLayoutPriorityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSLayoutPriorityViewController.m; sourceTree = "<group>"; };
 		9725C157261DA5930021D5D9 /* TSLayoutPriorityView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSLayoutPriorityView.h; sourceTree = "<group>"; };
@@ -1036,7 +1036,7 @@
 				1562F38223FD2FC70009FCEA /* AppDelegate.h */,
 				1562F38623FD2FC70009FCEA /* AppDelegate.m */,
 				9702123A2CFA283400C62F50 /* TestSwift.swift */,
-				9702123C2CFA2EC000C62F50 /* CJRepateDateGetter.swift */,
+				9702123C2CFA2EC000C62F50 /* CJClosestCommemorationDateGetter.swift */,
 				97578AB025590F7100249AD6 /* UIWindow+RootSetting.h */,
 				97578AB125590F7100249AD6 /* UIWindow+RootSetting.m */,
 				97578AAA25590E9300249AD6 /* MainViewController.h */,
@@ -3156,7 +3156,7 @@
 				7850B70020937C5A008F4A21 /* DragViewController.m in Sources */,
 				80FF90A41FC5649F00E437CF /* HomeViewController.m in Sources */,
 				800E07E52016CCF500799B78 /* DeviceInfo.m in Sources */,
-				9702123D2CFA2EC000C62F50 /* CJRepateDateGetter.swift in Sources */,
+				9702123D2CFA2EC000C62F50 /* CJClosestCommemorationDateGetter.swift in Sources */,
 				80238A602111966B008EB1D5 /* NavigationBarRemoveUnderlineViewController.m in Sources */,
 				8060C48320E0D0B30093B14E /* CJDistanceUtil.m in Sources */,
 				7856F96921F9B2DF004AF751 /* AuthorizationCJHelperViewController.m in Sources */,

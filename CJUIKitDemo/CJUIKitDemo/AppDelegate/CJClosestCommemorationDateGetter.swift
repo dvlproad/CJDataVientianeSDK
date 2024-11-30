@@ -1,5 +1,5 @@
 //
-//  CJDateUtil.swift
+//  CJClosestCommemorationDateGetter.swift
 //  CJUIKitDemo
 //
 //  Created by qian on 2024/11/30.
@@ -11,42 +11,45 @@
 
 import Foundation
 
-// 周期类型定义
-enum CycleType {
-    case week
-    case month
-    case year
+// MARK: 1、以本时间为纪念日，按指定纪念周期，获取指定日期后的最临近的纪念日；2、将本纪念日时间根据纪念周期输出指定的格式（公历/农历）
+// 纪念日周期类型定义
+enum CommemorationCycleType {
+    case none   // 不重复
+    case week   // 每周重复
+    case month  // 每月重复
+    case year   // 每年重复
 }
 
-struct CJRepateDateGetter {
-    /// 获取下一个周期的农历时间
+extension Date {
+    /// 以本时间为纪念日，按指定纪念周期，获取指定日期后的最临近的纪念日
+    /// eg：以本时间为纪念日，按每年重复，获取当前时间之后最临近的纪念日
     /// - Parameters:
-    ///   - selectedDate: 当前日期（公历）
-    ///   - calendar: 使用的农历 `Calendar`
-    ///   - cycleType: 周期类型（按月 or 按年）
-    ///   - comparisonDate: 用于比较的指定日期（公历）
+    ///   - commemorationCycleType: 周期类型（按周 or 按月 or 按年）
+    ///   - afterDate: 在指定日期后
     ///   - shouldFlyback: 当前为1月31号，则点击每月时候，为每月31号，当到2月的时候是否需要回退到月末
-    /// - Returns: 下一个重复周期的日期（公历）
-    static func nextLunarCycleDate(from selectedDate: Date, using calendar: Calendar = Calendar(identifier: .chinese), cycleType: CycleType, comparisonDate: Date, shouldFlyback: Bool) -> Date? {
-        print("\n要纪念的日期：\(CJDateFormatterUtil.lunarStringForDate(from: selectedDate, using: calendar))【\(CJDateFormatterUtil.formatGregorianDate(from: selectedDate))】【\(CJRepateDateGetter.getWeekdayString(from: selectedDate))】")
-        print("比较当前日期：\(CJDateFormatterUtil.lunarStringForDate(from: comparisonDate, using: calendar))【\(CJDateFormatterUtil.formatGregorianDate(from: comparisonDate))】【\(CJRepateDateGetter.getWeekdayString(from: comparisonDate))】")
+    ///   - calendar: 使用的农历 `Calendar`
+    /// - Returns: 指定日期后的最临近的纪念日
+    func closestCommemorationDate(commemorationCycleType: CommemorationCycleType, afterDate: Date, shouldFlyback: Bool, calendar: Calendar = Calendar(identifier: .chinese)) -> Date? {
+        let commemorationDate: Date = self
+        print("\n要纪念的日期：\(commemorationDate.lunarDateString())【\(CJDateFormatterUtil.formatGregorianDate(from: commemorationDate))】【\(CJRepateDateGetter.getWeekdayString(from: commemorationDate))】")
+        print("比较当前日期：\(afterDate.lunarDateString()))【\(CJDateFormatterUtil.formatGregorianDate(from: afterDate))】【\(CJRepateDateGetter.getWeekdayString(from: afterDate))】")
         
         // 获取当前日期和指定比较日期的农历信息
-        var selectedComponents = calendar.dateComponents([.year, .month, .day, .weekday], from: selectedDate)
-        let comparisonComponents = calendar.dateComponents([.year, .month, .day, .weekday], from: comparisonDate)
+        let commemorationComponents = calendar.dateComponents([.year, .month, .day, .weekday], from: commemorationDate)
+        let comparisonComponents = calendar.dateComponents([.year, .month, .day, .weekday], from: afterDate)
         
-        guard let selectedDay = selectedComponents.day, let comparisonDay = comparisonComponents.day, let comparisonMonth = comparisonComponents.month else {
+        guard let selectedDay = commemorationComponents.day, let comparisonDay = comparisonComponents.day, let comparisonMonth = comparisonComponents.month else {
             return nil
         }
         
-        var resultComponents = selectedComponents
+        var resultComponents = commemorationComponents
         var cycleTypeString = ""
         var compareResultString = ""
-        switch cycleType {
+        switch commemorationCycleType {
         case .week:
             // 比较“星期几”是否需要调整到周
             let comparisonWeekdayIndex = (comparisonComponents.weekday ?? 1) - 1
-            let selectedWeekdayIndex = (selectedComponents.weekday ?? 1) - 1
+            let selectedWeekdayIndex = (commemorationComponents.weekday ?? 1) - 1
             
             let weekdayStrings = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"]
             let selectedWeekdayString = weekdayStrings[selectedWeekdayIndex]
@@ -79,7 +82,7 @@ struct CJRepateDateGetter {
             
         case .year:
             // 比较“月”是否需要调整年份
-            if let selectedMonth = selectedComponents.month {
+            if let selectedMonth = commemorationComponents.month {
                 cycleTypeString = "每年\(selectedMonth)月\(selectedDay)号"
                 if comparisonMonth > selectedMonth || (comparisonMonth == selectedMonth && comparisonDay > selectedDay ) {
                     compareResultString = "今年现在已是\(comparisonMonth)月\(comparisonDay)号，已过了\(selectedMonth)月\(selectedDay)号，即下个\(selectedMonth)月\(selectedDay)号得到明年"
@@ -91,6 +94,9 @@ struct CJRepateDateGetter {
             } else {
                 compareResultString = "按年计算时候，出错了。。。"
             }
+            
+        case .none:
+            print("不用处理")
         }
         
         if shouldFlyback { // 当前为1月31号，则点击每月时候，为每月31号，当到2月的时候是否需要回退到月末
@@ -100,7 +106,7 @@ struct CJRepateDateGetter {
                 let range = calendar.range(of: .day, in: .month, for: nextMonthDate)
                 let daysInNextMonth = range?.count ?? 0 // 最后一天是几号
                 if selectedDay > daysInNextMonth {
-                    //let selectedDateRange = calendar.range(of: .day, in: .month, for: selectedDate)
+                    //let selectedDateRange = calendar.range(of: .day, in: .month, for: commemorationDate)
                     //let daysInSelectedDate = selectedDateRange?.count ?? 0
                     resultComponents.day = daysInNextMonth // 让其为最后一天
                 }
@@ -109,7 +115,7 @@ struct CJRepateDateGetter {
         
         // 确保下一个周期的日期存在，处理农历月份天数不一致的问题
         if let nextDate = calendar.date(from: resultComponents) {
-            print("\(cycleTypeString)：<\(compareResultString)>的日期存在：\(CJDateFormatterUtil.lunarStringForDate(from: nextDate, using: calendar))【\(CJDateFormatterUtil.formatGregorianDate(from: nextDate))】")
+            print("\(cycleTypeString)：<\(compareResultString)>的日期存在：\(nextDate.lunarDateString())【\(CJDateFormatterUtil.formatGregorianDate(from: nextDate))】")
             return nextDate
         } else {
             // 如果当前农历日不存在于下一个周期，则向后调整到有效日期
@@ -118,7 +124,7 @@ struct CJRepateDateGetter {
             while adjustedComponents.day ?? 1 > 1 {
                 adjustedComponents.day! -= 1
                 if let validDate = calendar.date(from: adjustedComponents) {
-                    print("\(cycleTypeString)：<\(compareResultString)>但调整后的有效日期为：\(CJDateFormatterUtil.lunarStringForDate(from: validDate, using: calendar))【\(CJDateFormatterUtil.formatGregorianDate(from: validDate))】")
+                    print("\(cycleTypeString)：<\(compareResultString)>但调整后的有效日期为：\(validDate.lunarDateString()))【\(CJDateFormatterUtil.formatGregorianDate(from: validDate))】")
                     return validDate
                 }
             }
@@ -126,6 +132,148 @@ struct CJRepateDateGetter {
             return nil
         }
     }
+    
+    /// 将本纪念日时间根据纪念周期输出指定的格式（公历/农历）
+    /// - Parameters:
+    ///   - commemorationCycleType: 周期类型（按周 or 按月 or 按年）
+    ///   - showInLunarType: 输出格式是农历，还是公历
+    /// - Returns: 本纪念日时间根据纪念周期及指定的格式（公历/农历）输出的字符串
+    func commemorationDateString(cycleType: CommemorationCycleType, showInLunarType: Bool) -> String {
+        var dateString: String = ""
+        switch cycleType {
+        case .week:
+            let weekDayString = self.weekdayString()
+            dateString = "每周 \(weekDayString)"
+            
+        case .month:
+            if showInLunarType {
+                let lunarTuple = self.lunarTuple()
+                dateString = "农历每月 \(lunarTuple.dayString)"
+            } else {
+                let selectedComponents = Calendar.current.dateComponents([.year, .month ,.day], from: self)
+                dateString = "每月 \(selectedComponents.day ?? 1)日"
+            }
+        case .year:
+            if showInLunarType {
+                let lunarTuple = self.lunarTuple()
+                dateString = "农历每年 \(lunarTuple.monthString)月\(lunarTuple.dayString)"
+            } else {
+                let selectedComponents = Calendar.current.dateComponents([.year, .month ,.day], from: self)
+                dateString = "每年 \(selectedComponents.month ?? 1)月\(selectedComponents.day ?? 1)日"
+            }
+        case .none:
+            if showInLunarType {
+                let lunarTuple = self.lunarTuple()
+                dateString = "\(lunarTuple.lunarYear)\(lunarTuple.stemBranch)年\(lunarTuple.monthString)月\(lunarTuple.dayString)"
+            } else {
+                let selectedComponents = Calendar.current.dateComponents([.year, .month ,.day], from: self)
+                dateString = "\(selectedComponents.year ?? 1)年 \(selectedComponents.month ?? 1)月\(selectedComponents.day ?? 1)日"
+            }
+        }
+        return dateString
+    }
+    
+    func weekdayString() -> String {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.weekday], from: self)
+        let weekday = components.weekday ?? 1
+        let weekdayStrings = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"]
+        return weekdayStrings[weekday - 1]
+    }
+}
+
+
+//MARK: 从公历日期中获取农历日期（含天干地支）的各种数据
+extension Date {
+    // 将日期格式化为农历日期（含天干地支）
+    func lunarDateString() -> String {
+        let lunarTuple = self.lunarTuple()
+        let adjustedLunarYear: Int = lunarTuple.lunarYear
+        let lunarYearWithStemBranch: String = lunarTuple.stemBranch
+        let lunarMonthName: String = lunarTuple.monthString
+        let lunarDayName: String = lunarTuple.dayString
+        let lunarDateString = "\(adjustedLunarYear)\(lunarYearWithStemBranch)年\(lunarMonthName)月\(lunarDayName)"
+        return lunarDateString
+    }
+    
+    // 从公历日期中获取农历日期（含天干地支）的各种数据
+    func lunarTuple() -> (lunarYear: Int, stemBranch: String, monthString: String, dayString: String) {
+        // 使用农历日历（中国农历）
+        let lunarCalendar = Calendar(identifier: .chinese)
+        
+        // 获取公历日期的农历年、月、日
+        let components = lunarCalendar.dateComponents([.year, .month, .day], from: self)
+        
+        // 获取年份、月份和日期
+        let lunarYear = components.year ?? 0
+        let lunarMonth = components.month ?? 0
+        let lunarDay = components.day ?? 0
+        
+        // 如果年份为40或41等小年份，可以推测它是基于农历纪年起始年份的偏差
+        // 这里可以做一个简单的年份修正，如果是从41年开始的纪年
+        let adjustedLunarYear = lunarYear + 1983  // 因为41年对应的是1984年农历纪年
+        
+        // 根据甲子年的纪年法计算天干地支
+        let baseYear = 1984 // 甲子年对应的公历年份(上一个甲子年是1984年，下一个甲子年是60年后的2044年)
+        let heavenlyStems = ["甲", "乙", "丙", "丁", "戊", "己", "庚", "辛", "壬", "癸"]
+        let earthlyBranches = ["子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥"]
+        let yearDifference = adjustedLunarYear - baseYear
+        // 计算天干地支的循环周期及获取天干和地支
+        let stemIndex = yearDifference % 10  // 天干的循环周期（10年一轮）
+        let branchIndex = yearDifference % 12  // 地支的循环周期（12年一轮）
+        let stem = heavenlyStems[stemIndex]
+        let branch = earthlyBranches[branchIndex]
+        let lunarYearWithStemBranch = "\(stem)\(branch)"  // 农历天干地支年份，例如 "乙巳"
+        
+        // 农历的天数和月份的中文表示
+        let monthDays = ["初一", "初二", "初三", "初四", "初五", "初六", "初七", "初八", "初九", "初十", "十一", "十二", "十三", "十四", "十五", "十六", "十七", "十八", "十九", "二十", "廿一", "廿二", "廿三", "廿四", "廿五", "廿六", "廿七", "廿八", "廿九", "三十"]
+        let months = ["正", "二", "三", "四", "五", "六", "七", "八", "九", "十", "冬", "腊"]
+        
+        // 获取农历年份的总月份数来判断是否闰月
+        let totalMonthsInLunarYear = lunarCalendar.range(of: .month, in: .year, for: self)?.count ?? 0
+        var isLeapMonth = false
+        
+        if totalMonthsInLunarYear == 13 {
+            // 如果该年有13个月，我们需要检查当前月是否是闰月
+            let leapMonth = lunarCalendar.component(.month, from: lunarCalendar.date(byAdding: .month, value: 1, to: self) ?? self)
+            if lunarMonth == leapMonth {
+                isLeapMonth = true
+            }
+        }
+        
+        // 如果是闰月，调整月份名称
+        var lunarMonthName = months[lunarMonth - 1]
+        if isLeapMonth {
+            lunarMonthName = "闰" + lunarMonthName
+        }
+        
+        // 获取天数的中文表示
+        let lunarDayName = monthDays[lunarDay - 1]
+        
+//        let normalDateString = formatGregorianDate(from: date)
+//        // 返回格式化后的农历日期
+//        let lunarDateString = "\(adjustedLunarYear)\(lunarYearWithStemBranch)年\(lunarMonthName)月\(lunarDayName)"
+//        print("\(normalDateString)【\(lunarDateString)】")
+        
+        return (adjustedLunarYear, lunarYearWithStemBranch, lunarMonthName, lunarDayName)
+    }
+}
+
+// MARK: 提供给 OC 使用的方法
+struct CJRepateDateGetter {
+    /// 已知纪念日时间，按指定纪念周期，获取指定日期后的最临近的纪念日
+    /// eg：已知纪念日时间，按每年重复，获取当前时间之后最临近的纪念日
+    /// - Parameters:
+    ///   - commemorationDate: 纪念日
+    ///   - commemorationCycleType: 周期类型（按周 or 按月 or 按年）
+    ///   - afterDate: 在指定日期后
+    ///   - shouldFlyback: 当前为1月31号，则点击每月时候，为每月31号，当到2月的时候是否需要回退到月末
+    ///   - calendar: 使用的农历 `Calendar`
+    /// - Returns: 指定日期后的最临近的纪念日
+    static func closestCommemorationDate(commemorationDate: Date, commemorationCycleType: CommemorationCycleType, afterDate: Date, shouldFlyback: Bool, calendar: Calendar = Calendar(identifier: .chinese)) -> Date? {
+        return commemorationDate.closestCommemorationDate(commemorationCycleType: commemorationCycleType, afterDate: afterDate, shouldFlyback: shouldFlyback, calendar: calendar)
+    }
+        
     
     static func getWeekdayString(from date: Date) -> String {
         let calendar = Calendar.current
@@ -160,83 +308,19 @@ struct CJDateIntervalUtil {
             return calendar.date(from: components)
         }
     }
-
 }
+
 
 struct CJDateFormatterUtil {
     // 静态方法：将公历日期格式化为农历日期（含天干地支）
     static func lunarStringForDate(from date: Date, using calendar: Calendar = Calendar(identifier: .chinese)) -> String {
-        let lunarTuple = lunarTupleForDate(from: date)
-        let adjustedLunarYear: Int = lunarTuple.lunarYear
-        let lunarYearWithStemBranch: String = lunarTuple.stemBranch
-        let lunarMonthName: String = lunarTuple.monthString
-        let lunarDayName: String = lunarTuple.dayString
-        let lunarDateString = "\(adjustedLunarYear)\(lunarYearWithStemBranch)年\(lunarMonthName)月\(lunarDayName)"
-        return lunarDateString
+        return date.lunarDateString()
     }
     
     // 从公历日期中获取农历日期（含天干地支）的各种数据
     static func lunarTupleForDate(from date: Date) -> (lunarYear: Int, stemBranch: String, monthString: String, dayString: String) {
-        // 使用农历日历（中国农历）
-        let lunarCalendar = Calendar(identifier: .chinese)
-        
-        // 获取公历日期的农历年、月、日
-        let components = lunarCalendar.dateComponents([.year, .month, .day], from: date)
-        
-        // 获取年份、月份和日期
-        let lunarYear = components.year ?? 0
-        let lunarMonth = components.month ?? 0
-        let lunarDay = components.day ?? 0
-        
-        // 如果年份为40或41等小年份，可以推测它是基于农历纪年起始年份的偏差
-        // 这里可以做一个简单的年份修正，如果是从41年开始的纪年
-        let adjustedLunarYear = lunarYear + 1983  // 因为41年对应的是1984年农历纪年
-        
-        // 根据甲子年的纪年法计算天干地支
-        let baseYear = 1984 // 甲子年对应的公历年份(上一个甲子年是1984年，下一个甲子年是60年后的2044年)
-        let heavenlyStems = ["甲", "乙", "丙", "丁", "戊", "己", "庚", "辛", "壬", "癸"]
-        let earthlyBranches = ["子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥"]
-        let yearDifference = adjustedLunarYear - baseYear
-        // 计算天干地支的循环周期及获取天干和地支
-        let stemIndex = yearDifference % 10  // 天干的循环周期（10年一轮）
-        let branchIndex = yearDifference % 12  // 地支的循环周期（12年一轮）
-        let stem = heavenlyStems[stemIndex]
-        let branch = earthlyBranches[branchIndex]
-        let lunarYearWithStemBranch = "\(stem)\(branch)"  // 农历天干地支年份，例如 "乙巳"
-        
-        // 农历的天数和月份的中文表示
-        let monthDays = ["初一", "初二", "初三", "初四", "初五", "初六", "初七", "初八", "初九", "初十", "十一", "十二", "十三", "十四", "十五", "十六", "十七", "十八", "十九", "二十", "廿一", "廿二", "廿三", "廿四", "廿五", "廿六", "廿七", "廿八", "廿九", "三十"]
-        let months = ["正", "二", "三", "四", "五", "六", "七", "八", "九", "十", "冬", "腊"]
-        
-        // 获取农历年份的总月份数来判断是否闰月
-        let totalMonthsInLunarYear = lunarCalendar.range(of: .month, in: .year, for: date)?.count ?? 0
-        var isLeapMonth = false
-        
-        if totalMonthsInLunarYear == 13 {
-            // 如果该年有13个月，我们需要检查当前月是否是闰月
-            let leapMonth = lunarCalendar.component(.month, from: lunarCalendar.date(byAdding: .month, value: 1, to: date) ?? date)
-            if lunarMonth == leapMonth {
-                isLeapMonth = true
-            }
-        }
-        
-        // 如果是闰月，调整月份名称
-        var lunarMonthName = months[lunarMonth - 1]
-        if isLeapMonth {
-            lunarMonthName = "闰" + lunarMonthName
-        }
-        
-        // 获取天数的中文表示
-        let lunarDayName = monthDays[lunarDay - 1]
-        
-//        let normalDateString = formatGregorianDate(from: date)
-//        // 返回格式化后的农历日期
-//        let lunarDateString = "\(adjustedLunarYear)\(lunarYearWithStemBranch)年\(lunarMonthName)月\(lunarDayName)"
-//        print("\(normalDateString)【\(lunarDateString)】")
-        
-        return (adjustedLunarYear, lunarYearWithStemBranch, lunarMonthName, lunarDayName)
+        return date.lunarTuple()
     }
-
 
     
     /// 格式化公历日期
