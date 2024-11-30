@@ -55,12 +55,35 @@
             NSDateModule.classEntry = [DateViewController class];
             [sectionDataModel.values addObject:NSDateModule];
         }
-        
         {
             CQDMModuleModel *NSDateModule = [[CQDMModuleModel alloc] init];
-            NSDateModule.title = @"NSDate下个周期";
+            NSDateModule.title = @"NSDate农历格式";
             NSDateModule.actionBlock = ^{
-                [[TestSwift1 new] printDate];
+                [[TestSwift1 new] printLunarDateString];
+            };
+            [sectionDataModel.values addObject:NSDateModule];
+        }
+        {
+            CQDMModuleModel *NSDateModule = [[CQDMModuleModel alloc] init];
+            NSDateModule.title = @"NSDate每周重复";
+            NSDateModule.actionBlock = ^{
+                [[TestSwift1 new] getNextRepateDate_week];
+            };
+            [sectionDataModel.values addObject:NSDateModule];
+        }
+        {
+            CQDMModuleModel *NSDateModule = [[CQDMModuleModel alloc] init];
+            NSDateModule.title = @"NSDate每月重复";
+            NSDateModule.actionBlock = ^{
+                [[TestSwift1 new] getNextRepateDate_month];
+            };
+            [sectionDataModel.values addObject:NSDateModule];
+        }
+        {
+            CQDMModuleModel *NSDateModule = [[CQDMModuleModel alloc] init];
+            NSDateModule.title = @"NSDate每年周期";
+            NSDateModule.actionBlock = ^{
+                [[TestSwift1 new] getNextRepateDate_year];
             };
             [sectionDataModel.values addObject:NSDateModule];
         }
