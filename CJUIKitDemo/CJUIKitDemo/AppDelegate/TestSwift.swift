@@ -18,6 +18,13 @@ class TestSwift1: NSObject {
     }
     
     @objc func printLunarDateString() {
+        // 不在 1984-2044 年之间的时间
+        lunarStringForDate(dateString: "1982-01-01", correctResultDateString: "1982辛酉年腊月初七")
+        lunarStringForDate(dateString: "1984-01-01", correctResultDateString: "1983癸亥年冬月廿九")
+        lunarStringForDate(dateString: "1986-01-01", correctResultDateString: "1985乙丑年冬月廿一")
+        lunarStringForDate(dateString: "2044-01-01", correctResultDateString: "2024癸亥年冬月初二")
+        
+        // 在 1984-2044 年之间的时间
         lunarStringForDate(dateString: "2024-03-19", correctResultDateString: "2024甲辰年二月初十")
         lunarStringForDate(dateString: "2024-10-01", correctResultDateString: "2024甲辰年八月廿九")
         lunarStringForDate(dateString: "2025-01-03", correctResultDateString: "2024甲辰年腊月初四")
@@ -71,6 +78,13 @@ class TestSwift1: NSObject {
         checkNearbyYear(isLunarCalendar: true, selectedDateString: "2024-04-07", currentDateString: "2024-11-29", correctResultDateString: "2025-03-28")  // 农历二月二十九
         checkNearbyYear(isLunarCalendar: true, selectedDateString: "2024-04-08", currentDateString: "2024-11-29", correctResultDateString: "2025-03-29")  // 农历二月三十
         checkNearbyYear(isLunarCalendar: true, selectedDateString: "2024-02-29", currentDateString: "2024-11-29", correctResultDateString: "2025-02-17")
+        
+        
+        checkNearbyYear(isLunarCalendar: true, selectedDateString: "2026-07-14", currentDateString: "2025-07-25", correctResultDateString: "2025-07-25")    // 农历闰六月初一
+        
+        checkNearbyYear(isLunarCalendar: true, selectedDateString: "2023-02-01", currentDateString: "2024-11-29", correctResultDateString: "2025-02-08")   // 农历2023年正月十一
+        checkNearbyYear(isLunarCalendar: true, selectedDateString: "2023-02-20", currentDateString: "2024-11-29", correctResultDateString: "2025-02-28")   // 农历2023年二月初一
+        checkNearbyYear(isLunarCalendar: true, selectedDateString: "2023-03-22", currentDateString: "2024-11-29", correctResultDateString: "2025-02-28")   // 农历2023年闰二月初一
     }
     
     func lunarStringForDate(dateString: String, correctResultDateString: String) -> String {
@@ -124,8 +138,15 @@ class TestSwift1: NSObject {
             let correctResultDate = dateFromYYYYMMDDString(dateString: correctResultDateString)
             if !CJDateCompareUtil.areDatesEqualIgnoringTime(nextYearDate, correctResultDate) {
                 print("❌每年几月几号不正确：\(CJDateFormatterUtil.lunarStringForDate(from: nextYearDate, using: lunarCalendar))【\(CJDateFormatterUtil.formatGregorianDate(from: nextYearDate))】，应该为：\(CJDateFormatterUtil.lunarStringForDate(from: correctResultDate, using: lunarCalendar))【\(CJDateFormatterUtil.formatGregorianDate(from: correctResultDate))】")
+            } else {
+                print("✅每年几月几号正确：\(correctStringForDate(calendar: lunarCalendar, nextYearDate: nextYearDate, currentDate: comparisonDate)))")
             }
         }
+    }
+    
+    func correctStringForDate(calendar: Calendar, nextYearDate: Date, currentDate: Date) -> String {
+        let string: String = "\(CJDateFormatterUtil.lunarStringForDate(from: nextYearDate, using: calendar))【\(CJDateFormatterUtil.formatGregorianDate(from: nextYearDate))】与当前相差\(nextYearDate.daysBetween(endDate: currentDate))天"
+        return string
     }
     
     func createDate() -> Date {

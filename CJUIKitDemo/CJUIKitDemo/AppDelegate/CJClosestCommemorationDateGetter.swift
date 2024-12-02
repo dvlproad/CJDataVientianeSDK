@@ -113,9 +113,28 @@ extension Date {
             }
         }
         
+        // 重要：如果是在农历里面找，并且该纪念月刚好是闰月则应该减去1
+        if calendar.identifier == .chinese && self.isLunarLeapMonth() {
+            resultComponents.month = (resultComponents.month ?? 1) - 1
+        }
+
         // 确保下一个周期的日期存在，处理农历月份天数不一致的问题
-        if let nextDate = calendar.date(from: resultComponents) {
-            print("\(cycleTypeString)：<\(compareResultString)>的日期存在：\(nextDate.lunarDateString())【\(CJDateFormatterUtil.formatGregorianDate(from: nextDate))】")
+        if var nextDate = calendar.date(from: resultComponents) {
+//            let calendarTypeString: String = calendar.identifier == .chinese ? "农历" : "公历"
+            let calendarTypeString: String = "农历"
+            print("\(calendarTypeString)\(cycleTypeString)：<\(compareResultString)>的日期存在：\(nextDate.lunarDateString())【\(CJDateFormatterUtil.formatGregorianDate(from: nextDate))】")
+            // 判断所得的日期是否在指定日期后，避免查找每年六月初一的时候，当前是2025-07-25农历六月初一，得到的结果是2025-06-25也是农历六月初一，
+            if nextDate < afterDate {
+                for iAdd in 1..<40 {
+                    let tempDate = nextDate.addingTimeInterval(TimeInterval(iAdd * 24 * 60 * 60)) // 加1小时
+                    
+                    let tempComponents = calendar.dateComponents([.year, .month, .day, .weekday], from: tempDate)
+                    if tempComponents.month == commemorationComponents.month && tempComponents.day == commemorationComponents.day {
+                        nextDate = tempDate
+                        break
+                    }
+                }
+            }
             return nextDate
         } else {
             // 如果当前农历日不存在于下一个周期，则向后调整到有效日期
@@ -229,20 +248,9 @@ extension Date {
         let monthDays = ["初一", "初二", "初三", "初四", "初五", "初六", "初七", "初八", "初九", "初十", "十一", "十二", "十三", "十四", "十五", "十六", "十七", "十八", "十九", "二十", "廿一", "廿二", "廿三", "廿四", "廿五", "廿六", "廿七", "廿八", "廿九", "三十"]
         let months = ["正", "二", "三", "四", "五", "六", "七", "八", "九", "十", "冬", "腊"]
         
-        // 获取农历年份的总月份数来判断是否闰月
-        let totalMonthsInLunarYear = lunarCalendar.range(of: .month, in: .year, for: self)?.count ?? 0
-        var isLeapMonth = false
-        
-        if totalMonthsInLunarYear == 13 {
-            // 如果该年有13个月，我们需要检查当前月是否是闰月
-            let leapMonth = lunarCalendar.component(.month, from: lunarCalendar.date(byAdding: .month, value: 1, to: self) ?? self)
-            if lunarMonth == leapMonth {
-                isLeapMonth = true
-            }
-        }
-        
-        // 如果是闰月，调整月份名称
+        // 重要：如果是在农历里面找，并且该纪念月刚好是闰月则应该加上"闰"字
         var lunarMonthName = months[lunarMonth - 1]
+        let isLeapMonth = self.isLunarLeapMonth()
         if isLeapMonth {
             lunarMonthName = "闰" + lunarMonthName
         }
@@ -258,6 +266,61 @@ extension Date {
         return (adjustedLunarYear, lunarYearWithStemBranch, lunarMonthName, lunarDayName)
     }
 }
+
+// MARK: 闰年、闰月判断
+extension Date {
+    /// 判断公历年份是否是闰年
+    func isGregorianLeapYear(year: Int) -> Bool {
+        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)
+    }
+
+    /// 手动判断农历年份是否包含闰月
+    func isLunarYearLeap(year: Int) -> Bool {
+        let chineseCalendar = Calendar(identifier: .chinese)
+        if let startOfYear = chineseCalendar.date(from: DateComponents(year: year - 1, month: 11, day: 1)),
+           let startOfNextYear = chineseCalendar.date(from: DateComponents(year: year, month: 11, day: 1)) {
+            let months = chineseCalendar.dateComponents([.month], from: startOfYear, to: startOfNextYear).month ?? 0
+            return months > 12 // 农历年有 13 个月
+        }
+        return false
+    }
+
+    /// 判断农历月份是否为闰月（兼容 iOS 17 以下）
+    func isLunarLeapMonth() -> Bool {
+        guard #available(iOS 17, *) else {
+            return _isLunarLeapMonthManual(for: self)
+        }
+        
+        let chineseCalendar = Calendar(identifier: .chinese)
+        let components = chineseCalendar.dateComponents([.isLeapMonth], from: self)
+        return components.isLeapMonth ?? false
+        
+    }
+    
+    /// 判断该月是否为农历的闰月（iOS 17 以下的手动实现）
+    private func _isLunarLeapMonthManual(for date: Date) -> Bool {
+        guard #available(iOS 17, *) else {
+            return false
+        }
+        
+        let chineseCalendar = Calendar(identifier: .chinese)
+        let components = chineseCalendar.dateComponents([.month, .isLeapMonth], from: date)
+        
+        if let isLeapMonth = components.isLeapMonth {
+            return isLeapMonth
+        }
+        
+        // 手动判断农历闰月，检查是否是超过 12 的月份
+        let gregorianCalendar = Calendar(identifier: .gregorian)
+        let year = gregorianCalendar.component(.year, from: date)
+        
+        if isLunarYearLeap(year: year) {
+            return components.month ?? 0 > 12 // 闰月通常是 13 月以上的月份
+        }
+        return false
+    }
+}
+
 
 // MARK: 提供给 OC 使用的方法
 struct CJRepateDateGetter {
@@ -307,6 +370,66 @@ struct CJDateIntervalUtil {
             components.day = day
             return calendar.date(from: components)
         }
+    }
+}
+
+// MARK: 格式化+天数差
+extension Date {
+    func daysBetween(endDate: Date) -> Int {
+        let startFormatedString = self.format("yyyy-MM-dd")
+        let startYMDDate: Date = Date.dateFromString(startFormatedString, format: "yyyy-MM-dd") ?? self
+        
+        let endFormatedString = endDate.format("yyyy-MM-dd")
+        let endYMDDate: Date = Date.dateFromString(endFormatedString, format: "yyyy-MM-dd") ?? endDate
+        
+        let days = endYMDDate.days(endDate: startYMDDate)
+        //print("😊😃还有\(days)天：从\(startYMDDate)到\(endFormatedString)")
+        return days
+    }
+    
+    /// 格式转换
+    func format(_ str: String = "yyyy-MM-dd HH:mm:ss") -> String {
+        let dateFormat = DateFormatter()
+        // 解决带上下午问题
+        dateFormat.calendar = .init(identifier: .gregorian)
+//        dateFormat.locale = Locale(identifier: localIdentifier.rawValue)
+        
+        dateFormat.dateFormat = str
+        dateFormat.timeZone = .current
+        let dateStr = dateFormat.string(from: self)
+        return dateStr
+        
+    }
+    
+    static func dateFromString(_ dateString: String?, format: String = "yyyy-MM-dd HH:mm:ss") -> Date? {
+        guard let dateString = dateString, !dateString.isEmpty else {
+            return nil
+        }
+        let dateFormatter: DateFormatter = DateFormatter()
+                dateFormatter.dateFormat = format
+        dateFormatter.locale = .current
+        let date: Date? = dateFormatter.date(from: dateString)
+        return date
+    }
+    
+    /// 计算两个日期之间的天数
+    /// - Parameter endDate: 结束日期
+    /// - Returns: 总天数
+    func days(endDate: Date, containsUpRange: Bool = true, useLunarDate: Bool = false) -> Int {
+        guard !Date.isSameDay(date1: self, date2: endDate) else {
+            return 0
+        }
+        let components = Calendar(identifier: .chinese).dateComponents([.day], from: self, to: endDate)
+        guard (components.day ?? 0) >= 0 else {
+            return components.day ?? 0
+        }
+        let days = (components.day ?? 0)
+        //print("😭😃还有\(days)天：从\(self.format())到\(endDate.format())")
+        return days
+    }
+    static func isSameDay(date1: Date, date2: Date) -> Bool {
+        
+        return Calendar.current.isDate(date1, inSameDayAs: date2)
     }
 }
 
