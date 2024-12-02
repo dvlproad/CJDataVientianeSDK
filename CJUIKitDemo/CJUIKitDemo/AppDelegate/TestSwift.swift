@@ -19,10 +19,11 @@ class TestSwift1: NSObject {
     
     @objc func printLunarDateString() {
         // 不在 1984-2044 年之间的时间
-        lunarStringForDate(dateString: "1982-01-01", correctResultDateString: "1982辛酉年腊月初七")
+        lunarStringForDate(dateString: "1982-01-01", correctResultDateString: "1981辛酉年腊月初七")
         lunarStringForDate(dateString: "1984-01-01", correctResultDateString: "1983癸亥年冬月廿九")
         lunarStringForDate(dateString: "1986-01-01", correctResultDateString: "1985乙丑年冬月廿一")
-        lunarStringForDate(dateString: "2044-01-01", correctResultDateString: "2024癸亥年冬月初二")
+        lunarStringForDate(dateString: "2044-01-01", correctResultDateString: "2043癸亥年腊月初二")
+        lunarStringForDate(dateString: "2025-08-01", correctResultDateString: "2025乙巳年闰六月初八")
         
         // 在 1984-2044 年之间的时间
         lunarStringForDate(dateString: "2024-03-19", correctResultDateString: "2024甲辰年二月初十")

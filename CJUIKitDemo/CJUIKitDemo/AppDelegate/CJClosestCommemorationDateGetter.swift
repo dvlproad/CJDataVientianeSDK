@@ -215,8 +215,9 @@ extension Date {
         return lunarDateString
     }
     
-    // 从公历日期中获取农历日期（含天干地支）的各种数据
-    func lunarTuple() -> (lunarYear: Int, stemBranch: String, monthString: String, dayString: String) {
+    /*
+    // 从公历日期中获取农历日期（含天干地支）的各种数据(TODO: 1984年之前的计算会有问题，其他正确)
+    func lunarTuple_after1984() -> (lunarYear: Int, stemBranch: String, monthString: String, dayString: String) {
         // 使用农历日历（中国农历）
         let lunarCalendar = Calendar(identifier: .chinese)
         
@@ -231,6 +232,8 @@ extension Date {
         // 如果年份为40或41等小年份，可以推测它是基于农历纪年起始年份的偏差
         // 这里可以做一个简单的年份修正，如果是从41年开始的纪年
         let adjustedLunarYear = lunarYear + 1983  // 因为41年对应的是1984年农历纪年
+//        let gregorianDate = self  // 获取当前公历日期
+//        let adjustedLunarYear = Calendar(identifier: .chinese).dateComponents([.year], from: gregorianDate).year ?? lunarYear
         
         // 根据甲子年的纪年法计算天干地支
         let baseYear = 1984 // 甲子年对应的公历年份(上一个甲子年是1984年，下一个甲子年是60年后的2044年)
@@ -262,6 +265,42 @@ extension Date {
 //        // 返回格式化后的农历日期
 //        let lunarDateString = "\(adjustedLunarYear)\(lunarYearWithStemBranch)年\(lunarMonthName)月\(lunarDayName)"
 //        print("\(normalDateString)【\(lunarDateString)】")
+        
+        return (adjustedLunarYear, lunarYearWithStemBranch, lunarMonthName, lunarDayName)
+    }
+    */
+    
+    // 从公历日期中获取农历日期（含天干地支）的各种数据(已处理闰月情况)
+    func lunarTuple() -> (lunarYear: Int, stemBranch: String, monthString: String, dayString: String) {
+        let dateStyle: DateFormatter.Style = .long
+        
+        let chineseFormatter = DateFormatter()
+        chineseFormatter.locale = Locale(identifier: "zh_CN")
+        chineseFormatter.dateStyle = dateStyle
+        chineseFormatter.calendar = Calendar(identifier: .chinese)
+        
+        let lunarDateFullString = chineseFormatter.string(from: self)
+        
+        // 检查字符串长度
+        guard lunarDateFullString.count >= 9 else {
+            //print("输入的农历日期格式不正确")
+            return (0, "", "", "")
+        }
+
+        // 截取年份（1-4位）
+        let adjustedLunarYearString = String(lunarDateFullString.prefix(4))
+        let adjustedLunarYear = Int(adjustedLunarYearString) ?? 0
+        
+        // 截取天干地支（5-6位）
+        let lunarYearWithStemBranch = String(lunarDateFullString.dropFirst(4).prefix(2))
+        
+        // 截取月份（8位）
+        let monthLength = lunarDateFullString.contains("闰") ? 2 : 1
+        let lunarMonthName = String(lunarDateFullString.dropFirst(7).prefix(monthLength))
+        
+        // 截取日期（9位之后的部分）
+        let dayCropIndex = 7 + monthLength + 1
+        let lunarDayName = String(lunarDateFullString.dropFirst(dayCropIndex))
         
         return (adjustedLunarYear, lunarYearWithStemBranch, lunarMonthName, lunarDayName)
     }
