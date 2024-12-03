@@ -67,9 +67,8 @@ extension Date {
 extension Date {
     /// 仅供农历使用：从指定日期之后的未来40天内找出自己月日与一致的那天。月一定要一样，如果那月没有指定日，如没有三十，则返回末尾
     /// 注意，此计算结果及时当前日期刚好是每年纪念日，也不会返回今天，而是返回今天之后的下一个
+    /// 注意这里只找下个月，eg如果是两个月后则不会显示
     func findNextEqualLunarDateFromDate(_ fromDate: Date) -> Date? {
-        
-        
         guard #available(iOS 17, *) else {
             return nil
         }
@@ -204,11 +203,11 @@ extension Date {
                     // 重要：如果是在农历里面找，并且该纪念月刚好是闰月则应该加上"闰"字
                     let lunarMonthName = monthCNString[month - 1]
                     let lunarLeapMonthCNName = "闰" + lunarMonthName + "月"
-                    print("\(month) \(lunarLeapMonthCNName)")
+                    //print("\(month) \(lunarLeapMonthCNName)")
                     return (month, lunarLeapMonthCNName) // 返回闰月的month
                 } else {
                     let lunarMonthName = monthCNString[month - 1]
-                    print("\(month) 普通\(lunarMonthName)月")
+                    //print("\(month) 普通\(lunarMonthName)月")
                 }
             }
             

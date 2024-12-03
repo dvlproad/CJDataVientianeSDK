@@ -33,6 +33,7 @@ class TestSwift1: NSObject {
     
     @objc func findNextEqualLunarDate() {
         print("【农历】：纪念日为2020-03-23，即以农历每年二月三十为例（考虑今年或明年有没有二月三十,以及没有的时候是做回归到月末，还是补偿到下月初）+闰月")
+        findNextEqualLunarDate(fromDateString: "2023-01-01", targetDateString: "2020-03-23", correctResultString: "下个月[注意这里只找下个月，eg如果是两个月后则不会显示]没有与之相等的日期")   // 二月三十
         findNextEqualLunarDate(fromDateString: "2023-03-20", targetDateString: "2020-03-23", correctResultString: "2023-03-21")   // 二月三十
         findNextEqualLunarDate(fromDateString: "2023-03-22", targetDateString: "2020-03-23", correctResultString: "2023-04-19")   // 闰二月廿九（没有三十号）
     }
@@ -44,7 +45,7 @@ class TestSwift1: NSObject {
         let nextEqualDate: Date? = targetDate.findNextEqualLunarDateFromDate(fromDate)
         var resultString: String
         if nextEqualDate == nil {
-            resultString = "下个月没有与之相等的日期"
+            resultString = "下个月[注意这里只找下个月，eg如果是两个月后则不会显示]没有与之相等的日期"
         } else {
             resultString = nextEqualDate!.format("yyyy-MM-dd")
         }
@@ -99,6 +100,14 @@ class TestSwift1: NSObject {
 //        let currentDate = createDate()
 //        let comparisonDate = Calendar.current.date(byAdding: .day, value: -10, to: currentDate)! // 比较日期
         
+
+        print("按月计算下一个周期【农历】：纪念日为2026-07-14，即以农历每月初一为例（每月都有初一）")
+        checkNearbyMonth(isLunarCalendar: true, selectedDateString: "2026-07-14", currentDateString: "2025-06-24", correctResultDateString: "2025-06-25")    // 当前2025-06-24农历五月廿九
+        checkNearbyMonth(isLunarCalendar: true, selectedDateString: "2026-07-14", currentDateString: "2025-06-25", correctResultDateString: "2025-06-25")    // 当前2025-06-25农历六月初一
+        checkNearbyMonth(isLunarCalendar: true, selectedDateString: "2026-07-14", currentDateString: "2025-06-26", correctResultDateString: "2025-07-25")    // 当前2025-06-26农历六月初二
+        checkNearbyMonth(isLunarCalendar: true, selectedDateString: "2026-07-14", currentDateString: "2025-07-25", correctResultDateString: "2025-07-25")    // 当前2025-07-25农历闰六月初一
+        checkNearbyMonth(isLunarCalendar: true, selectedDateString: "2026-07-14", currentDateString: "2025-07-26", correctResultDateString: "2025-08-23")    // 当前2025-08-23农历七月初一
+        
         // 公历
         checkNearbyMonth(isLunarCalendar: false, selectedDateString: "2024-03-19", currentDateString: "2024-03-09", correctResultDateString: "2024-03-19")
         checkNearbyMonth(isLunarCalendar: false, selectedDateString: "2024-04-08", currentDateString: "2024-11-29", correctResultDateString: "2024-12-08")
@@ -136,7 +145,9 @@ class TestSwift1: NSObject {
         
         
         print("按年计算下一个周期【农历】：纪念日为2026-07-14，即以农历每年六月初一为例（每年都有年六月初一）")
-        checkNearbyYear(isLunarCalendar: true, selectedDateString: "2026-07-14", currentDateString: "2025-07-24", correctResultDateString: "2025-07-25")    // 当前2025-07-24农历六月三十
+        checkNearbyYear(isLunarCalendar: true, selectedDateString: "2026-07-14", currentDateString: "2025-06-24", correctResultDateString: "2025-06-25")    // 当前2025-06-24农历五月廿九
+        checkNearbyYear(isLunarCalendar: true, selectedDateString: "2026-07-14", currentDateString: "2025-06-25", correctResultDateString: "2025-06-25")    // 当前2025-06-25农历六月初一
+        checkNearbyYear(isLunarCalendar: true, selectedDateString: "2026-07-14", currentDateString: "2025-06-26", correctResultDateString: "2025-07-25")    // 当前2025-06-26农历六月初二
         checkNearbyYear(isLunarCalendar: true, selectedDateString: "2026-07-14", currentDateString: "2025-07-25", correctResultDateString: "2025-07-25")    // 当前2025-07-25农历闰六月初一
         checkNearbyYear(isLunarCalendar: true, selectedDateString: "2026-07-14", currentDateString: "2025-07-26", correctResultDateString: "2026-07-14")    // 当前2025-07-26农历闰六月初二
         print("按年计算下一个周期【农历】：纪念日为2019-03-06，即以农历每年正月三十为例（考虑今年或明年有没有正月三十,以及没有的时候是做回归到月末，还是补偿到下月初）")
@@ -255,7 +266,8 @@ class TestSwift1: NSObject {
     // 按年计算下一个周期
     func checkNearbyYear(isLunarCalendar: Bool, selectedDateString: String, currentDateString: String, shouldFlyback: Bool = false, correctResultDateString: String) {
         let selectedDate = greDateFromYYYYMMDDString(dateString: selectedDateString)
-        let comparisonDate = greDateFromYYYYMMDDString(dateString: currentDateString)
+        var comparisonDate = greDateFromYYYYMMDDString(dateString: currentDateString)
+        comparisonDate = comparisonDate.addingTimeInterval(TimeInterval(1 * 60 * 60)) // 加1小时，用来处理兼容测试使用的时候提供的时间不是0点
         
         let lunarCalendar = Calendar(identifier: isLunarCalendar ? .chinese : .gregorian)
         if let nextYearDate = selectedDate.closestCommemorationDate(commemorationCycleType: .year, afterDate: comparisonDate, shouldFlyback: shouldFlyback, calendar: lunarCalendar) {

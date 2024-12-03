@@ -33,6 +33,10 @@ extension Date {
 //        if self.timeZone != calendar.timeZone {
 //            print("xxxxxxxxxxx\(self.timeZone) \(calendar.timeZone)")
 //        }
+        
+        if commemorationCycleType == .none {
+            return self
+        }
             
         let commemorationDate: Date = self
         print("\n要纪念的日期：\(commemorationDate.lunarDateString())【\(CJDateFormatterUtil.formatGregorianDate(from: commemorationDate))】【\(CJRepateDateGetter.getWeekdayString(from: commemorationDate))】")
@@ -76,12 +80,20 @@ extension Date {
         case .month:
             cycleTypeString = "每月\(selectedDay)号"
             // 比较“天”是否需要调整月份
-            if comparisonDay > selectedDay {
-                compareResultString = "本月现在已是\(comparisonDay)号，已过了\(selectedDay)号，即下个\(selectedDay)号得到下月"
-                resultComponents.month = (comparisonComponents.month ?? 1) + 1
-            } else {
+            if comparisonDay <= selectedDay {
                 compareResultString = "本月现在还是\(comparisonDay)号，还未到\(selectedDay)号，即下个\(selectedDay)号还在本月"
                 resultComponents.month = (comparisonComponents.month ?? 1)
+            } else {
+                // 如果日期已经超过，判断下个月是否还有
+                // 计算当前时间afterDate的下个月的月份是否还是与这个月相等，是则代表当前时间是闰月前一月，否则则是闰月那一月
+                let stillCurrnetMonth: Bool = afterDate.isNextLunarMonthEqualToCurrentMonth()
+                if calendar.identifier == .chinese && stillCurrnetMonth {
+                    compareResultString = "本月现在已是\(comparisonDay)号，已过了\(selectedDay)号，但是下个月是本月的闰月，所以下个\(selectedDay)号所在的compontent的month应该保持不变。至于"
+                    resultComponents.month = (comparisonComponents.month ?? 1) + 0
+                } else {
+                    compareResultString = "本月现在已是\(comparisonDay)号，已过了\(selectedDay)号，即下个\(selectedDay)号得到下月"
+                    resultComponents.month = (comparisonComponents.month ?? 1) + 1
+                }
             }
             resultComponents.year = comparisonComponents.year
             
@@ -129,7 +141,8 @@ extension Date {
             }
             
         case .none:
-            print("不用处理")
+            //print("不用处理")
+            resultComponents = commemorationComponents
         }
         
         if shouldFlyback { // 当前为1月31号，则点击每月时候，为每月31号，当到2月的时候是否需要回退到月末
@@ -158,7 +171,11 @@ extension Date {
             print("\(calendarTypeString)\(cycleTypeString)：<\(compareResultString)>的日期存在：\(nextDate.lunarDateString())【\(CJDateFormatterUtil.formatGregorianDate(from: nextDate))】")
             // 判断所得的日期是否在指定日期后，避免查找每年六月初一的时候，当前是2025-07-25农历六月初一，得到的结果是2025-06-25也是农历六月初一，
             // 请确保创建生成的之前的 afterDate 以及 用来生成nextDate的self时间是格林时间。不然下面比较可能导致 nextDate < afterDate
-            if nextDate < afterDate && calendar.identifier == .chinese {
+            
+            let nextDateComponents = calendar.dateComponents([.year, .month, .day, .weekday], from: afterDate)
+            let result: ComparisonResult = nextDate.compareDatesByYearMonthDay(afterDate) // nextDate < afterDate 只比较年月日，避免其他因素影响
+            if result == .orderedAscending && calendar.identifier == .chinese {
+            //if nextDate < afterDate && calendar.identifier == .chinese {
                 nextDate = self.findNextEqualLunarDateFromDate(nextDate) ?? nextDate
             }
             return nextDate
@@ -193,10 +210,10 @@ extension Date {
         case .month:
             if showInLunarType {
                 let lunarTuple = self.lunarTuple()
-                dateString = "农历每月 \(lunarTuple.dayString)"
+                dateString = "农历每月\(lunarTuple.dayString)"
             } else {
                 let selectedComponents = Calendar.current.dateComponents([.year, .month ,.day], from: self)
-                dateString = "每月 \(selectedComponents.day ?? 1)日"
+                dateString = "每月\(selectedComponents.day ?? 1)日"
             }
         case .year:
             if showInLunarType {
@@ -212,7 +229,7 @@ extension Date {
                 dateString = "\(lunarTuple.lunarYear)\(lunarTuple.stemBranch)年\(lunarTuple.monthString)月\(lunarTuple.dayString)"
             } else {
                 let selectedComponents = Calendar.current.dateComponents([.year, .month ,.day], from: self)
-                dateString = "\(selectedComponents.year ?? 1)年 \(selectedComponents.month ?? 1)月\(selectedComponents.day ?? 1)日"
+                dateString = "\(selectedComponents.year ?? 1)年\(selectedComponents.month ?? 1)月\(selectedComponents.day ?? 1)日"
             }
         }
         return dateString
@@ -224,6 +241,18 @@ extension Date {
         let weekday = components.weekday ?? 1
         let weekdayStrings = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"]
         return weekdayStrings[weekday - 1]
+    }
+    
+    /// 比较两个日期的大小，要求只考虑年月日，不考虑时分秒
+    func compareDatesByYearMonthDay(_ date: Date) -> ComparisonResult {
+        let calendar = Calendar.current
+        
+        // 获取去掉时分秒的日期（归一化到当天的开始时间）
+        let normalizedDate1 = calendar.startOfDay(for: self)
+        let normalizedDate2 = calendar.startOfDay(for: date)
+        
+        // 比较两个日期
+        return normalizedDate1.compare(normalizedDate2)
     }
 }
 
