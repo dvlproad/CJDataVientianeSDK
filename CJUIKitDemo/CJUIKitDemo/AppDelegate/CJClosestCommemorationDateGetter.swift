@@ -30,9 +30,13 @@ extension Date {
     ///   - calendar: 使用的农历 `Calendar`
     /// - Returns: 指定日期后的最临近的纪念日
     func closestCommemorationDate(commemorationCycleType: CommemorationCycleType, afterDate: Date, shouldFlyback: Bool, calendar: Calendar = Calendar(identifier: .chinese)) -> Date? {
+//        if self.timeZone != calendar.timeZone {
+//            print("xxxxxxxxxxx\(self.timeZone) \(calendar.timeZone)")
+//        }
+            
         let commemorationDate: Date = self
         print("\n要纪念的日期：\(commemorationDate.lunarDateString())【\(CJDateFormatterUtil.formatGregorianDate(from: commemorationDate))】【\(CJRepateDateGetter.getWeekdayString(from: commemorationDate))】")
-        print("比较当前日期：\(afterDate.lunarDateString()))【\(CJDateFormatterUtil.formatGregorianDate(from: afterDate))】【\(CJRepateDateGetter.getWeekdayString(from: afterDate))】")
+        print("比较当前日期：\(afterDate.lunarDateString())【\(CJDateFormatterUtil.formatGregorianDate(from: afterDate))】【\(CJRepateDateGetter.getWeekdayString(from: afterDate))】")
         
         // 获取当前日期和指定比较日期的农历信息
         let commemorationComponents = calendar.dateComponents([.year, .month, .day, .weekday], from: commemorationDate)
@@ -79,14 +83,43 @@ extension Date {
                 compareResultString = "本月现在还是\(comparisonDay)号，还未到\(selectedDay)号，即下个\(selectedDay)号还在本月"
                 resultComponents.month = (comparisonComponents.month ?? 1)
             }
+            resultComponents.year = comparisonComponents.year
             
         case .year:
             // 比较“月”是否需要调整年份
             if let selectedMonth = commemorationComponents.month {
                 cycleTypeString = "每年\(selectedMonth)月\(selectedDay)号"
-                if comparisonMonth > selectedMonth || (comparisonMonth == selectedMonth && comparisonDay > selectedDay ) {
-                    compareResultString = "今年现在已是\(comparisonMonth)月\(comparisonDay)号，已过了\(selectedMonth)月\(selectedDay)号，即下个\(selectedMonth)月\(selectedDay)号得到明年"
+                if comparisonMonth > selectedMonth {
+                    compareResultString = "今年现在已是\(comparisonMonth)月，已过了\(selectedMonth)月，所以下个\(selectedMonth)月\(selectedDay)号得到明年"
                     resultComponents.year = (comparisonComponents.year ?? 0) + 1
+                    
+                } else if comparisonMonth == selectedMonth {
+                    if comparisonDay <= selectedDay {
+                        compareResultString = "今年现在还是\(comparisonMonth)月\(comparisonDay)号，还未到\(selectedMonth)月\(selectedDay)号，即下个\(selectedMonth)月\(selectedDay)号还在今年"
+                        resultComponents.year = (comparisonComponents.year ?? 0)
+                    } else {
+                        // 如果日期已经超过，判断下个月是否还有
+                        // 计算当前时间afterDate的下个月的月份是否还是与这个月相等，是则代表当前时间是闰月前一月，否则则是闰月那一月
+                        let stillCurrnetMonth: Bool = afterDate.isNextLunarMonthEqualToCurrentMonth()
+                        if calendar.identifier == .chinese && stillCurrnetMonth {
+                            compareResultString = "今年现在已是\(comparisonMonth)月\(comparisonDay)号，已过了\(selectedMonth)月\(selectedDay)号，但是下个月是本月的闰月，所以下个\(selectedMonth)月\(selectedDay)号还是在今年"
+                            resultComponents.year = (comparisonComponents.year ?? 0)
+                        } else {
+                            compareResultString = "今年现在已是\(comparisonMonth)月\(comparisonDay)号，已过了\(selectedMonth)月\(selectedDay)号，所以下个\(selectedMonth)月\(selectedDay)号得到明年"
+                            resultComponents.year = (comparisonComponents.year ?? 0) + 1
+                        }
+                        
+    //                    // 如果所纪念的月份在刚好是当前年的闰月前一月(前提为有闰月)，则不等到明年。如果所纪念的月份在刚好是当前年的闰月，则按正常算即要等到明年。
+    //                    let lunarLeapMonthTuple = afterDate.getThisYearLunarLeapMonthTuple()
+    //                    if lunarLeapMonthTuple != nil && lunarLeapMonthTuple!.lunarLeapMonth == selectedMonth { // 此处两种可能：闰月前一月，或闰月那一月
+    //
+    //
+    //                    } else {
+    //                        compareResultString = "今年现在已是\(comparisonMonth)月\(comparisonDay)号，已过了\(selectedMonth)月\(selectedDay)号，并且没有闰月，即下个\(selectedMonth)月\(selectedDay)号得到明年"
+    //                        resultComponents.year = (comparisonComponents.year ?? 0) + 1
+    //                    }
+                    }
+                    
                 } else {
                     compareResultString = "今年现在还是\(comparisonMonth)月\(comparisonDay)号，还未到\(selectedMonth)月\(selectedDay)号，即下个\(selectedMonth)月\(selectedDay)号还在今年"
                     resultComponents.year = (comparisonComponents.year ?? 0)
@@ -124,16 +157,9 @@ extension Date {
             let calendarTypeString: String = "农历"
             print("\(calendarTypeString)\(cycleTypeString)：<\(compareResultString)>的日期存在：\(nextDate.lunarDateString())【\(CJDateFormatterUtil.formatGregorianDate(from: nextDate))】")
             // 判断所得的日期是否在指定日期后，避免查找每年六月初一的时候，当前是2025-07-25农历六月初一，得到的结果是2025-06-25也是农历六月初一，
-            if nextDate < afterDate {
-                for iAdd in 1..<40 {
-                    let tempDate = nextDate.addingTimeInterval(TimeInterval(iAdd * 24 * 60 * 60)) // 加1小时
-                    
-                    let tempComponents = calendar.dateComponents([.year, .month, .day, .weekday], from: tempDate)
-                    if tempComponents.month == commemorationComponents.month && tempComponents.day == commemorationComponents.day {
-                        nextDate = tempDate
-                        break
-                    }
-                }
+            // 请确保创建生成的之前的 afterDate 以及 用来生成nextDate的self时间是格林时间。不然下面比较可能导致 nextDate < afterDate
+            if nextDate < afterDate && calendar.identifier == .chinese {
+                nextDate = self.findNextEqualLunarDateFromDate(nextDate) ?? nextDate
             }
             return nextDate
         } else {
@@ -305,61 +331,6 @@ extension Date {
         return (adjustedLunarYear, lunarYearWithStemBranch, lunarMonthName, lunarDayName)
     }
 }
-
-// MARK: 闰年、闰月判断
-extension Date {
-    /// 判断公历年份是否是闰年
-    func isGregorianLeapYear(year: Int) -> Bool {
-        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)
-    }
-
-    /// 手动判断农历年份是否包含闰月
-    func isLunarYearLeap(year: Int) -> Bool {
-        let chineseCalendar = Calendar(identifier: .chinese)
-        if let startOfYear = chineseCalendar.date(from: DateComponents(year: year - 1, month: 11, day: 1)),
-           let startOfNextYear = chineseCalendar.date(from: DateComponents(year: year, month: 11, day: 1)) {
-            let months = chineseCalendar.dateComponents([.month], from: startOfYear, to: startOfNextYear).month ?? 0
-            return months > 12 // 农历年有 13 个月
-        }
-        return false
-    }
-
-    /// 判断农历月份是否为闰月（兼容 iOS 17 以下）
-    func isLunarLeapMonth() -> Bool {
-        guard #available(iOS 17, *) else {
-            return _isLunarLeapMonthManual(for: self)
-        }
-        
-        let chineseCalendar = Calendar(identifier: .chinese)
-        let components = chineseCalendar.dateComponents([.isLeapMonth], from: self)
-        return components.isLeapMonth ?? false
-        
-    }
-    
-    /// 判断该月是否为农历的闰月（iOS 17 以下的手动实现）
-    private func _isLunarLeapMonthManual(for date: Date) -> Bool {
-        guard #available(iOS 17, *) else {
-            return false
-        }
-        
-        let chineseCalendar = Calendar(identifier: .chinese)
-        let components = chineseCalendar.dateComponents([.month, .isLeapMonth], from: date)
-        
-        if let isLeapMonth = components.isLeapMonth {
-            return isLeapMonth
-        }
-        
-        // 手动判断农历闰月，检查是否是超过 12 的月份
-        let gregorianCalendar = Calendar(identifier: .gregorian)
-        let year = gregorianCalendar.component(.year, from: date)
-        
-        if isLunarYearLeap(year: year) {
-            return components.month ?? 0 > 12 // 闰月通常是 13 月以上的月份
-        }
-        return false
-    }
-}
-
 
 // MARK: 提供给 OC 使用的方法
 struct CJRepateDateGetter {

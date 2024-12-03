@@ -348,6 +348,7 @@
 		97578D072559474F00249AD6 /* TSRangeSliderControl2.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578D062559474F00249AD6 /* TSRangeSliderControl2.m */; };
 		976794E9258093EF002FD0C7 /* AStringLengthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976794E7258093EE002FD0C7 /* AStringLengthViewController.m */; };
 		976794FA2580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976794F92580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m */; };
+		979496AB2CFECD720063828D /* CJLunarDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979496AA2CFECD720063828D /* CJLunarDateExtension.swift */; };
 		97A9191E25AFE8510051B902 /* imageOriginColor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97A9191525AFE8510051B902 /* imageOriginColor@2x.png */; };
 		97A9191F25AFE8510051B902 /* longVertical.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 97A9191625AFE8510051B902 /* longVertical.jpg */; };
 		97A9192025AFE8510051B902 /* taixi_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97A9191725AFE8510051B902 /* taixi_icon@2x.png */; };
@@ -991,6 +992,7 @@
 		976794E8258093EF002FD0C7 /* AStringLengthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AStringLengthViewController.h; sourceTree = "<group>"; };
 		976794F82580B494002FD0C7 /* KeyboardAutoMoveUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardAutoMoveUpViewController.h; sourceTree = "<group>"; };
 		976794F92580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardAutoMoveUpViewController.m; sourceTree = "<group>"; };
+		979496AA2CFECD720063828D /* CJLunarDateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJLunarDateExtension.swift; sourceTree = "<group>"; };
 		97A9191525AFE8510051B902 /* imageOriginColor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imageOriginColor@2x.png"; sourceTree = "<group>"; };
 		97A9191625AFE8510051B902 /* longVertical.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = longVertical.jpg; sourceTree = "<group>"; };
 		97A9191725AFE8510051B902 /* taixi_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "taixi_icon@2x.png"; sourceTree = "<group>"; };
@@ -1037,6 +1039,7 @@
 				1562F38623FD2FC70009FCEA /* AppDelegate.m */,
 				9702123A2CFA283400C62F50 /* TestSwift.swift */,
 				9702123C2CFA2EC000C62F50 /* CJClosestCommemorationDateGetter.swift */,
+				979496AA2CFECD720063828D /* CJLunarDateExtension.swift */,
 				97578AB025590F7100249AD6 /* UIWindow+RootSetting.h */,
 				97578AB125590F7100249AD6 /* UIWindow+RootSetting.m */,
 				97578AAA25590E9300249AD6 /* MainViewController.h */,
@@ -3244,6 +3247,7 @@
 				808BF3242019C3E900511F7C /* YunUncaughtExceptionHandler.m in Sources */,
 				7849A43F2682A93C00767EAC /* CQUpdateContentPopupView.m in Sources */,
 				787FDB8520500B5C008A46E3 /* SwitchSliderViewController.m in Sources */,
+				979496AB2CFECD720063828D /* CJLunarDateExtension.swift in Sources */,
 				78778E22272AB18200576853 /* UINavigationBar+CJChangeBG.m in Sources */,
 				973E4CBD25A353D200748B44 /* ViewPandownViewController2.m in Sources */,
 				80500388211C3A29002A2306 /* PresentBaseViewController.m in Sources */,
