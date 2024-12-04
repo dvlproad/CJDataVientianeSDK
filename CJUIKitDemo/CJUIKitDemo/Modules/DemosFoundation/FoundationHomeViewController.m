@@ -17,7 +17,10 @@
 #import "CJUIKitDemo-Swift.h"
 
 
-@interface FoundationHomeViewController ()
+@interface FoundationHomeViewController () {
+    
+}
+@property (nonatomic, strong) CQDMModuleModel *recoveDateModule;
 
 @end
 
@@ -54,6 +57,56 @@
             NSDateModule.title = @"NSDate";
             NSDateModule.classEntry = [DateViewController class];
             [sectionDataModel.values addObject:NSDateModule];
+        }
+        {
+            CQDMModuleModel *dateModule = [[CQDMModuleModel alloc] init];
+            dateModule.title = @"NSDate日期与字符串转换";
+            dateModule.content = @"24小时制下标准保存，24制/12制下恢复";
+            dateModule.actionBlock = ^{
+                [TSDateFormatterUtil testRecover24DateIn12];
+            };
+            [sectionDataModel.values addObject:dateModule];
+        }
+        {
+            CQDMModuleModel *dateModule = [[CQDMModuleModel alloc] init];
+            dateModule.title = @"NSDate日期与字符串转换";
+            dateModule.content = @"12小时制下标准保存，12制/24制下恢复";
+            dateModule.actionBlock = ^{
+                [TSDateFormatterUtil testRecover12DateIn24];
+            };
+            [sectionDataModel.values addObject:dateModule];
+        }
+        
+        {
+            CQDMModuleModel *dateModule = [[CQDMModuleModel alloc] init];
+            dateModule.title = @"NSDate日期与字符串转换：保存";
+            dateModule.content = @"24小时制下保存，12制下恢复";
+            dateModule.actionBlock = ^{
+                NSDate *testDate = [TSDateFormatterUtil createTestDate];
+                NSString *needRecoverString = [TSDateFormatterUtil testyyyyMMddHHmmssString_from_date:testDate];
+                self.recoveDateModule.content = [NSString stringWithFormat:@"24小时制下保存，12制下恢复\n待恢复：%@", needRecoverString];
+                [self.tableView reloadData];
+            };
+            [sectionDataModel.values addObject:dateModule];
+        }
+        {
+            CQDMModuleModel *dateModule = [[CQDMModuleModel alloc] init];
+            dateModule.title = @"NSDate日期与字符串转换：恢复";
+            dateModule.content = @"24小时制下保存，12制下恢复";
+            dateModule.contentLines = 3;
+            dateModule.actionBlock = ^{
+                NSString *recoverDateString = [TSDateFormatterUtil test_Date_from_yyyyMMddHHmmssString];
+                NSString *currentContentString = self.recoveDateModule.content;
+                NSArray<NSString *> *components = [currentContentString componentsSeparatedByString:@"\n"];
+                if (components.count > 2) {
+                    NSArray *firstTwoComponents = [components subarrayWithRange:NSMakeRange(0, 2)];
+                    currentContentString = [firstTwoComponents componentsJoinedByString:@"\n"];
+                }
+                self.recoveDateModule.content = [NSString stringWithFormat:@"%@\n恢复成：%@", currentContentString, recoverDateString];
+                [self.tableView reloadData];
+            };
+            [sectionDataModel.values addObject:dateModule];
+            self.recoveDateModule = dateModule;
         }
         {
             CQDMModuleModel *NSDateModule = [[CQDMModuleModel alloc] init];

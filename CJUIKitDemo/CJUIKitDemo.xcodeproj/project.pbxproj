@@ -335,6 +335,8 @@
 		9725C15F261DA7680021D5D9 /* recognize_icon_pass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9725C15D261DA7680021D5D9 /* recognize_icon_pass@2x.png */; };
 		9725C160261DA7680021D5D9 /* recognize_icon_pass@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9725C15E261DA7680021D5D9 /* recognize_icon_pass@3x.png */; };
 		9725C1CB262005C30021D5D9 /* TSBugLayoutPriorityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9725C1CA262005C30021D5D9 /* TSBugLayoutPriorityView.m */; };
+		972C69512D00064000E53720 /* CJDateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972C69502D00064000E53720 /* CJDateFormatterExtension.swift */; };
+		972C69532D000AF700E53720 /* TSDateFormatterUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972C69522D000AF700E53720 /* TSDateFormatterUtil.swift */; };
 		973E4CBD25A353D200748B44 /* ViewPandownViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 973E4CBB25A353D200748B44 /* ViewPandownViewController2.m */; };
 		975487A025A9943000DD7080 /* CMaxSubStringViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 9754879D25A9942F00DD7080 /* CMaxSubStringViewController1.m */; };
 		975487A125A9943000DD7080 /* CMaxSubStringViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 9754879E25A9943000DD7080 /* CMaxSubStringViewController2.m */; };
@@ -966,6 +968,8 @@
 		9725C15E261DA7680021D5D9 /* recognize_icon_pass@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recognize_icon_pass@3x.png"; sourceTree = "<group>"; };
 		9725C1C9262005C30021D5D9 /* TSBugLayoutPriorityView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSBugLayoutPriorityView.h; sourceTree = "<group>"; };
 		9725C1CA262005C30021D5D9 /* TSBugLayoutPriorityView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSBugLayoutPriorityView.m; sourceTree = "<group>"; };
+		972C69502D00064000E53720 /* CJDateFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJDateFormatterExtension.swift; sourceTree = "<group>"; };
+		972C69522D000AF700E53720 /* TSDateFormatterUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSDateFormatterUtil.swift; sourceTree = "<group>"; };
 		973E4CBB25A353D200748B44 /* ViewPandownViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPandownViewController2.m; sourceTree = "<group>"; };
 		973E4CBC25A353D200748B44 /* ViewPandownViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPandownViewController2.h; sourceTree = "<group>"; };
 		9754879C25A9942F00DD7080 /* CMaxSubStringViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMaxSubStringViewController2.h; sourceTree = "<group>"; };
@@ -1038,8 +1042,10 @@
 				1562F38223FD2FC70009FCEA /* AppDelegate.h */,
 				1562F38623FD2FC70009FCEA /* AppDelegate.m */,
 				9702123A2CFA283400C62F50 /* TestSwift.swift */,
+				972C69522D000AF700E53720 /* TSDateFormatterUtil.swift */,
 				9702123C2CFA2EC000C62F50 /* CJClosestCommemorationDateGetter.swift */,
 				979496AA2CFECD720063828D /* CJLunarDateExtension.swift */,
+				972C69502D00064000E53720 /* CJDateFormatterExtension.swift */,
 				97578AB025590F7100249AD6 /* UIWindow+RootSetting.h */,
 				97578AB125590F7100249AD6 /* UIWindow+RootSetting.m */,
 				97578AAA25590E9300249AD6 /* MainViewController.h */,
@@ -2840,7 +2846,7 @@
 				TargetAttributes = {
 					780E45FF1E5DF87B00980127 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 8285LLMDV3;
+						DevelopmentTeam = XF866W89WA;
 						LastSwiftMigration = 1520;
 						ProvisioningStyle = Automatic;
 					};
@@ -3159,6 +3165,7 @@
 				7850B70020937C5A008F4A21 /* DragViewController.m in Sources */,
 				80FF90A41FC5649F00E437CF /* HomeViewController.m in Sources */,
 				800E07E52016CCF500799B78 /* DeviceInfo.m in Sources */,
+				972C69532D000AF700E53720 /* TSDateFormatterUtil.swift in Sources */,
 				9702123D2CFA2EC000C62F50 /* CJClosestCommemorationDateGetter.swift in Sources */,
 				80238A602111966B008EB1D5 /* NavigationBarRemoveUnderlineViewController.m in Sources */,
 				8060C48320E0D0B30093B14E /* CJDistanceUtil.m in Sources */,
@@ -3315,6 +3322,7 @@
 				78C81489216E11AF00A6B190 /* CChildViewController.m in Sources */,
 				80FF919E1FC5682B00E437CF /* OtherHomeViewController.m in Sources */,
 				80FF90AD1FC5649F00E437CF /* NavigationBarViewController.m in Sources */,
+				972C69512D00064000E53720 /* CJDateFormatterExtension.swift in Sources */,
 				78778DF3272AB18200576853 /* UIImageCJCompressHelper.m in Sources */,
 				80FF90A81FC5649F00E437CF /* ImageChangeColorViewController.m in Sources */,
 				97578D072559474F00249AD6 /* TSRangeSliderControl2.m in Sources */,
@@ -3488,12 +3496,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8285LLMDV3;
+				DEVELOPMENT_TEAM = XF866W89WA;
 				GCC_PREFIX_HEADER = CJUIKitDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = CJUIKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dvlproad.CJUIKitDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3512,12 +3520,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8285LLMDV3;
+				DEVELOPMENT_TEAM = XF866W89WA;
 				GCC_PREFIX_HEADER = CJUIKitDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = CJUIKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dvlproad.CJUIKitDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

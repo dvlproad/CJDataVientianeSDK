@@ -445,7 +445,7 @@ extension Date {
             return nil
         }
         let dateFormatter: DateFormatter = DateFormatter()
-                dateFormatter.dateFormat = format
+        dateFormatter.dateFormat = format
         dateFormatter.locale = .current
         let date: Date? = dateFormatter.date(from: dateString)
         return date
