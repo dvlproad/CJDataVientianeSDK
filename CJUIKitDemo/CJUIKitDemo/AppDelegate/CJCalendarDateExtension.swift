@@ -79,19 +79,8 @@ extension Date {
     ///   - monthNumberString: 指定的月。为月的数字字符串。格林时候为1-12，中文日历时候为正、二、三、...、腊，不包含月字
     /// - Returns: 公历/农历指定年月有的天数
     static func getDayStringsInSpicialYearAndMonth(inLunarCalendar: Bool, year: Int, monthNumberString: String) -> [String] {
-        var newDateWithMonthFirstDay: Date
-        if inLunarCalendar {
-            let lunarMediumString = "\(year)年\(monthNumberString)月初一" // 不能使用之前的值，因为之前可能是三十号，但新的这个month所在的月可能没有三十号，而导致到时候会跳到下个月去
-            newDateWithMonthFirstDay = Date.fromLunarMediumString(lunarMediumString) ?? errorDate()
-        } else {
-            let calendar = Calendar.current
-            var components = DateComponents()
-            components.year = year
-            components.month = (monthNumberString as NSString).integerValue
-            components.day = 1
-            components.calendar = Calendar(identifier: .gregorian)
-            newDateWithMonthFirstDay = calendar.date(from: components) ?? errorDate()
-        }
+        var newDateWithMonthFirstDay: Date = Date.fromYearNumber_monthNumberString_dayString(inLunarCalendar: inLunarCalendar, year: year, monthNumberString: monthNumberString, dayFullString: inLunarCalendar ? "初一" : "1日") ?? errorDate()  // dayFullString 不能使用之前的值，因为之前可能是三十号，但新的这个month所在的月可能没有三十号，而导致到时候会跳到下个月去
+        
         let monthAndDayTuple = newDateWithMonthFirstDay.currentMonthDayCountTuple(inLunarCalendar: inLunarCalendar)
         let dayCount: Int = monthAndDayTuple?.dayCount ?? 29
         
@@ -101,6 +90,33 @@ extension Date {
         } else {
             return (1...dayCount).map { "\($0)日" }
         }
+    }
+    
+    /// 根据在公历/农历日期选择器选中的年月日字符串转成时间Date
+    /// - Parameters:
+    ///   - inLunarCalendar: 是否是农历
+    ///   - year: 指定的年
+    ///   - monthNumberString: 指定的月。为月的数字字符串。格林时候为1-12，中文日历时候为正、二、三、...、腊，不包含月字
+    ///   - dayFullString: 指定的天。为天的完整字符串。格林时候为1日、2日、...、30日，中文日历时候为初一、初二、初三、...、三十
+    /// - Returns: 对应的公历时间
+    static func fromYearNumber_monthNumberString_dayString(inLunarCalendar: Bool, year: Int, monthNumberString: String, dayFullString: String) -> Date? {
+        var date: Date?
+        if inLunarCalendar {
+            let lunarMediumString = "\(year)年\(monthNumberString)月\(dayFullString)"
+            date = Date.fromLunarMediumString(lunarMediumString)
+        } else {
+            let dayNumberString = dayFullString.replacingOccurrences(of: "日", with: "")
+            let dayNumber = Int(dayNumberString)
+            
+            let calendar = Calendar.current
+            var components = DateComponents()
+            components.year = year
+            components.month = (monthNumberString as NSString).integerValue
+            components.day = dayNumber
+            components.calendar = Calendar(identifier: .gregorian)
+            date = calendar.date(from: components)
+        }
+        return date
     }
     
     /// 将形如 "2025年腊月二十" String 转为 Date
