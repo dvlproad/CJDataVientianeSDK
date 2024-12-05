@@ -359,6 +359,7 @@
 		97A9192325AFE8510051B902 /* loading@3x.gif in Resources */ = {isa = PBXBuildFile; fileRef = 97A9191A25AFE8510051B902 /* loading@3x.gif */; };
 		97A9192425AFE8510051B902 /* longHorizontal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 97A9191B25AFE8510051B902 /* longHorizontal.jpg */; };
 		97A9192525AFE8510051B902 /* TwoImageCompareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A9191C25AFE8510051B902 /* TwoImageCompareView.m */; };
+		97E59DF12D0198300093AE9F /* CJCalendarDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E59DF02D0198300093AE9F /* CJCalendarDateExtension.swift */; };
 		97EB21DA25ABFEC2008CDC13 /* BIndexSubStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EB21D925ABFEC2008CDC13 /* BIndexSubStringViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -1006,6 +1007,7 @@
 		97A9191B25AFE8510051B902 /* longHorizontal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = longHorizontal.jpg; sourceTree = "<group>"; };
 		97A9191C25AFE8510051B902 /* TwoImageCompareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoImageCompareView.m; sourceTree = "<group>"; };
 		97A9191D25AFE8510051B902 /* TwoImageCompareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoImageCompareView.h; sourceTree = "<group>"; };
+		97E59DF02D0198300093AE9F /* CJCalendarDateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJCalendarDateExtension.swift; sourceTree = "<group>"; };
 		97EB21D825ABFEC2008CDC13 /* BIndexSubStringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIndexSubStringViewController.h; sourceTree = "<group>"; };
 		97EB21D925ABFEC2008CDC13 /* BIndexSubStringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIndexSubStringViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1045,6 +1047,7 @@
 				972C69522D000AF700E53720 /* TSDateFormatterUtil.swift */,
 				9702123C2CFA2EC000C62F50 /* CJClosestCommemorationDateGetter.swift */,
 				979496AA2CFECD720063828D /* CJLunarDateExtension.swift */,
+				97E59DF02D0198300093AE9F /* CJCalendarDateExtension.swift */,
 				972C69502D00064000E53720 /* CJDateFormatterExtension.swift */,
 				97578AB025590F7100249AD6 /* UIWindow+RootSetting.h */,
 				97578AB125590F7100249AD6 /* UIWindow+RootSetting.m */,
@@ -3297,6 +3300,7 @@
 				7894C2A7256ECAE200C73B5E /* CQAgeRangeSliderControl.m in Sources */,
 				78A9926E25795E3000B54E30 /* TSTextFieldAccessoryViewController.m in Sources */,
 				78C8148A216E11AF00A6B190 /* FChildViewController.m in Sources */,
+				97E59DF12D0198300093AE9F /* CJCalendarDateExtension.swift in Sources */,
 				78778E36272AB18200576853 /* CJTextField.m in Sources */,
 				78778DF1272AB18200576853 /* UIImage+CJSplitImageIntoTwoParts.m in Sources */,
 				784C87FF216F2B1D00AFEE7D /* SemaphoreGateKeeperViewController.m in Sources */,

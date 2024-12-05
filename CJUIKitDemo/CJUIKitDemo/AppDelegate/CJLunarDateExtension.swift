@@ -16,18 +16,8 @@ extension Date {
         return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)
     }
 
-    /// 手动判断农历年份是否包含闰月
-    func isLunarYearLeap(year: Int) -> Bool {
-        let chineseCalendar = Calendar(identifier: .chinese)
-        if let startOfYear = chineseCalendar.date(from: DateComponents(year: year - 1, month: 11, day: 1)),
-           let startOfNextYear = chineseCalendar.date(from: DateComponents(year: year, month: 11, day: 1)) {
-            let months = chineseCalendar.dateComponents([.month], from: startOfYear, to: startOfNextYear).month ?? 0
-            return months > 12 // 农历年有 13 个月
-        }
-        return false
-    }
-
-    /// 判断农历月份是否为闰月（兼容 iOS 17 以下）
+    /// 判断本时间所在的农历月份是否为闰月（兼容 iOS 17 以下）
+    /// 判断该年是否为含有闰月的年，即判断该年是否有13个月的方法暂未提供
     func isLunarLeapMonth() -> Bool {
         guard #available(iOS 17, *) else {
             return _isLunarLeapMonthManual(for: self)
@@ -47,7 +37,6 @@ extension Date {
         
         let chineseCalendar = Calendar(identifier: .chinese)
         let components = chineseCalendar.dateComponents([.month, .isLeapMonth], from: date)
-        
         if let isLeapMonth = components.isLeapMonth {
             return isLeapMonth
         }
@@ -55,9 +44,19 @@ extension Date {
         // 手动判断农历闰月，检查是否是超过 12 的月份
         let gregorianCalendar = Calendar(identifier: .gregorian)
         let year = gregorianCalendar.component(.year, from: date)
-        
-        if isLunarYearLeap(year: year) {
+        if _isLunarYearLeap(year: year) {
             return components.month ?? 0 > 12 // 闰月通常是 13 月以上的月份
+        }
+        return false
+    }
+    
+    /// 手动判断农历年份是否包含闰月
+    private func _isLunarYearLeap(year: Int) -> Bool {
+        let chineseCalendar = Calendar(identifier: .chinese)
+        if let startOfYear = chineseCalendar.date(from: DateComponents(year: year - 1, month: 11, day: 1)),
+           let startOfNextYear = chineseCalendar.date(from: DateComponents(year: year, month: 11, day: 1)) {
+            let months = chineseCalendar.dateComponents([.month], from: startOfYear, to: startOfNextYear).month ?? 0
+            return months > 12 // 农历年有 13 个月
         }
         return false
     }

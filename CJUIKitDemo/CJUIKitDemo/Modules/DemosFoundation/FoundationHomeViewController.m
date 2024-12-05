@@ -60,6 +60,16 @@
         }
         {
             CQDMModuleModel *dateModule = [[CQDMModuleModel alloc] init];
+            dateModule.title = @"NSDate指定日期的日期数据";
+            dateModule.content = @"获取指定时间所在的 公历年份 和 农历年份 中有多少个月，以及当前月有多少天";
+            dateModule.contentLines = 2;
+            dateModule.actionBlock = ^{
+                [TestSwift1 getCalendarMonthsAndDays];
+            };
+            [sectionDataModel.values addObject:dateModule];
+        }
+        {
+            CQDMModuleModel *dateModule = [[CQDMModuleModel alloc] init];
             dateModule.title = @"NSDate日期与字符串转换";
             dateModule.content = @"24小时制下标准保存，24制/12制下恢复";
             dateModule.actionBlock = ^{
@@ -112,7 +122,7 @@
             CQDMModuleModel *NSDateModule = [[CQDMModuleModel alloc] init];
             NSDateModule.title = @"NSDate农历格式";
             NSDateModule.actionBlock = ^{
-                [[TestSwift1 new] printLunarDateString];
+                [TestSwift1 printLunarDateString];
             };
             [sectionDataModel.values addObject:NSDateModule];
         }
@@ -122,7 +132,7 @@
             CQDMModuleModel *NSDateModule = [[CQDMModuleModel alloc] init];
             NSDateModule.title = @"NSDate是否有闰月";
             NSDateModule.actionBlock = ^{
-                [[TestSwift1 new] getLeapMonth];
+                [TestSwift1 getLeapMonth];
             };
             [sectionDataModel.values addObject:NSDateModule];
         }
@@ -130,7 +140,7 @@
             CQDMModuleModel *NSDateModule = [[CQDMModuleModel alloc] init];
             NSDateModule.title = @"NSDate农历：下个月的月份是否和本月相等，即下个月是否是闰月";
             NSDateModule.actionBlock = ^{
-                [[TestSwift1 new] isNextLunarMonthEqual];
+                [TestSwift1 isNextLunarMonthEqual];
             };
             [sectionDataModel.values addObject:NSDateModule];
         }
@@ -138,7 +148,7 @@
             CQDMModuleModel *NSDateModule = [[CQDMModuleModel alloc] init];
             NSDateModule.title = @"NSDate农历：找下一个月与之相等的农历日期";
             NSDateModule.actionBlock = ^{
-                [[TestSwift1 new] findNextEqualLunarDate];
+                [TestSwift1 findNextEqualLunarDate];
             };
             [sectionDataModel.values addObject:NSDateModule];
         }
@@ -146,7 +156,7 @@
             CQDMModuleModel *NSDateModule = [[CQDMModuleModel alloc] init];
             NSDateModule.title = @"NSDate每周重复";
             NSDateModule.actionBlock = ^{
-                [[TestSwift1 new] getNextRepateDate_week];
+                [TestSwift1 getNextRepateDate_week];
             };
             [sectionDataModel.values addObject:NSDateModule];
         }
@@ -154,7 +164,7 @@
             CQDMModuleModel *NSDateModule = [[CQDMModuleModel alloc] init];
             NSDateModule.title = @"NSDate每月重复";
             NSDateModule.actionBlock = ^{
-                [[TestSwift1 new] getNextRepateDate_month];
+                [TestSwift1 getNextRepateDate_month];
             };
             [sectionDataModel.values addObject:NSDateModule];
         }
@@ -162,7 +172,7 @@
             CQDMModuleModel *NSDateModule = [[CQDMModuleModel alloc] init];
             NSDateModule.title = @"NSDate每年周期";
             NSDateModule.actionBlock = ^{
-                [[TestSwift1 new] getNextRepateDate_year];
+                [TestSwift1 getNextRepateDate_year];
             };
             [sectionDataModel.values addObject:NSDateModule];
         }
