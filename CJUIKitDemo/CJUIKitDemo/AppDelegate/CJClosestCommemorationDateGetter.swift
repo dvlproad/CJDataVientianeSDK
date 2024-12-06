@@ -67,17 +67,21 @@ extension Date {
             // 周7 > 周2 : 相差2 = 2-7 + 7
             // 周6 > 周3 : 相差4 = 3-6 + 7
             // 周3 < 周4 : 相差1 = 4-3 + 0
+            var shouldAddDayCount: Int
             if comparisonWeekdayIndex > selectedWeekdayIndex {
                 compareResultString = "本周现在已是\(comparisonWeekdayString)，已过了\(selectedWeekdayString)，即下个\(selectedWeekdayString)得到下周"
-                resultComponents.day = (comparisonComponents.day ?? 1) + (selectedWeekdayIndex-comparisonWeekdayIndex) + 7
+                shouldAddDayCount = (selectedWeekdayIndex-comparisonWeekdayIndex) + 7
             } else {
                 compareResultString = "本周在还是\(comparisonWeekdayString)，还未到\(selectedWeekdayString)，即下个\(selectedWeekdayString)还在本周"
-                resultComponents.day = (comparisonComponents.day ?? 1) + (selectedWeekdayIndex-comparisonWeekdayIndex)
+                shouldAddDayCount = (selectedWeekdayIndex-comparisonWeekdayIndex)
             }
-            resultComponents.month = comparisonComponents.month
-            resultComponents.year = comparisonComponents.year
+            let newDate = calendar.date(byAdding: .day, value: shouldAddDayCount, to: afterDate)
+            return newDate
             
         case .month:
+            resultComponents = DateComponents()
+            resultComponents.day = commemorationComponents.day
+            
             cycleTypeString = "每月\(selectedDay)号"
             // 比较“天”是否需要调整月份
             if comparisonDay <= selectedDay {
@@ -98,12 +102,24 @@ extension Date {
             resultComponents.year = comparisonComponents.year
             
         case .year:
+            // 一定要新起一个值避免被干扰，这里曾经因为使用的是 resultComponents = commemorationComponents 而导致 2024-11-29 后的二月初一找错了
+            resultComponents = DateComponents()
+            resultComponents.month = commemorationComponents.month
+            resultComponents.day = commemorationComponents.day
             // 比较“月”是否需要调整年份
             if let selectedMonth = commemorationComponents.month {
                 cycleTypeString = "每年\(selectedMonth)月\(selectedDay)号"
                 if comparisonMonth > selectedMonth {
-                    compareResultString = "今年现在已是\(comparisonMonth)月，已过了\(selectedMonth)月，所以下个\(selectedMonth)月\(selectedDay)号得到明年"
-                    resultComponents.year = (comparisonComponents.year ?? 0) + 1
+                    // 重要：如果是在农历里面找，并且该纪念月刚好是闰月则应该减去1
+                    let stillCurrnetMonth: Bool = afterDate.isNextLunarMonthEqualToCurrentMonth()
+                    if calendar.identifier == .chinese && stillCurrnetMonth {
+                        compareResultString = "今年现在已是\(comparisonMonth)月，已过了\(selectedMonth)月，但是下个月是本月的闰月，所以下个\(selectedMonth)月\(selectedDay)号还是在今年"
+                        resultComponents.year = (comparisonComponents.year ?? 0) + 0
+                        
+                    } else {
+                        compareResultString = "今年现在已是\(comparisonMonth)月，已过了\(selectedMonth)月，所以下个\(selectedMonth)月\(selectedDay)号得到明年"
+                        resultComponents.year = (comparisonComponents.year ?? 0) + 1
+                    }
                     
                 } else if comparisonMonth == selectedMonth {
                     if comparisonDay <= selectedDay {
@@ -158,11 +174,6 @@ extension Date {
                 }
             }
         }
-        
-        // 重要：如果是在农历里面找，并且该纪念月刚好是闰月则应该减去1
-        if calendar.identifier == .chinese && self.isLunarLeapMonth() {
-            resultComponents.month = (resultComponents.month ?? 1) - 1
-        }
 
         // 确保下一个周期的日期存在，处理农历月份天数不一致的问题
         if var nextDate = calendar.date(from: resultComponents) {
@@ -176,7 +187,7 @@ extension Date {
             let result: ComparisonResult = nextDate.compareDatesByYearMonthDay(afterDate) // nextDate < afterDate 只比较年月日，避免其他因素影响
             if result == .orderedAscending && calendar.identifier == .chinese {
             //if nextDate < afterDate && calendar.identifier == .chinese {
-                nextDate = self.findNextEqualLunarDateFromDate(nextDate) ?? nextDate
+                nextDate = self.findNextEqualLunarDateFromDate(nextDate, isMonthMustEqual: commemorationCycleType == .year ? true : false) ?? nextDate
             }
             return nextDate
         } else {

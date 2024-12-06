@@ -64,10 +64,14 @@ extension Date {
 
 // MARK: 闰年、闰月信息输出
 extension Date {
-    /// 仅供农历使用：从指定日期之后的未来40天内找出自己月日与一致的那天。月一定要一样，如果那月没有指定日，如没有三十，则返回末尾
+    /// 仅供农历使用：从指定日期之后的未来40天内找出与自己相等的那天（支持只判断日，或者要求月日都相等，如六月初一，下个月要闰六月初一）。如果那月没有指定日，如没有三十，则返回末尾
     /// 注意，此计算结果及时当前日期刚好是每年纪念日，也不会返回今天，而是返回今天之后的下一个
     /// 注意这里只找下个月，eg如果是两个月后则不会显示
-    func findNextEqualLunarDateFromDate(_ fromDate: Date) -> Date? {
+    /// - Parameters:
+    ///   - fromDate: 从什么时间开始查找与本时间相等的日期
+    ///   - isMonthMustEqual: 是否月一定要相等（查找每年几月几号需要设为true，查找每月几号需要设为false）
+    /// - Returns: 查找到的日期
+    func findNextEqualLunarDateFromDate(_ fromDate: Date, isMonthMustEqual: Bool) -> Date? {
         guard #available(iOS 17, *) else {
             return nil
         }
@@ -82,14 +86,16 @@ extension Date {
         let afterDateMonth: Int = afterDateComponents.month ?? 0
         let afterDateDay: Int = afterDateComponents.day ?? 0
         
-        // 如果要计算的位置所在月份已经超过了指定的月份，那不可能在下月找到，只能在明年了
-        if afterDateMonth > targetDateMonth {
-            return nil
-        }
-        
-        if afterDateMonth < targetDateMonth {
-            print("警告：请从当前月开始查找，再找查这里没必要多写算法")
-            return nil
+        if isMonthMustEqual {
+            // 如果要计算的位置所在月份已经超过了指定的月份，那不可能在下月找到，只能在明年了
+            if afterDateMonth > targetDateMonth {
+                return nil
+            }
+            
+            if afterDateMonth < targetDateMonth {
+                print("警告：请从当前月开始查找，再找查这里没必要多写算法")
+                return nil
+            }
         }
         
         // 如果当前日期已经超过目标日期，但当前日期又不是闰月，那也没必要计算，肯定为空
@@ -106,14 +112,24 @@ extension Date {
             let tempDateMonth: Int = tempComponents.month ?? 0
             let tempDateDay: Int = tempComponents.day ?? 0
             
-            if tempDateMonth == targetDateMonth {
+            if isMonthMustEqual {
+                if tempDateMonth == afterDateMonth {
+                    if tempDateDay == targetDateDay {
+                        futureNextDate = tempDate
+                        break
+                    }
+                } else if tempDateMonth > afterDateMonth { // 已跨越
+                    futureNextDate = tempDate.addingTimeInterval(TimeInterval(-1 * 24 * 60 * 60)) // 减去1天
+                    break
+                }
+            } else {
                 if tempDateDay == targetDateDay {
                     futureNextDate = tempDate
                     break
+                } else if tempDateMonth > afterDateMonth { // 已跨越
+                    futureNextDate = tempDate.addingTimeInterval(TimeInterval(-1 * 24 * 60 * 60)) // 减去1天
+                    break
                 }
-            } else if tempDateMonth > targetDateMonth { // 已跨越
-                futureNextDate = tempDate.addingTimeInterval(TimeInterval(-1 * 24 * 60 * 60)) // 减去1天
-                break
             }
         }
         

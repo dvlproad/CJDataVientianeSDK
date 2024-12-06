@@ -8,6 +8,7 @@
 
 import Foundation
 import CJFoundation_Swift
+import CQDemoKit
 
 class TestSwift1: NSObject {
     func test() {
@@ -54,7 +55,14 @@ class TestSwift1: NSObject {
             }
         }
         
-        print("\(dateString) 所在的【\(inLunarCalendar ? "公历" : "农历")】中，\(resultString)")
+        printResultMessage("\(dateString) 所在的【\(inLunarCalendar ? "公历" : "农历")】中，\(resultString)")
+    }
+    
+    private static func printResultMessage(_ string: String) {
+        print(string)
+        if (string.contains("❌")) {
+            CJUIKitToastUtil.showMessage(string)
+        }
     }
     
     
@@ -74,16 +82,22 @@ class TestSwift1: NSObject {
     
     @objc static func findNextEqualLunarDate() {
         print("【农历】：纪念日为2020-03-23，即以农历每年二月三十为例（考虑今年或明年有没有二月三十,以及没有的时候是做回归到月末，还是补偿到下月初）+闰月")
-        findNextEqualLunarDate(fromDateString: "2023-01-01", targetDateString: "2020-03-23", correctResultString: "下个月[注意这里只找下个月，eg如果是两个月后则不会显示]没有与之相等的日期")   // 二月三十
-        findNextEqualLunarDate(fromDateString: "2023-03-20", targetDateString: "2020-03-23", correctResultString: "2023-03-21")   // 二月三十
-        findNextEqualLunarDate(fromDateString: "2023-03-22", targetDateString: "2020-03-23", correctResultString: "2023-04-19")   // 闰二月廿九（没有三十号）
+        findNextEqualLunarDate(fromDateString: "2023-01-01", targetDateString: "2020-03-23", isMonthMustEqual: true, correctResultString: "下个月[注意这里只找下个月，eg如果是两个月后则不会显示]没有与之相等的日期")   // 二月三十
+        findNextEqualLunarDate(fromDateString: "2023-03-20", targetDateString: "2020-03-23", isMonthMustEqual: true, correctResultString: "2023-03-21")   // 二月三十
+        findNextEqualLunarDate(fromDateString: "2023-03-22", targetDateString: "2020-03-23", isMonthMustEqual: true, correctResultString: "2023-04-19")   // 闰二月廿九（没有三十号）
+        
+        print("【农历】：纪念日为2008-02-08，即以农历每月初二为例")
+        findNextEqualLunarDate(fromDateString: "2025-07-25", targetDateString: "2008-02-08", isMonthMustEqual: false, correctResultString: "2025-07-26")
+        
+        print("【农历】：纪念日为2024-02-09，即以农历每月三十为例")
+        findNextEqualLunarDate(fromDateString: "2025-07-25", targetDateString: "2024-02-09", isMonthMustEqual: false, correctResultString: "2025-08-22")
     }
     
-    @objc static func findNextEqualLunarDate(fromDateString: String, targetDateString:String, correctResultString: String) {
+    @objc static func findNextEqualLunarDate(fromDateString: String, targetDateString:String, isMonthMustEqual: Bool, correctResultString: String) {
         let fromDate = greDateFromYYYYMMDDString(dateString: fromDateString)
         let targetDate = greDateFromYYYYMMDDString(dateString: targetDateString)
         
-        let nextEqualDate: Date? = targetDate.findNextEqualLunarDateFromDate(fromDate)
+        let nextEqualDate: Date? = targetDate.findNextEqualLunarDateFromDate(fromDate, isMonthMustEqual: isMonthMustEqual)
         var resultString: String
         if nextEqualDate == nil {
             resultString = "下个月[注意这里只找下个月，eg如果是两个月后则不会显示]没有与之相等的日期"
@@ -92,9 +106,9 @@ class TestSwift1: NSObject {
         }
         
         if resultString != correctResultString {
-            print("❌\(fromDateString)之后与\(targetDateString)相等的日期为\(correctResultString)，但结果错误\(resultString)")
+            printResultMessage("❌\(fromDateString)之后与\(targetDateString)相等的日期为\(correctResultString)，但结果错误\(resultString)")
         } else {
-            print("✅\(fromDateString)之后与\(targetDateString)相等的日期为\(correctResultString)，结果正确")
+            printResultMessage("✅\(fromDateString)之后与\(targetDateString)相等的日期为\(correctResultString)，结果正确")
         }
     }
     
@@ -136,6 +150,8 @@ class TestSwift1: NSObject {
         checkNearbyWeek(isLunarCalendar: true, selectedDateString: "2020-05-19", currentDateString: "2024-03-09", correctResultDateString: "2024-03-12")
         checkNearbyWeek(isLunarCalendar: true, selectedDateString: "2024-05-01", currentDateString: "2023-12-25", correctResultDateString: "2023-12-27") // 还没到周三
         checkNearbyWeek(isLunarCalendar: true, selectedDateString: "2024-05-01", currentDateString: "2023-12-28", correctResultDateString: "2024-01-03") // 已过周三，且跨年
+        checkNearbyWeek(isLunarCalendar: true, selectedDateString: "2024-07-06", currentDateString: "2025-07-25", correctResultDateString: "2025-07-26")
+        
     }
     
     // 按月计算下一个周期
@@ -166,6 +182,15 @@ class TestSwift1: NSObject {
         // 农历
         checkNearbyMonth(isLunarCalendar: true, selectedDateString: "2024-03-19", currentDateString: "2024-03-09", correctResultDateString: "2024-03-19") // 农历二月初十
         checkNearbyMonth(isLunarCalendar: true, selectedDateString: "2024-04-08", currentDateString: "2024-11-29", correctResultDateString: "2024-11-30")
+        
+        // 农历：纪念日为农历每月初一
+        checkNearbyMonth(isLunarCalendar: true, selectedDateString: "2025-07-25", currentDateString: "2025-07-24", correctResultDateString: "2025-07-25")
+        checkNearbyMonth(isLunarCalendar: true, selectedDateString: "2025-07-25", currentDateString: "2025-07-25", correctResultDateString: "2025-07-25")
+        checkNearbyMonth(isLunarCalendar: true, selectedDateString: "2025-07-25", currentDateString: "2025-07-26", correctResultDateString: "2025-08-23")
+        // 农历：纪念日为农历每月初二
+        checkNearbyMonth(isLunarCalendar: true, selectedDateString: "2008-02-08", currentDateString: "2025-07-25", correctResultDateString: "2025-07-26")
+        // 农历：以2024-02-09为纪念日，即农历每月三十
+        checkNearbyMonth(isLunarCalendar: true, selectedDateString: "2024-02-09", currentDateString: "2025-07-25", correctResultDateString: "2025-08-22")
 
         
     }
@@ -221,18 +246,35 @@ class TestSwift1: NSObject {
         
         checkNearbyYear(isLunarCalendar: true, selectedDateString: "2023-02-01", currentDateString: "2024-11-29", correctResultDateString: "2025-02-08")   // 农历2023年正月十一
         checkNearbyYear(isLunarCalendar: true, selectedDateString: "2023-02-20", currentDateString: "2024-11-29", correctResultDateString: "2025-02-28")   // 农历2023年二月初一
+        
+        let normalDateComponentString = componentStringForDateString(dateString: "2023-02-08", inLunar: true) // 正月十八
+        print("农历正月十八的 month 和 day 值为[\(normalDateComponentString)]")
+        let beforeLeapMonthString = "2023-02-21" // 二月初二
+        let leapMonthString = "2023-03-23" // 闰二月初二
+        let beforeLeapMonthDateComponentString = componentStringForDateString(dateString: beforeLeapMonthString, inLunar: true)
+        let leapMonthDateComponentString = componentStringForDateString(dateString: leapMonthString, inLunar: true)
+        print("农历二月初二 和 农历闰二月初二 的 month 和 day 值分别为[\(beforeLeapMonthDateComponentString) VS \(leapMonthDateComponentString)]")
         checkNearbyYear(isLunarCalendar: true, selectedDateString: "2023-03-22", currentDateString: "2024-11-29", correctResultDateString: "2025-02-28")   // 农历2023年闰二月初一
     }
     
-    static func lunarStringForDate(dateString: String, correctResultDateString: String) -> String {
+    /// 辅助日志输出
+    static private func componentStringForDateString(dateString: String, inLunar: Bool) -> String {
+        let calendar: Calendar = Calendar(identifier: inLunar ? .chinese : .gregorian)
+        let date = greDateFromYYYYMMDDString(dateString: dateString)
+        let dateComponents = calendar.dateComponents([.year, .month, .day, .weekday], from: date)
+        let componentString: String = "\(dateComponents.year!)-\(dateComponents.month!)-\(dateComponents.day!)"
+        return componentString
+    }
+    
+    
+    static func lunarStringForDate(dateString: String, correctResultDateString: String) {
         let date = greDateFromYYYYMMDDString(dateString: dateString)
         let lunarString = CJDateFormatterUtil.lunarStringForDate(from: date)
         if lunarString != correctResultDateString {
-            print("❌\(CJDateFormatterUtil.formatGregorianDate(from: date))【\(correctResultDateString)】，农历展示错误\(lunarString)")
+            printResultMessage("❌\(CJDateFormatterUtil.formatGregorianDate(from: date))【\(correctResultDateString)】，农历展示错误\(lunarString)")
         } else {
-            print("✅\(CJDateFormatterUtil.formatGregorianDate(from: date))【\(correctResultDateString)】，农历展示正确")
+            printResultMessage("✅\(CJDateFormatterUtil.formatGregorianDate(from: date))【\(correctResultDateString)】，农历展示正确")
         }
-        return lunarString
     }
     
     @objc static func printLeapMonthInfo(dateString: String, correctResultDateString: String) {
@@ -250,9 +292,9 @@ class TestSwift1: NSObject {
         }
         
         if resultString != correctResultDateString {
-            print("❌\(correctResultDateString)，但结果错误\(resultString)")
+            printResultMessage("❌\(correctResultDateString)，但结果错误\(resultString)")
         } else {
-            print("✅\(correctResultDateString)，结果正确")
+            printResultMessage("✅\(correctResultDateString)，结果正确")
         }
     }
     
@@ -269,9 +311,9 @@ class TestSwift1: NSObject {
         }
         
         if resultString != correctResultString {
-            print("❌\(correctResultString)，但结果错误\(resultString)")
+            printResultMessage("❌\(correctResultString)，但结果错误\(resultString)")
         } else {
-            print("✅\(correctResultString)，结果正确")
+            printResultMessage("✅\(correctResultString)，结果正确")
         }
     }
     
@@ -284,7 +326,7 @@ class TestSwift1: NSObject {
 //            print("按周计算下一个日期为：\(lunarStringForDate(from: nextMonthDate, using: lunarCalendar))【\(formatGregorianDate(from: nextMonthDate))】")
             let correctResultDate = greDateFromYYYYMMDDString(dateString: correctResultDateString)
             if !CJDateCompareUtil.areDatesEqualIgnoringTime(nextWeekDate, correctResultDate) {
-                print("❌每周周几不正确：\(CJDateFormatterUtil.lunarStringForDate(from: nextWeekDate, using: lunarCalendar))【\(CJDateFormatterUtil.formatGregorianDate(from: nextWeekDate))】【\(CJRepateDateGetter.getWeekdayString(from: nextWeekDate))】，应该为：\(CJDateFormatterUtil.lunarStringForDate(from: correctResultDate, using: lunarCalendar))【\(CJDateFormatterUtil.formatGregorianDate(from: correctResultDate))】【\(CJRepateDateGetter.getWeekdayString(from: correctResultDate))】")
+                print("❌每周周几不正确：应该为：\(CJDateFormatterUtil.lunarStringForDate(from: correctResultDate, using: lunarCalendar))【\(CJDateFormatterUtil.formatGregorianDate(from: correctResultDate))】【\(CJRepateDateGetter.getWeekdayString(from: correctResultDate))】，而现在是\(CJDateFormatterUtil.lunarStringForDate(from: nextWeekDate, using: lunarCalendar))【\(CJDateFormatterUtil.formatGregorianDate(from: nextWeekDate))】【\(CJRepateDateGetter.getWeekdayString(from: nextWeekDate))】")
             } else {
                 print("✅每周周几正确：\(correctStringForDate(calendar: lunarCalendar, nextRepateDate: nextWeekDate, currentDate: comparisonDate)))")
             }
@@ -301,7 +343,7 @@ class TestSwift1: NSObject {
 //            print("按月计算下一个日期为：\(lunarStringForDate(from: nextMonthDate, using: lunarCalendar))【\(formatGregorianDate(from: nextMonthDate))】")
             let correctResultDate = greDateFromYYYYMMDDString(dateString: correctResultDateString)
             if !CJDateCompareUtil.areDatesEqualIgnoringTime(nextMonthDate, correctResultDate) {
-                print("❌每月几号不正确：\(CJDateFormatterUtil.lunarStringForDate(from: nextMonthDate, using: lunarCalendar))【\(CJDateFormatterUtil.formatGregorianDate(from: nextMonthDate))】，应该为：\(CJDateFormatterUtil.lunarStringForDate(from: correctResultDate, using: lunarCalendar))【\(CJDateFormatterUtil.formatGregorianDate(from: correctResultDate))】")
+                printResultMessage("❌每月几号不正确：应该为：\(CJDateFormatterUtil.lunarStringForDate(from: correctResultDate, using: lunarCalendar))【\(CJDateFormatterUtil.formatGregorianDate(from: correctResultDate))】，而现在是\(CJDateFormatterUtil.lunarStringForDate(from: nextMonthDate, using: lunarCalendar))【\(CJDateFormatterUtil.formatGregorianDate(from: nextMonthDate))】")
             } else {
                 print("✅每月几号正确：\(correctStringForDate(calendar: lunarCalendar, nextRepateDate: nextMonthDate, currentDate: comparisonDate)))")
             }
@@ -319,7 +361,7 @@ class TestSwift1: NSObject {
 //            print("按年计算下一个日期为：\(lunarStringForDate(from: nextYearDate, using: lunarCalendar))【\(formatGregorianDate(from: nextYearDate))】")
             let correctResultDate = greDateFromYYYYMMDDString(dateString: correctResultDateString)
             if !CJDateCompareUtil.areDatesEqualIgnoringTime(nextYearDate, correctResultDate) {
-                print("❌每年几月几号不正确：\(CJDateFormatterUtil.lunarStringForDate(from: nextYearDate, using: lunarCalendar))【\(CJDateFormatterUtil.formatGregorianDate(from: nextYearDate))】，应该为：\(CJDateFormatterUtil.lunarStringForDate(from: correctResultDate, using: lunarCalendar))【\(CJDateFormatterUtil.formatGregorianDate(from: correctResultDate))】")
+                print("❌每年几月几号不正确：应该为：\(CJDateFormatterUtil.lunarStringForDate(from: correctResultDate, using: lunarCalendar))【\(CJDateFormatterUtil.formatGregorianDate(from: correctResultDate))】，而现在是\(CJDateFormatterUtil.lunarStringForDate(from: nextYearDate, using: lunarCalendar))【\(CJDateFormatterUtil.formatGregorianDate(from: nextYearDate))】")
             } else {
                 print("✅每年几月几号正确：\(correctStringForDate(calendar: lunarCalendar, nextRepateDate: nextYearDate, currentDate: comparisonDate)))")
             }

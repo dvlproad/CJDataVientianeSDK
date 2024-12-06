@@ -10,40 +10,23 @@
 import Foundation
 
 extension Date {
-    /// 获取本时间所在的【公历/农历】年份中有多少个月，以及当前月有多少天。请不要使用此方法计算农历有多少个月，因为本方法在农历有闰月的时候计算结果不对。
-    /// 场景：日期选择器弹起来的时候，天那一列要有多少个元素
-    func currentMonthDayCountTuple(inLunarCalendar: Bool = false) -> (monthCount: Int, dayCount: Int)? {
-        let calendar = Calendar(identifier: inLunarCalendar ? .chinese : .gregorian)
- 
-        let monthRange = calendar.range(of: .month, in: .year, for: self)
-        let monthCount: Int? = monthRange?.count
-        if monthCount == nil {
-            return nil
-        }
-        
-        let dayRange = calendar.range(of: .day, in: .month, for: self)
-        let dayCount: Int? = dayRange?.count
-        if dayCount == nil {
-            return nil
-        }
-        
-        return (monthCount!, dayCount!)
-    }
-    
-    /// 重新定位指定的农历月份在农历中进行年的切换后，该月在新的年里的位置
+    // MARK: 日期选择器-农历：滑动年
+    /// 重新定位指定的农历月份在农历中进行年的切换后，该月在新的年里的位置（因为新的月份表里可能随机插入某个闰月）
     /// 场景：在农历日期选择器中进行年的切换可能导致之前选中的月的位置发生变化。
     /// eg：用于修复①之前选中了闰六月，现在切换到其他年时候，可能变成选了七月。②或者之前选了闰六月后的七月，现在可能变成选八月。③之前选了六月，但切换后的年有闰二月，则会变成选择了五月
     /// - Parameters:
-    ///   - targetLunarMonthNumberString: 要重新定位的农历月份
-    ///   - newLunarMonthNumberStrings: 要定位那年得来的农历月份表里，可通过 `getLunarMonthStringsInSpicialYear` 接口获得农历指定年有的月数
+    ///   - targetLunarMonthString: 要重新定位的农历月份
+    ///   - newLunarMonthStrings: 要定位那年得来的农历月份表里，可通过 `getLunarMonthStringsInSpicialYear` 接口获得农历指定年有的月数
     /// - Returns: 农历月份在农历中进行年的切换后，该月在新的年里的位置，包括位置索引和对应的结果
-    static func relocationLunarMonthInNewYear(targetLunarMonthNumberString: String, newLunarMonthNumberStrings: [String]) -> (monthIndex: Int, monthString: String)? {
+    static func relocationLunarMonthInNewYear(targetLunarMonthString: String, newLunarMonthStrings: [String]) -> (monthIndex: Int, monthString: String)? {
         var newLunarMonthIndex: Int?
-        for i in 0 ..< newLunarMonthNumberStrings.count {
-            let iLunarMonth = newLunarMonthNumberStrings[i]
-            if iLunarMonth.contains(targetLunarMonthNumberString) {
+        let targetLunarMonthString = targetLunarMonthString
+        for i in 0 ..< newLunarMonthStrings.count {
+            let iLunarMonth = newLunarMonthStrings[i]
+            // 兼容找的是普通的月份、找到是闰月
+            if iLunarMonth.contains(targetLunarMonthString) || targetLunarMonthString.contains(iLunarMonth) {
                 newLunarMonthIndex = i
-                if iLunarMonth == targetLunarMonthNumberString {   // 如果是完全相等那就一定是想要的，如闰月
+                if iLunarMonth == targetLunarMonthString {   // 如果是完全相等那就一定是想要的，如闰月
                     newLunarMonthIndex = i
                     break
                 }
@@ -53,11 +36,12 @@ extension Date {
         if newLunarMonthIndex == nil {
             return nil
         }
-        let newLunarMonthString = newLunarMonthNumberStrings[newLunarMonthIndex!]
+        let newLunarMonthString = newLunarMonthStrings[newLunarMonthIndex!]
         return (newLunarMonthIndex!, newLunarMonthString)
     }
     
-    /// 获取农历指定年有的月数。使用场景：日历表滑动时候，判断指定的年有多少个月，避免当前是31号，然后选的那月没有31号，而导致调到下个月。正确的应该是显示那月的末尾
+    /// 日期选择器，滑动年重新计算农历指定年有的月数。
+    /// 使用场景：日历表滑动时候，判断指定的年有多少个月，避免当前是31号，然后选的那月没有31号，而导致调到下个月。正确的应该是显示那月的末尾
     /// - Parameters:
     ///   - inLunarCalendar: 是否是农历
     ///   - year: 指定的年
@@ -72,6 +56,7 @@ extension Date {
         return lunarMonthNumberStrings
     }
     
+    // MARK: 日期选择器-公历/农历：滑动月或滑动年（2月29号滑动年 / 1月31号滑动月），对月的处理（该月有多少天、）
     /// 获取公历/农历指定年月有的天数。使用场景：日历表滑动时候，判断指定的年月有多少天，避免当前是31号，然后选的那月没有31号，而导致调到下个月。正确的应该是显示那月的末尾
     /// - Parameters:
     ///   - inLunarCalendar: 是否是农历
@@ -92,6 +77,27 @@ extension Date {
         }
     }
     
+    /// 获取本时间所在的【公历/农历】年份中有多少个月，以及当前月有多少天。请不要使用此方法计算农历有多少个月，因为本方法在农历有闰月的时候计算结果不对。
+    /// 场景：日期选择器弹起来的时候，天那一列要有多少个元素
+    func currentMonthDayCountTuple(inLunarCalendar: Bool = false) -> (monthCount: Int, dayCount: Int)? {
+        let calendar = Calendar(identifier: inLunarCalendar ? .chinese : .gregorian)
+ 
+        let monthRange = calendar.range(of: .month, in: .year, for: self)
+        let monthCount: Int? = monthRange?.count
+        if monthCount == nil {
+            return nil
+        }
+        
+        let dayRange = calendar.range(of: .day, in: .month, for: self)
+        let dayCount: Int? = dayRange?.count
+        if dayCount == nil {
+            return nil
+        }
+        
+        return (monthCount!, dayCount!)
+    }
+    
+    // MARK: 日期选择器-滑动结束生成时间
     /// 根据在公历/农历日期选择器选中的年月日字符串转成时间Date
     /// - Parameters:
     ///   - inLunarCalendar: 是否是农历
