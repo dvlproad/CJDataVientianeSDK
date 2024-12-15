@@ -12,13 +12,13 @@ import Foundation
 // MARK: 闰年、闰月判断
 extension Date {
     /// 判断公历年份是否是闰年
-    func isGregorianLeapYear(year: Int) -> Bool {
+    public func isGregorianLeapYear(year: Int) -> Bool {
         return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)
     }
 
     /// 判断本时间所在的农历月份是否为闰月（兼容 iOS 17 以下）
     /// 判断该年是否为含有闰月的年，即判断该年是否有13个月的方法暂未提供
-    func isLunarLeapMonth() -> Bool {
+    public func isLunarLeapMonth() -> Bool {
         guard #available(iOS 17, *) else {
             return _isLunarLeapMonthManual(for: self)
         }
@@ -71,7 +71,7 @@ extension Date {
     ///   - fromDate: 从什么时间开始查找与本时间相等的日期
     ///   - isMonthMustEqual: 是否月一定要相等（查找每年几月几号需要设为true，查找每月几号需要设为false）
     /// - Returns: 查找到的日期
-    func findNextEqualLunarDateFromDate(_ fromDate: Date, isMonthMustEqual: Bool) -> Date? {
+    public func findNextEqualLunarDateFromDate(_ fromDate: Date, isMonthMustEqual: Bool) -> Date? {
         guard #available(iOS 17, *) else {
             return nil
         }
@@ -144,7 +144,7 @@ extension Date {
     
     /// 仅供农历使用：当前时间为公历时间，计算判断其下一个月的月份是否与本月相等。即下个月是否是闰月
     /// 使用场景：常用来判断每年几月几号的下一个纪念日是否需要换年
-    func isNextLunarMonthEqualToCurrentMonth() -> Bool {
+    public func isNextLunarMonthEqualToCurrentMonth() -> Bool {
         guard #available(iOS 17, *) else {
             return false
         }
@@ -174,7 +174,7 @@ extension Date {
     }
 
     
-    func getThisYearLunarLeapMonthTuple() -> (lunarLeapMonth: Int, lunarLeapMonthCNName:String)? {
+    public func getThisYearLunarLeapMonthTuple() -> (lunarLeapMonth: Int, lunarLeapMonthCNName:String)? {
         let greCalendar = Calendar(identifier: .gregorian)
         let components = greCalendar.dateComponents([.year, .month], from: self)
         if let year = components.year {

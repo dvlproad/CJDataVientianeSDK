@@ -9,7 +9,7 @@
 
 import Foundation
 
-extension Date {
+public extension Date {
     // MARK: 日期选择器-农历：滑动年
     /// 重新定位指定的农历月份在农历中进行年的切换后，该月在新的年里的位置（因为新的月份表里可能随机插入某个闰月）
     /// 场景：在农历日期选择器中进行年的切换可能导致之前选中的月的位置发生变化。
@@ -18,7 +18,7 @@ extension Date {
     ///   - targetLunarMonthString: 要重新定位的农历月份
     ///   - newLunarMonthStrings: 要定位那年得来的农历月份表里，可通过 `getLunarMonthStringsInSpicialYear` 接口获得农历指定年有的月数
     /// - Returns: 农历月份在农历中进行年的切换后，该月在新的年里的位置，包括位置索引和对应的结果
-    static func relocationLunarMonthInNewYear(targetLunarMonthString: String, newLunarMonthStrings: [String]) -> (monthIndex: Int, monthString: String)? {
+    static public func relocationLunarMonthInNewYear(targetLunarMonthString: String, newLunarMonthStrings: [String]) -> (monthIndex: Int, monthString: String)? {
         var newLunarMonthIndex: Int?
         let targetLunarMonthString = targetLunarMonthString
         for i in 0 ..< newLunarMonthStrings.count {
@@ -47,7 +47,7 @@ extension Date {
     ///   - year: 指定的年
     ///   - leapMonthNumber: 那年闰月所在的位置，有闰月的时候值为1-12，没有闰月的时候值为0
     /// - Returns: 农历指定年有的月数
-    static func getLunarMonthStringsInSpicialYear(year: Int, leapMonthNumber: Int) -> [String] {
+    static public func getLunarMonthStringsInSpicialYear(year: Int, leapMonthNumber: Int) -> [String] {
         var lunarMonthNumberStrings = ["正", "二" ,"三", "四", "五", "六", "七", "八" ,"九", "十", "冬", "腊"]
         if leapMonthNumber > 0 {
             let leapMonthString = "闰\(lunarMonthNumberStrings[leapMonthNumber - 1])"
@@ -63,7 +63,7 @@ extension Date {
     ///   - year: 指定的年
     ///   - monthNumberString: 指定的月。为月的数字字符串。格林时候为1-12，中文日历时候为正、二、三、...、腊，不包含月字
     /// - Returns: 公历/农历指定年月有的天数
-    static func getDayStringsInSpicialYearAndMonth(inLunarCalendar: Bool, year: Int, monthNumberString: String) -> [String] {
+    static public func getDayStringsInSpicialYearAndMonth(inLunarCalendar: Bool, year: Int, monthNumberString: String) -> [String] {
         var newDateWithMonthFirstDay: Date = Date.fromYearNumber_monthNumberString_dayString(inLunarCalendar: inLunarCalendar, year: year, monthNumberString: monthNumberString, dayFullString: inLunarCalendar ? "初一" : "1日") ?? errorDate()  // dayFullString 不能使用之前的值，因为之前可能是三十号，但新的这个month所在的月可能没有三十号，而导致到时候会跳到下个月去
         
         let monthAndDayTuple = newDateWithMonthFirstDay.currentMonthDayCountTuple(inLunarCalendar: inLunarCalendar)
@@ -79,7 +79,7 @@ extension Date {
     
     /// 获取本时间所在的【公历/农历】年份中有多少个月，以及当前月有多少天。请不要使用此方法计算农历有多少个月，因为本方法在农历有闰月的时候计算结果不对。
     /// 场景：日期选择器弹起来的时候，天那一列要有多少个元素
-    func currentMonthDayCountTuple(inLunarCalendar: Bool = false) -> (monthCount: Int, dayCount: Int)? {
+    public func currentMonthDayCountTuple(inLunarCalendar: Bool = false) -> (monthCount: Int, dayCount: Int)? {
         let calendar = Calendar(identifier: inLunarCalendar ? .chinese : .gregorian)
  
         let monthRange = calendar.range(of: .month, in: .year, for: self)
@@ -105,7 +105,7 @@ extension Date {
     ///   - monthNumberString: 指定的月。为月的数字字符串。格林时候为1-12，中文日历时候为正、二、三、...、腊，不包含月字
     ///   - dayFullString: 指定的天。为天的完整字符串。格林时候为1日、2日、...、30日，中文日历时候为初一、初二、初三、...、三十
     /// - Returns: 对应的公历时间
-    static func fromYearNumber_monthNumberString_dayString(inLunarCalendar: Bool, year: Int, monthNumberString: String, dayFullString: String) -> Date? {
+    static public func fromYearNumber_monthNumberString_dayString(inLunarCalendar: Bool, year: Int, monthNumberString: String, dayFullString: String) -> Date? {
         var date: Date?
         if inLunarCalendar {
             let lunarMediumString = "\(year)年\(monthNumberString)月\(dayFullString)"
@@ -126,7 +126,7 @@ extension Date {
     }
     
     /// 将形如 "2025年腊月二十" String 转为 Date
-    static func fromLunarMediumString(_ lunarMediumString: String) -> Date? {
+    static public func fromLunarMediumString(_ lunarMediumString: String) -> Date? {
         let calendar = Calendar(identifier: .chinese)
 
         let chineseFormatter = DateFormatter()

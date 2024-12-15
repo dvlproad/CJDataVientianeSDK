@@ -61,6 +61,7 @@ target 'CJUIKitDemo' do
     
 #    pod 'SwiftExtraCJHelper',   :path => '../'
     pod 'CJFoundation-Swift',   :path => '../'
+    pod 'CJDataVientianeSDK-Swift',   :path => '../'
 end
 
 #target 'CJUIKitDemoTests' do

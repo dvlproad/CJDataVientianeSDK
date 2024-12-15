@@ -10,12 +10,12 @@ import Foundation
 
 // MARK: 时间 TimeString 的 Date 与 String 互相转换
 /// 时间字符串的格式类型
-enum DateTimeStringType {
+public enum DateTimeStringType {
     case en_24  // 标准的24小时制
     case en_12  // 英文的12小时制
     case cn_12  // 中文版12小时制
 }
-extension Date {
+public extension Date {
     /// 提供一个错误的时间，便于排查
     static func errorDate() -> Date  {
         let errorDateComponents = DateComponents(year: 2999, month: 12, day: 27)
@@ -38,7 +38,7 @@ extension Date {
     }
     
     /// 从时间字符串中恢复日期（需判断时间字符串格式，注意：即使Date转字符串的时候，在12小时制下也是使用 yyyy-MM-dd HH:mm:ss ，且结果也会变成 yyyy-MM-dd hh:mm:ss a 或 yyyy-MM-dd ahh:mm:ss 格式的字符串）
-    static func fromTimeString(_ timeString: String) -> Date? {
+    static public func fromTimeString(_ timeString: String) -> Date? {
         var dateFormat: String = "yyyy-MM-dd HH:mm:ss"
         var locale: Locale = Locale(identifier: "en_US")  // 使用固定的Locale，避免受到设备语言设置影响
         let type = Date.getTimeStringType(timeString: timeString)
@@ -60,7 +60,7 @@ extension Date {
     
     /// 判断一个时间字符串是12小时制还是24小时制。使用场景：正确判断出来后才能使用正确format去格式化
     /// 目前只针对日期转字符串使用的是 yyyy-MM-dd HH:mm:ss 格式，如果是24小时制的时间字符串则仍使用 yyyy-MM-dd HH:mm:ss ，否则如果是12小时制的时间则当为英文时应使用 yyyy-MM-dd hh:mm:ss a 而中文的12小时制应使用 yyyy-MM-dd ahh:mm:ss
-    static func getTimeStringType(timeString: String) -> DateTimeStringType {
+    static public func getTimeStringType(timeString: String) -> DateTimeStringType {
         // 使用正则表达式检查是否包含 "AM" 或 "PM"
         let ampmPattern = "(AM|PM|am|pm|上午|下午)"
         let regex = try! NSRegularExpression(pattern: ampmPattern, options: [])
@@ -76,7 +76,7 @@ extension Date {
         return DateTimeStringType.en_24
     }
     
-    static func getTimeFormatter() -> DateFormatter {
+    static public func getTimeFormatter() -> DateFormatter {
         let dateFormatter = DateFormatter()
         //dateFormatter.locale = Locale.current
         //dateFormatter.locale = Locale(identifier: "en_US")  // zh_CN  en_US  zh_Hans_CN en_US_POSIX 修复iOS 16.5 以上12小时制/24小时制 HH/hh引起的时间计算错误
@@ -89,11 +89,21 @@ extension Date {
     }
     
     /// 格式转换
-    func toTimeString() -> String {
+    public func toTimeString() -> String {
         let dateFormatter = Date.getTimeFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         
         let dateString = dateFormatter.string(from: self)
         return dateString
+    }
+    
+    /// 日期字符串，格式为2024/5/20
+    static func getYYMMDDDateString(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        let dateString = formatter.string(from: date)
+        return dateString
+        //        let components = Calendar.current.dateComponents([.year, .month ,.day], from: date)
+        //        return "\((components.year ?? 2023))/\(components.month ?? 3)/\(components.day ?? 29)"
     }
 }

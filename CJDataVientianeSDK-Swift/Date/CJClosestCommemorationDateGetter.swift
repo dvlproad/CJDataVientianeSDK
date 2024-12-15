@@ -13,14 +13,31 @@ import Foundation
 
 // MARK: 1、以本时间为纪念日，按指定纪念周期，获取指定日期后的最临近的纪念日；2、将本纪念日时间根据纪念周期输出指定的格式（公历/农历）
 // 纪念日周期类型定义
-enum CommemorationCycleType {
+public enum CommemorationCycleType: String, Codable {
     case none   // 不重复
     case week   // 每周重复
     case month  // 每月重复
     case year   // 每年重复
 }
 
-extension Date {
+public extension Date {
+    static public func getLatestSpecifiedDate(month: Int, day: Int) -> Date {
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(identifier: "Asia/Shanghai") ?? TimeZone.current
+        
+        let now = Date()
+        var components = calendar.dateComponents([.year, .month, .day], from: now)
+        components.month = month
+        components.day = day
+
+        // 如果今天的日期已经过了元旦，则返回明年的元旦
+        if calendar.compare(now, to: calendar.date(from: components)!, toGranularity: .day) == .orderedDescending {
+            components.year = components.year! + 1
+        }
+
+        return calendar.date(from: components) ?? now
+    }
+    
     /// 以本时间为纪念日，按指定纪念周期，获取指定日期后的最临近的纪念日
     /// eg：以本时间为纪念日，按每年重复，获取当前时间之后最临近的纪念日
     /// - Parameters:
@@ -29,7 +46,7 @@ extension Date {
     ///   - shouldFlyback: 当前为1月31号，则点击每月时候，为每月31号，当到2月的时候是否需要回退到月末
     ///   - calendar: 使用的农历 `Calendar`
     /// - Returns: 指定日期后的最临近的纪念日
-    func closestCommemorationDate(commemorationCycleType: CommemorationCycleType, afterDate: Date, shouldFlyback: Bool, calendar: Calendar = Calendar(identifier: .chinese)) -> Date? {
+    public func closestCommemorationDate(commemorationCycleType: CommemorationCycleType, afterDate: Date, shouldFlyback: Bool, calendar: Calendar = Calendar(identifier: .chinese)) -> Date? {
 //        if self.timeZone != calendar.timeZone {
 //            print("xxxxxxxxxxx\(self.timeZone) \(calendar.timeZone)")
 //        }
@@ -211,7 +228,7 @@ extension Date {
     ///   - commemorationCycleType: 周期类型（按周 or 按月 or 按年）
     ///   - showInLunarType: 输出格式是农历，还是公历
     /// - Returns: 本纪念日时间根据纪念周期及指定的格式（公历/农历）输出的字符串
-    func commemorationDateString(cycleType: CommemorationCycleType, showInLunarType: Bool) -> String {
+    public func commemorationDateString(cycleType: CommemorationCycleType, showInLunarType: Bool) -> String {
         var dateString: String = ""
         switch cycleType {
         case .week:
@@ -246,7 +263,7 @@ extension Date {
         return dateString
     }
     
-    func weekdayString() -> String {
+    public func weekdayString() -> String {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.weekday], from: self)
         let weekday = components.weekday ?? 1
@@ -255,7 +272,7 @@ extension Date {
     }
     
     /// 比较两个日期的大小，要求只考虑年月日，不考虑时分秒
-    func compareDatesByYearMonthDay(_ date: Date) -> ComparisonResult {
+    public func compareDatesByYearMonthDay(_ date: Date) -> ComparisonResult {
         let calendar = Calendar.current
         
         // 获取去掉时分秒的日期（归一化到当天的开始时间）
@@ -269,9 +286,9 @@ extension Date {
 
 
 //MARK: 从公历日期中获取农历日期（含天干地支）的各种数据
-extension Date {
+public extension Date {
     // 将日期格式化为农历日期（含天干地支）
-    func lunarDateString() -> String {
+    public func lunarDateString() -> String {
         let lunarTuple = self.lunarTuple()
         let adjustedLunarYear: Int = lunarTuple.lunarYear
         let lunarYearWithStemBranch: String = lunarTuple.stemBranch
@@ -337,7 +354,7 @@ extension Date {
     */
     
     // 从公历日期中获取农历日期（含天干地支）的各种数据(已处理闰月情况)
-    func lunarTuple() -> (lunarYear: Int, stemBranch: String, monthString: String, dayString: String) {
+    public func lunarTuple() -> (lunarYear: Int, stemBranch: String, monthString: String, dayString: String) {
         let dateStyle: DateFormatter.Style = .long
         
         let chineseFormatter = DateFormatter()
@@ -373,7 +390,7 @@ extension Date {
 }
 
 // MARK: 提供给 OC 使用的方法
-struct CJRepateDateGetter {
+public struct CJRepateDateGetter {
     /// 已知纪念日时间，按指定纪念周期，获取指定日期后的最临近的纪念日
     /// eg：已知纪念日时间，按每年重复，获取当前时间之后最临近的纪念日
     /// - Parameters:
@@ -388,7 +405,7 @@ struct CJRepateDateGetter {
     }
         
     
-    static func getWeekdayString(from date: Date) -> String {
+    static public func getWeekdayString(from date: Date) -> String {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.weekday], from: date)
         let weekday = components.weekday ?? 1
@@ -401,7 +418,7 @@ struct CJDateIntervalUtil {
     /// 获取指定日期所在月份的所有天数
     /// - Parameter date: 输入的日期
     /// - Returns: 包含所有天数的数组
-    static func getDaysInMonth(for date: Date) -> [Date] {
+    static public func getDaysInMonth(for date: Date) -> [Date] {
         let calendar = Calendar.current
         
         // 获取当前月份的范围
@@ -424,7 +441,7 @@ struct CJDateIntervalUtil {
 }
 
 // MARK: 格式化+天数差
-extension Date {
+public extension Date {
     func daysBetween(endDate: Date) -> Int {
         let startFormatedString = self.format("yyyy-MM-dd")
         let startYMDDate: Date = Date.dateFromString(startFormatedString, format: "yyyy-MM-dd") ?? self
@@ -438,7 +455,7 @@ extension Date {
     }
     
     /// 格式转换
-    func format(_ str: String = "yyyy-MM-dd HH:mm:ss") -> String {
+    public func format(_ str: String = "yyyy-MM-dd HH:mm:ss") -> String {
         let dateFormat = DateFormatter()
         // 解决带上下午问题
         dateFormat.calendar = .init(identifier: .gregorian)
@@ -451,7 +468,7 @@ extension Date {
         
     }
     
-    static func dateFromString(_ dateString: String?, format: String = "yyyy-MM-dd HH:mm:ss") -> Date? {
+    static public func dateFromString(_ dateString: String?, format: String = "yyyy-MM-dd HH:mm:ss") -> Date? {
         guard let dateString = dateString, !dateString.isEmpty else {
             return nil
         }
@@ -465,7 +482,7 @@ extension Date {
     /// 计算两个日期之间的天数
     /// - Parameter endDate: 结束日期
     /// - Returns: 总天数
-    func days(endDate: Date, containsUpRange: Bool = true, useLunarDate: Bool = false) -> Int {
+    public func days(endDate: Date, containsUpRange: Bool = true, useLunarDate: Bool = false) -> Int {
         guard !Date.isSameDay(date1: self, date2: endDate) else {
             return 0
         }
@@ -477,27 +494,27 @@ extension Date {
         //print("😭😃还有\(days)天：从\(self.format())到\(endDate.format())")
         return days
     }
-    static func isSameDay(date1: Date, date2: Date) -> Bool {
+    static public func isSameDay(date1: Date, date2: Date) -> Bool {
         
         return Calendar.current.isDate(date1, inSameDayAs: date2)
     }
 }
 
 
-struct CJDateFormatterUtil {
+public struct CJDateFormatterUtil {
     // 静态方法：将公历日期格式化为农历日期（含天干地支）
-    static func lunarStringForDate(from date: Date, using calendar: Calendar = Calendar(identifier: .chinese)) -> String {
+    static public func lunarStringForDate(from date: Date, using calendar: Calendar = Calendar(identifier: .chinese)) -> String {
         return date.lunarDateString()
     }
     
     // 从公历日期中获取农历日期（含天干地支）的各种数据
-    static func lunarTupleForDate(from date: Date) -> (lunarYear: Int, stemBranch: String, monthString: String, dayString: String) {
+    static public func lunarTupleForDate(from date: Date) -> (lunarYear: Int, stemBranch: String, monthString: String, dayString: String) {
         return date.lunarTuple()
     }
 
     
     /// 格式化公历日期
-    static func formatGregorianDate(from date: Date) -> String {
+    static public func formatGregorianDate(from date: Date) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         formatter.locale = Locale(identifier: "zh_CN")
@@ -505,9 +522,9 @@ struct CJDateFormatterUtil {
     }
 }
 
-struct CJDateCompareUtil {
+public struct CJDateCompareUtil {
     //比较两个日期是否相等，只考虑年、月、日
-    static func areDatesEqualIgnoringTime(_ date1: Date, _ date2: Date) -> Bool {
+    static public func areDatesEqualIgnoringTime(_ date1: Date, _ date2: Date) -> Bool {
         let calendar = Calendar.current
 //        let componentsToCompare: Set<Calendar.Component> = [.year, .month, .day]
         

@@ -55,6 +55,9 @@ PODS:
   - CJBaseUtil/CJPinyinHelper (0.5.1):
     - PinYin4Objc
   - CJBaseUtil/CJQRCodeUtil (0.5.1)
+  - CJDataVientianeSDK-Swift (0.0.1):
+    - CJDataVientianeSDK-Swift/Date (= 0.0.1)
+  - CJDataVientianeSDK-Swift/Date (0.0.1)
   - CJFile/CJFileManager (0.0.9)
   - CJFile/CJFileModel (0.0.9)
   - CJFoundation (0.1.3):
@@ -122,6 +125,7 @@ DEPENDENCIES:
   - CJBaseEffectKit/CJScaleHeadView
   - CJBaseHelper (from `../`)
   - CJBaseUtil (from `../`)
+  - CJDataVientianeSDK-Swift (from `../`)
   - CJFile/CJFileManager
   - CJFile/CJFileModel
   - CJFoundation (from `../`)
@@ -162,6 +166,8 @@ EXTERNAL SOURCES:
     :path: "../"
   CJBaseUtil:
     :path: "../"
+  CJDataVientianeSDK-Swift:
+    :path: "../"
   CJFoundation:
     :path: "../"
   CJFoundation-Swift:
@@ -171,6 +177,7 @@ SPEC CHECKSUMS:
   CJBaseEffectKit: 8640801fa272a1d96a6edce2c994652ced0e519f
   CJBaseHelper: 71c9d695c76736b2fc66123157d5626da4556177
   CJBaseUtil: 1bbf8d5f831dc12ae4bb06c8b5326bd39f3522e1
+  CJDataVientianeSDK-Swift: d0f03e9dfa4d20feab46805cd2dd2ed24c2a4675
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
   CJFoundation: 53b4df7152c6d6fd776f55f387c67f431b8574bd
   CJFoundation-Swift: ee85ffcaf2d0031cc55fec3e46abbd86cb7597e7
@@ -186,6 +193,6 @@ SPEC CHECKSUMS:
   UINavigation-SXFixSpace: 10f223253ebff2ceefa26694e23b7694269763c4
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 048f14e30753c2c957a3906914aa4b4cfc8acf8d
+PODFILE CHECKSUM: 6509e27727e23b80a91b2fdc285339b27d38c646
 
 COCOAPODS: 1.16.2

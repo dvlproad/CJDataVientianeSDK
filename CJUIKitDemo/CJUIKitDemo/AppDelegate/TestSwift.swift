@@ -8,6 +8,7 @@
 
 import Foundation
 import CJFoundation_Swift
+import CJDataVientianeSDK_Swift
 import CQDemoKit
 
 class TestSwift1: NSObject {
