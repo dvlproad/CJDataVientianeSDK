@@ -41,7 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  return  颜色
  */
-+ (UIColor *)cjColorWithHexString:(NSString *)color alpha:(CGFloat)alpha;
++ (nullable UIColor *)cjColorWithHexString:(NSString *)color alpha:(CGFloat)alpha;
 
 /*
  *

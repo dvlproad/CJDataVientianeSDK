@@ -18,14 +18,14 @@
  *
  *  return  颜色
  */
-+ (UIColor *)cjColorWithHexString:(NSString *)color alpha:(CGFloat)alpha
++ (nullable UIColor *)cjColorWithHexString:(NSString *)color alpha:(CGFloat)alpha
 {
     //删除字符串中的空格
     NSString *cString = [[color stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
     // String should be 6 or 8 characters
     if ([cString length] < 6)
     {
-        return [UIColor clearColor];
+        return nil;
     }
     // strip 0X if it appears
     //如果是0x开头的，那么截取字符串，字符串从索引为2的位置开始，一直到末尾
