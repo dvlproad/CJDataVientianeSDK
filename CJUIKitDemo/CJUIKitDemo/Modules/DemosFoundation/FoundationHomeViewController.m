@@ -13,6 +13,7 @@
 
 #import "DateViewController.h"
 #import "TypeConvertViewController.h"
+#import "TSInsertFeedHomeViewController.h"
 
 #import "CJUIKitDemo-Swift.h"
 
@@ -21,6 +22,7 @@
     
 }
 @property (nonatomic, strong) CQDMModuleModel *recoveDateModule;
+
 
 @end
 
@@ -175,6 +177,21 @@
                 [TestSwift1 getNextRepateDate_year];
             };
             [sectionDataModel.values addObject:NSDateModule];
+        }
+        
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    
+    // FeedAd
+    {
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
+        sectionDataModel.theme = @"广告流FeedAd插入相关";
+        {
+            CQDMModuleModel *dateModule = [[CQDMModuleModel alloc] init];
+            dateModule.title = @"广告流FeedAd插入相关";
+            dateModule.classEntry = [TSInsertFeedHomeViewController class];
+            [sectionDataModel.values addObject:dateModule];
         }
         
         [sectionDataModels addObject:sectionDataModel];

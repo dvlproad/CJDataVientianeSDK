@@ -348,6 +348,8 @@
 		97578D072559474F00249AD6 /* TSRangeSliderControl2.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578D062559474F00249AD6 /* TSRangeSliderControl2.m */; };
 		976794E9258093EF002FD0C7 /* AStringLengthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976794E7258093EE002FD0C7 /* AStringLengthViewController.m */; };
 		976794FA2580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976794F92580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m */; };
+		97824E0E2D27CB45001DD4E7 /* TSFeedAdInsertUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97824E0D2D27CB45001DD4E7 /* TSFeedAdInsertUtil.swift */; };
+		97824E122D27DE09001DD4E7 /* TSInsertFeedHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97824E102D27DE09001DD4E7 /* TSInsertFeedHomeViewController.m */; };
 		97A9191E25AFE8510051B902 /* imageOriginColor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97A9191525AFE8510051B902 /* imageOriginColor@2x.png */; };
 		97A9191F25AFE8510051B902 /* longVertical.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 97A9191625AFE8510051B902 /* longVertical.jpg */; };
 		97A9192025AFE8510051B902 /* taixi_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97A9191725AFE8510051B902 /* taixi_icon@2x.png */; };
@@ -991,6 +993,9 @@
 		976794E8258093EF002FD0C7 /* AStringLengthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AStringLengthViewController.h; sourceTree = "<group>"; };
 		976794F82580B494002FD0C7 /* KeyboardAutoMoveUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardAutoMoveUpViewController.h; sourceTree = "<group>"; };
 		976794F92580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardAutoMoveUpViewController.m; sourceTree = "<group>"; };
+		97824E0D2D27CB45001DD4E7 /* TSFeedAdInsertUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSFeedAdInsertUtil.swift; sourceTree = "<group>"; };
+		97824E0F2D27DE09001DD4E7 /* TSInsertFeedHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSInsertFeedHomeViewController.h; sourceTree = "<group>"; };
+		97824E102D27DE09001DD4E7 /* TSInsertFeedHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSInsertFeedHomeViewController.m; sourceTree = "<group>"; };
 		97A9191525AFE8510051B902 /* imageOriginColor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imageOriginColor@2x.png"; sourceTree = "<group>"; };
 		97A9191625AFE8510051B902 /* longVertical.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = longVertical.jpg; sourceTree = "<group>"; };
 		97A9191725AFE8510051B902 /* taixi_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "taixi_icon@2x.png"; sourceTree = "<group>"; };
@@ -1036,6 +1041,7 @@
 				1562F38223FD2FC70009FCEA /* AppDelegate.h */,
 				1562F38623FD2FC70009FCEA /* AppDelegate.m */,
 				9702123A2CFA283400C62F50 /* TestSwift.swift */,
+				97824E0D2D27CB45001DD4E7 /* TSFeedAdInsertUtil.swift */,
 				972C69522D000AF700E53720 /* TSDateFormatterUtil.swift */,
 				97578AB025590F7100249AD6 /* UIWindow+RootSetting.h */,
 				97578AB125590F7100249AD6 /* UIWindow+RootSetting.m */,
@@ -2634,6 +2640,7 @@
 			children = (
 				80FF91721FC5682A00E437CF /* FoundationHomeViewController.h */,
 				80FF91771FC5682A00E437CF /* FoundationHomeViewController.m */,
+				97824E112D27DE09001DD4E7 /* Insert */,
 				80FF917F1FC5682A00E437CF /* NSDate */,
 				80FF91781FC5682A00E437CF /* NSString */,
 				80FF91731FC5682A00E437CF /* TypeConvert */,
@@ -2733,6 +2740,15 @@
 				7894C2A3256ECAE200C73B5E /* Resources */,
 			);
 			path = TSSliderFactory;
+			sourceTree = "<group>";
+		};
+		97824E112D27DE09001DD4E7 /* Insert */ = {
+			isa = PBXGroup;
+			children = (
+				97824E0F2D27DE09001DD4E7 /* TSInsertFeedHomeViewController.h */,
+				97824E102D27DE09001DD4E7 /* TSInsertFeedHomeViewController.m */,
+			);
+			path = Insert;
 			sourceTree = "<group>";
 		};
 		97A9191425AFE8510051B902 /* Resources */ = {
@@ -3078,6 +3094,7 @@
 				78226A9021A42103002167F2 /* CJConvertUtil.m in Sources */,
 				156AC8D12406D9F800A5A23D /* DemoTagButtonFactory.m in Sources */,
 				786254C324A92EBF00E3CCC3 /* CJDataSearchUtil.m in Sources */,
+				97824E0E2D27CB45001DD4E7 /* TSFeedAdInsertUtil.swift in Sources */,
 				78778DFD272AB18200576853 /* CJUIKitConstant.m in Sources */,
 				78778E34272AB18200576853 /* CJSwitchView.m in Sources */,
 				78778E0A272AB18200576853 /* UIView+CJAnimation.m in Sources */,
@@ -3286,6 +3303,7 @@
 				78778E06272AB18200576853 /* CJDefaultToolbar.m in Sources */,
 				1562F38923FD2FC70009FCEA /* AppDelegate.m in Sources */,
 				7894C2A7256ECAE200C73B5E /* CQAgeRangeSliderControl.m in Sources */,
+				97824E122D27DE09001DD4E7 /* TSInsertFeedHomeViewController.m in Sources */,
 				78A9926E25795E3000B54E30 /* TSTextFieldAccessoryViewController.m in Sources */,
 				78C8148A216E11AF00A6B190 /* FChildViewController.m in Sources */,
 				78778E36272AB18200576853 /* CJTextField.m in Sources */,

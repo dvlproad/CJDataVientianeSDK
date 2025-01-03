@@ -38,5 +38,10 @@ Pod::Spec.new do |s|
   s.subspec 'Date' do |ss|
     ss.source_files = "CJDataVientianeSDK-Swift/Date/**/*.{swift}"
   end
+  
+  # 插入数据
+  s.subspec 'Insert' do |ss|
+    ss.source_files = "CJDataVientianeSDK-Swift/Insert/**/*.{swift}"
+  end
 
 end
