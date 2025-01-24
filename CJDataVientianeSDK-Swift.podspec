@@ -1,9 +1,13 @@
 Pod::Spec.new do |s|
-  #验证方法：pod lib lint CJDataVientianeSDK-Swift.podspec --allow-warnings --use-libraries --verbose
+  # 上传到github公有库:
+  #验证方法1：pod lib lint CJDataVientianeSDK-Swift.podspec --sources='https://github.com/CocoaPods/Specs.git' --allow-warnings --use-libraries --verbose
+  #验证方法2：pod lib lint CJDataVientianeSDK-Swift.podspec --sources=master --allow-warnings --use-libraries --verbose
+  #提交方法(github公有库)： pod trunk push CJDataVientianeSDK-Swift.podspec --allow-warnings
+  
   s.name         = "CJDataVientianeSDK-Swift"
   s.version      = "0.0.1"
-  s.summary      = "Swift/OC帮助类"
-  s.homepage     = "https://github.com/dvlproad/CJUIKit.git"
+  s.summary      = "数据万象SDK"
+  s.homepage     = "https://github.com/dvlproad/CJDataVientianeSDK"
   s.license      = "MIT"
   s.author       = "dvlproad"
 
@@ -21,7 +25,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "9.0"
   s.swift_version = '5.0'
 
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJDataVientianeSDK-Swift_0.1.1" }
+  s.source       = { :git => "https://github.com/dvlproad/CJDataVientianeSDK", :tag => "CJDataVientianeSDK-Swift_0.0.1" }
   # s.source_files  = "CJBaseUtil/*.{h,m}"
   # s.resources = "CJBaseUtil/**/*.{png}"
   s.frameworks = 'UIKit'
