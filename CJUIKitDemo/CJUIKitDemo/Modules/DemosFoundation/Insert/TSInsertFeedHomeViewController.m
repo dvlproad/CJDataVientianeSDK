@@ -17,6 +17,9 @@
 @property (nonatomic, strong) TSFeedAdInsertUtil *feedAdInsertUtil1;
 @property (nonatomic, strong) TSFeedAdInsertUtil *feedAdInsertUtil2;
 
+@property (nonatomic, strong) TSFeedAdInsertUtil *feedAdInsertUtil11;
+@property (nonatomic, strong) NSMutableArray<TSTempDataModel *> *currentDataModels;
+
 
 @end
 
@@ -31,6 +34,14 @@
     self.feedAdInsertUtil1 = [[TSFeedAdInsertUtil alloc] initWithCurrentDataModels:@[] afterEveryRowSteps:@[] remainderEveryRowStep:4 itemCountPerRow:1];
     self.feedAdInsertUtil2 = [[TSFeedAdInsertUtil alloc] initWithCurrentDataModels:@[] afterEveryRowSteps:@[@2] remainderEveryRowStep:1 itemCountPerRow:3];
     
+    NSMutableArray *currentDataModels = [[NSMutableArray alloc] init];
+    for (int i = 0; i < 50; i++) {
+        TSTempDataModel *tempDataModel = [[TSTempDataModel alloc] init];
+        [currentDataModels addObject:tempDataModel];
+    }
+    self.currentDataModels = currentDataModels;
+    self.feedAdInsertUtil11 = [[TSFeedAdInsertUtil alloc] initWithCurrentDataModels:self.currentDataModels afterEveryRowSteps:@[@2] remainderEveryRowStep:1 itemCountPerRow:3];
+    
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     
     // FeedAd
@@ -39,21 +50,31 @@
         sectionDataModel.theme = @"广告流FeedAd插入相关";
         {
             CQDMModuleModel *dateModule = [[CQDMModuleModel alloc] init];
-            dateModule.title = @"广告流FeedAd插入相关";
+            dateModule.title = @"广告流FeedAd插入相关--在分页数据中添加";
             dateModule.content = [self.feedAdInsertUtil1 getInsertDescription];
             dateModule.contentLines = 4;
             dateModule.actionBlock = ^{
-                [self.feedAdInsertUtil1 insertElementsIfNeeded];
+                [self.feedAdInsertUtil1 insertElementsToAppendArray];
             };
             [sectionDataModel.values addObject:dateModule];
         }
         {
             CQDMModuleModel *dateModule = [[CQDMModuleModel alloc] init];
-            dateModule.title = @"广告流FeedAd插入相关";
+            dateModule.title = @"广告流FeedAd插入相关--在分页数据中添加";
             dateModule.content = [self.feedAdInsertUtil2 getInsertDescription];
             dateModule.contentLines = 4;
             dateModule.actionBlock = ^{
-                [self.feedAdInsertUtil2 insertElementsIfNeeded];
+                [self.feedAdInsertUtil2 insertElementsToAppendArray];
+            };
+            [sectionDataModel.values addObject:dateModule];
+        }
+        {
+            CQDMModuleModel *dateModule = [[CQDMModuleModel alloc] init];
+            dateModule.title = @"广告流FeedAd插入相关--整理自身";
+            dateModule.content = [self.feedAdInsertUtil11 getInsertDescription];
+            dateModule.contentLines = 4;
+            dateModule.actionBlock = ^{
+                [self.feedAdInsertUtil11 insertElementsToSelf];
             };
             [sectionDataModel.values addObject:dateModule];
         }

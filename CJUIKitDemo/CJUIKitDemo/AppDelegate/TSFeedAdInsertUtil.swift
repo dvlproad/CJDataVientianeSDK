@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 import CJDataVientianeSDK_Swift
 
-struct TSTempDataModel {
+class TSTempDataModel: NSObject {
     var isAdBannerModel: Bool = false
 }
 
@@ -53,37 +53,49 @@ class TSFeedAdInsertUtil: NSObject {
     }
     
     
-    @objc func insertElementsIfNeeded() {
-        currentDataModels = insertElementsIfNeededToArray(currentDataModels)
-    }
-    
-    @objc func insertElementsIfNeededToArray(_ array: [Any]) -> [Any] {
-        var toArray:[Any] = array
-        
+    @objc func insertElementsToAppendArray() {
         var appendModels: [Any] = []
         for i in 0 ..< 10 {
             let model = TSTempDataModel()
             appendModels.append(model)
         }
         
-        let lastArrayCount = toArray.count
+
+        let lastArrayCount = currentDataModels.count
         CJFeedAdInsertUtil.insertElementsIfNeeded(in: &appendModels, lastArrayCount: lastArrayCount, lastInsertIndex: &lastInsertIndex, afterEveryRowSteps: &afterEveryRowSteps, remainderEveryRowStep: remainderEveryRowStep, itemCountPerRow: itemCountPerRow, insertElementGetter: {
             
-            var model = TSTempDataModel()
+            let model = TSTempDataModel()
+            model.isAdBannerModel = true
+            
+            return model
+        })
+        currentDataModels.append(contentsOf: appendModels)
+        
+        self.printResultString()
+    }
+    
+    @objc func insertElementsToSelf() {
+        currentDataModels = CJFeedAdInsertUtil.insertElementsIfNeeded(in: &currentDataModels, afterEveryRowSteps: &afterEveryRowSteps, remainderEveryRowStep: remainderEveryRowStep, itemCountPerRow: itemCountPerRow, insertElementGetter: {
+            
+            let model = TSTempDataModel()
             model.isAdBannerModel = true
             
             return model
         })
         
-        toArray.append(contentsOf: appendModels)
-        
-        for i in 0 ..< toArray.count {
-            let model = toArray[i]
+        self.printResultString()
+    }
+    
+    
+
+    private func printResultString() {
+        var string: String = ""
+        for i in 0 ..< currentDataModels.count {
+            let model = currentDataModels[i]
             if let model = model as? TSTempDataModel {
-                print("\(i): \(model.isAdBannerModel ? "【✅是】广告" : "【不是】广告")")
+                string += "\(i): \(model.isAdBannerModel ? "【✅是】广告" : "【不是】广告")\n"
             }
         }
-        
-        return toArray
+        print(string)
     }
 }

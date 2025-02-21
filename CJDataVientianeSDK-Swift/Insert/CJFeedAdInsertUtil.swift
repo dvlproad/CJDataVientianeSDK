@@ -10,6 +10,18 @@ import Foundation
 
 
 open class CJFeedAdInsertUtil {
+    public static func insertElementsIfNeeded(in array: inout [Any], afterEveryRowSteps: inout [Int], remainderEveryRowStep: Int, itemCountPerRow: Int, insertElementGetter: () -> Any) -> [Any] {
+        var toArray:[Any] = []
+        var appendModels: [Any] = array
+        
+        var lastArrayCount = 0
+        var lastInsertIndex: Int = -1
+        insertElementsIfNeeded(in: &appendModels, lastArrayCount: lastArrayCount, lastInsertIndex: &lastInsertIndex, afterEveryRowSteps: &afterEveryRowSteps, remainderEveryRowStep: remainderEveryRowStep, itemCountPerRow: itemCountPerRow, insertElementGetter: insertElementGetter)
+        
+        toArray.append(contentsOf: appendModels)
+    
+        return toArray
+    }
     
     // 在数组中持续插入新元素，并且只有在当前位置距离上次插入位置超过4个元素时才进行插入
     /// - Parameter lastArrayCount: array 可能是要追加的元素，所以需要 lastArrayCount 标记 array 前有多少个元素了
@@ -38,7 +50,7 @@ open class CJFeedAdInsertUtil {
         
         var index = 0
         var insertCount = 0
-        while index < array.count + insertCount {
+        while index < array.count + insertCount, afterEveryStep > 0 {   // 避免 afterEveryStep 为 0，然后死循环导致内存溢出
 //            if (index + lastArrayCount + 1) % (afterEveryStep+1) == 0 { // 4-9-14-19-24-29-34
             if index + lastArrayCount - lastInsertIndex > afterEveryStep { // 4-9-14-19-24-29-34
                 let element = insertElementGetter()
@@ -56,12 +68,5 @@ open class CJFeedAdInsertUtil {
             index += 1
         }
         array = tempArray
-//        var insertString: String = ""
-//        for i in 0 ..< array.count {
-//            let model = toArray[i]
-//            if let model = model as? TSTempDataModel {
-//                print("\(i): \(model.isAdBannerModel ? "【✅是】广告" : "【不是】广告")")
-//            }
-//        }
     }
 }
