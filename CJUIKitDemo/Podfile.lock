@@ -1,44 +1,47 @@
 PODS:
   - CJBaseEffectKit/CJScaleHeadView (0.2.0)
-  - CJBaseHelper (0.1.7):
-    - CJBaseHelper/AppInfoCJHelper (= 0.1.7)
-    - CJBaseHelper/AuthorizationCJHelper (= 0.1.7)
-    - CJBaseHelper/DeviceCJHelper (= 0.1.7)
-    - CJBaseHelper/HookCJHelper (= 0.1.7)
-    - CJBaseHelper/NSCalendarCJHelper (= 0.1.7)
-    - CJBaseHelper/NSDateFormatterCJHelper (= 0.1.7)
-    - CJBaseHelper/NSObjectCJHelper (= 0.1.7)
-    - CJBaseHelper/NSOperationQueueCJHelper (= 0.1.7)
-    - CJBaseHelper/ServerCJHelper (= 0.1.7)
-    - CJBaseHelper/UIViewControllerCJHelper (= 0.1.7)
-    - CJBaseHelper/WebCJHelper (= 0.1.7)
-  - CJBaseHelper/AppInfoCJHelper (0.1.7)
-  - CJBaseHelper/AuthorizationCJHelper (0.1.7)
-  - CJBaseHelper/DeviceCJHelper (0.1.7)
-  - CJBaseHelper/HookCJHelper (0.1.7)
-  - CJBaseHelper/NSCalendarCJHelper (0.1.7)
-  - CJBaseHelper/NSDateFormatterCJHelper (0.1.7)
-  - CJBaseHelper/NSObjectCJHelper (0.1.7)
-  - CJBaseHelper/NSOperationQueueCJHelper (0.1.7)
-  - CJBaseHelper/ServerCJHelper (0.1.7)
-  - CJBaseHelper/UIViewControllerCJHelper (0.1.7)
-  - CJBaseHelper/WebCJHelper (0.1.7)
+  - CJBaseHelper (0.1.9):
+    - CJBaseHelper/AppInfoCJHelper (= 0.1.9)
+    - CJBaseHelper/AuthorizationCJHelper (= 0.1.9)
+    - CJBaseHelper/DeviceCJHelper (= 0.1.9)
+    - CJBaseHelper/HookCJHelper (= 0.1.9)
+    - CJBaseHelper/NSCalendarCJHelper (= 0.1.9)
+    - CJBaseHelper/NSDateFormatterCJHelper (= 0.1.9)
+    - CJBaseHelper/NSObjectCJHelper (= 0.1.9)
+    - CJBaseHelper/NSOperationQueueCJHelper (= 0.1.9)
+    - CJBaseHelper/ServerCJHelper (= 0.1.9)
+    - CJBaseHelper/UIViewControllerCJHelper (= 0.1.9)
+    - CJBaseHelper/WebCJHelper (= 0.1.9)
+  - CJBaseHelper/AppInfoCJHelper (0.1.9)
+  - CJBaseHelper/AuthorizationCJHelper (0.1.9)
+  - CJBaseHelper/DeviceCJHelper (0.1.9)
+  - CJBaseHelper/HookCJHelper (0.1.9)
+  - CJBaseHelper/NSCalendarCJHelper (0.1.9)
+  - CJBaseHelper/NSDateFormatterCJHelper (0.1.9)
+  - CJBaseHelper/NSObjectCJHelper (0.1.9)
+  - CJBaseHelper/NSOperationQueueCJHelper (0.1.9)
+  - CJBaseHelper/ServerCJHelper (0.1.9)
+  - CJBaseHelper/UIViewControllerCJHelper (0.1.9)
+  - CJBaseHelper/WebCJHelper (0.1.9)
   - CJBaseUtil (0.5.1):
     - CJBaseUtil/CJAppLastUtil (= 0.5.1)
     - CJBaseUtil/CJCallUtil (= 0.5.1)
     - CJBaseUtil/CJDataUtil (= 0.5.1)
     - CJBaseUtil/CJDateUtil (= 0.5.1)
+    - CJBaseUtil/CJDecimalUtil (= 0.5.1)
     - CJBaseUtil/CJIndentedStringUtil (= 0.5.1)
     - CJBaseUtil/CJKeyboardUtil (= 0.5.1)
     - CJBaseUtil/CJLaunchImageUtil (= 0.5.1)
     - CJBaseUtil/CJManager (= 0.5.1)
     - CJBaseUtil/CJPinyinHelper (= 0.5.1)
     - CJBaseUtil/CJQRCodeUtil (= 0.5.1)
+    - CJBaseUtil/CJRandomNameUtil (= 0.5.1)
   - CJBaseUtil/CJAppLastUtil (0.5.1):
     - SAMKeychain
   - CJBaseUtil/CJCallUtil (0.5.1)
   - CJBaseUtil/CJDataUtil (0.5.1)
   - CJBaseUtil/CJDateUtil (0.5.1)
+  - CJBaseUtil/CJDecimalUtil (0.5.1)
   - CJBaseUtil/CJIndentedStringUtil (0.5.1)
   - CJBaseUtil/CJKeyboardUtil (0.5.1)
   - CJBaseUtil/CJLaunchImageUtil (0.5.1)
@@ -55,6 +58,7 @@ PODS:
   - CJBaseUtil/CJPinyinHelper (0.5.1):
     - PinYin4Objc
   - CJBaseUtil/CJQRCodeUtil (0.5.1)
+  - CJBaseUtil/CJRandomNameUtil (0.5.1)
   - CJDataVientianeSDK-Swift (0.0.1):
     - CJDataVientianeSDK-Swift/Date (= 0.0.1)
     - CJDataVientianeSDK-Swift/Insert (= 0.0.1)
@@ -125,12 +129,12 @@ PODS:
 
 DEPENDENCIES:
   - CJBaseEffectKit/CJScaleHeadView
-  - CJBaseHelper (from `../`)
-  - CJBaseUtil (from `../`)
+  - CJBaseHelper (from `../../../Github/CJUIKit`)
+  - CJBaseUtil (from `../../../Github/CJUIKit`)
   - CJDataVientianeSDK-Swift (from `../`)
   - CJFile/CJFileManager
   - CJFile/CJFileModel
-  - CJFoundation (from `../`)
+  - CJFoundation (from `../../../Github/CJUIKit`)
   - CJFoundation-Swift (from `../`)
   - CJPopupView/CJPopoverView
   - CQDemoKit/BaseUIKit (~> 0.7.1)
@@ -165,23 +169,23 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   CJBaseHelper:
-    :path: "../"
+    :path: "../../../Github/CJUIKit"
   CJBaseUtil:
-    :path: "../"
+    :path: "../../../Github/CJUIKit"
   CJDataVientianeSDK-Swift:
     :path: "../"
   CJFoundation:
-    :path: "../"
+    :path: "../../../Github/CJUIKit"
   CJFoundation-Swift:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CJBaseEffectKit: 8640801fa272a1d96a6edce2c994652ced0e519f
-  CJBaseHelper: 71c9d695c76736b2fc66123157d5626da4556177
-  CJBaseUtil: 1bbf8d5f831dc12ae4bb06c8b5326bd39f3522e1
-  CJDataVientianeSDK-Swift: e7f99790aa9ab684b97aff9fb404de5878b042a3
+  CJBaseEffectKit: 178d5e0f4cb87379f06cfd49a7c7329d49a2d5de
+  CJBaseHelper: 8080ddf39b5edd71798d5a45a3e03a5484522e2c
+  CJBaseUtil: 9f4bb4dbc4618757efc211e51864943eee47183d
+  CJDataVientianeSDK-Swift: 202f7c52e557f037c8aa1f0d9e8b131631a4b600
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
-  CJFoundation: 53b4df7152c6d6fd776f55f387c67f431b8574bd
+  CJFoundation: 816d2d20aa9444a5d0f01da4c747b14d6cc51aef
   CJFoundation-Swift: ee85ffcaf2d0031cc55fec3e46abbd86cb7597e7
   CJPopupView: c7685f6a0225a89c72d97ea946f2816b5442abaf
   CQDemoKit: d3c8f63f39f685299711194a65bb2f6ec11bc947
@@ -195,6 +199,6 @@ SPEC CHECKSUMS:
   UINavigation-SXFixSpace: 10f223253ebff2ceefa26694e23b7694269763c4
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: f6bd5a80aa97598d6b573049e4f99e9b8da7278e
+PODFILE CHECKSUM: 529f61f47e1a49149720d1090775ad252f104a8c
 
 COCOAPODS: 1.16.2

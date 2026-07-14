@@ -30,6 +30,9 @@
 #import "NSObject+CJSearchProperty.h"
 #import "CJSortedCategoryResult.h"
 #import "CJDateOtherUtil.h"
+#import "CJDecimalUtil+Distance.h"
+#import "CJDecimalUtil+Money.h"
+#import "CJDecimalUtil.h"
 #import "CJIndentedStringUtil.h"
 #import "CJKeyboardUtil.h"
 #import "CJLaunchImageUtil.h"
@@ -41,6 +44,7 @@
 #import "CJTimerModel.h"
 #import "CJPinyinHelper.h"
 #import "CJQRCodeUtil.h"
+#import "CJRandomNameUtil.h"
 
 FOUNDATION_EXPORT double CJBaseUtilVersionNumber;
 FOUNDATION_EXPORT const unsigned char CJBaseUtilVersionString[];

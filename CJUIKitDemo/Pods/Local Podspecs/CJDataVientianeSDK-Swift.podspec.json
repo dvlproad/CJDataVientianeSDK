@@ -1,8 +1,8 @@
 {
   "name": "CJDataVientianeSDK-Swift",
   "version": "0.0.1",
-  "summary": "Swift/OC帮助类",
-  "homepage": "https://github.com/dvlproad/CJUIKit.git",
+  "summary": "数据万象SDK",
+  "homepage": "https://github.com/dvlproad/CJDataVientianeSDK",
   "license": "MIT",
   "authors": "dvlproad",
   "description": "A longer description of CJDataVientianeSDK-Swift in Markdown format.\n\n* Think: Why did you write this? What is the focus? What does it do?\n* CocoaPods will be using this to generate tags, and improve search results.\n* Try to keep it short, snappy and to the point.\n* Finally, don't worry about the indent, CocoaPods strips it!",
@@ -11,8 +11,8 @@
   },
   "swift_versions": "5.0",
   "source": {
-    "git": "https://github.com/dvlproad/CJUIKit.git",
-    "tag": "CJDataVientianeSDK-Swift_0.1.1"
+    "git": "https://github.com/dvlproad/CJDataVientianeSDK",
+    "tag": "CJDataVientianeSDK-Swift_0.0.1"
   },
   "frameworks": "UIKit",
   "requires_arc": true,
