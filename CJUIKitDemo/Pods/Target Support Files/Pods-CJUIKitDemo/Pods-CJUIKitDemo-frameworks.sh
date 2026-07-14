@@ -176,10 +176,8 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/CJBaseEffectKit/CJBaseEffectKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJBaseHelper/CJBaseHelper.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJBaseUIKit/CJBaseUIKit.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/CJBaseUtil/CJBaseUtil.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJDataVientianeSDK-Swift/CJDataVientianeSDK_Swift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJFile/CJFile.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJFoundation/CJFoundation.framework"
@@ -188,19 +186,14 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/CQDemoKit/CQDemoKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Mantle/Mantle.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/PinYin4Objc/PinYin4Objc.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Shimmer/Shimmer.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/UINavigation-SXFixSpace/UINavigation_SXFixSpace.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YYText/YYText.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/CJBaseEffectKit/CJBaseEffectKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJBaseHelper/CJBaseHelper.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJBaseUIKit/CJBaseUIKit.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/CJBaseUtil/CJBaseUtil.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJDataVientianeSDK-Swift/CJDataVientianeSDK_Swift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJFile/CJFile.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJFoundation/CJFoundation.framework"
@@ -209,10 +202,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/CQDemoKit/CQDemoKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Mantle/Mantle.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/PinYin4Objc/PinYin4Objc.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Shimmer/Shimmer.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/UINavigation-SXFixSpace/UINavigation_SXFixSpace.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YYText/YYText.framework"

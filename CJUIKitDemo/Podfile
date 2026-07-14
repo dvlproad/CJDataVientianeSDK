@@ -40,15 +40,12 @@ target 'CJUIKitDemo' do
 
     # 基本的第三方库
     pod 'MJExtension', '~> 3.0.13'
-    pod 'Mantle', '~> 2.1.0'
 
     pod 'YYText', '~> 1.0.7'
 
     pod 'CJBaseUIKit',          :path => '../../../Github/CJUIKit'
-    pod 'CJBaseUtil',           :path => '../../../Github/CJUIKit'
     pod 'CJFoundation',         :path => '../../../Github/CJUIKit'
     pod 'CJBaseHelper',         :path => '../../../Github/CJUIKit'
-    pod 'CJBaseEffectKit',      :subspecs => ['CJScaleHeadView']
 #    pod 'CJBaseUIKit', :subspecs => ['UIColor', 'UIButton', 'UITextField', 'CJToast', 'CJAlert']
 #    pod 'CJBaseUtil', :subspecs => ['CJLog']
 #    pod 'CJFoundation', :subspecs => ['NSString']

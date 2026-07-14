@@ -9,9 +9,6 @@
 #import "AppDelegate.h"
 #import "UIWindow+RootSetting.h"
 
-#import "YunUncaughtExceptionHandler.h"
-
-#import "CJAppLastUtil.h"
 #import <IQKeyboardManager/IQKeyboardManager.h>
 
 #import <UINavigation_SXFixSpace/UINavigationSXFixSpace.h>
@@ -68,8 +65,6 @@
         NSLog(@"block3:%d",age2);
     } class]);
     
-    YunInstallUncaughtExceptionHandler();
-    
     // 设置所有UIKit的主题
     [APPUIKitSetting configAppThemeUIKit];
     
@@ -86,17 +81,6 @@
     // Override point for customization after application launch.
     [self configureDefaultNavigationBarAppearance];
     [self adjustDevice];
-    
-    BOOL isFirstLaunchApp = [CJAppLastUtil isFirstLaunchApp];
-    NSString *isFirstLaunchAppString = [NSString stringWithFormat:@"是否是第一次安装app:%@", isFirstLaunchApp ? @"是" : @"否"];
-    
-    BOOL isFirstLaunchThisVersion = [CJAppLastUtil isFirstLaunchThisVersion];
-    NSString *isFirstLaunchThisVersionString = [NSString stringWithFormat:@"是否是第一次安装这个版本:%@", isFirstLaunchThisVersion ? @"是" : @"否"];
-    
-    NSString *firstJudgeString = [NSString stringWithFormat:@"%@\n%@", isFirstLaunchAppString, isFirstLaunchThisVersionString];
-    NSLog(@"%@", isFirstLaunchAppString);
-    NSLog(@"%@", isFirstLaunchThisVersionString);
-    NSLog(@"%@", firstJudgeString);
     
     return YES;
 }

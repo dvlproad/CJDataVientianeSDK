@@ -8,6 +8,7 @@
 
 #import "TextSizeCompareView.h"
 #import <CJFoundation/NSString+CJTextSizeInView.h>
+#import <CJBaseUIKit/UIColor+CJHex.h>
 
 @interface TextSizeCompareView () {
     
