@@ -1,6 +1,0 @@
-module CJComplexUIKit {
-  umbrella header "CJComplexUIKit-umbrella.h"
-
-  export *
-  module * { export * }
-}
