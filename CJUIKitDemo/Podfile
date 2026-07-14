@@ -44,7 +44,7 @@ target 'CJUIKitDemo' do
 
     pod 'YYText', '~> 1.0.7'
 
-#    pod 'CJBaseUIKit',          :path => '../'
+    pod 'CJBaseUIKit',          :path => '../../../Github/CJUIKit'
     pod 'CJBaseUtil',           :path => '../../../Github/CJUIKit'
     pod 'CJFoundation',         :path => '../../../Github/CJUIKit'
     pod 'CJBaseHelper',         :path => '../../../Github/CJUIKit'
