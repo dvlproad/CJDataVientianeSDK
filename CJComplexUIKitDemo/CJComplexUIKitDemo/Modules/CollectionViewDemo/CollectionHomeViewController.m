@@ -11,8 +11,6 @@
 //UICollectionView
 #import "CvDemo_Complex.h"
 
-#import "MyCycleADViewController.h"
-
 //图片选择的集合视图
 #import "UploadNoneImagePickerViewController.h"
 #import "UploadDirectlyImagePickerViewController.h"
@@ -43,13 +41,6 @@
             complexDemoModule.classEntry = [CvDemo_Complex class];
             complexDemoModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:complexDemoModule];
-        }
-        {
-            CQDMModuleModel *cycleScrollViewModule = [[CQDMModuleModel alloc] init];
-            cycleScrollViewModule.title = @"MyCycleADView(无限循环的视图)";
-            cycleScrollViewModule.classEntry = [MyCycleADViewController class];
-            cycleScrollViewModule.isCreateByXib = YES;
-            [sectionDataModel.values addObject:cycleScrollViewModule];
         }
         [sectionDataModels addObject:sectionDataModel];
     }
