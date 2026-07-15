@@ -7,37 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1562F38723FD2FC70009FCEA /* APPUIKitSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F38123FD2FC70009FCEA /* APPUIKitSetting.m */; };
 		1562F38923FD2FC70009FCEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F38623FD2FC70009FCEA /* AppDelegate.m */; };
 		2561953B0CAB4632CB89BBA5 /* Pods_CJUIKitDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8387796C9091D0E618AB7637 /* Pods_CJUIKitDemo.framework */; };
 		780E46051E5DF87B00980127 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E46041E5DF87B00980127 /* main.m */; };
 		780E460E1E5DF87B00980127 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 780E460C1E5DF87B00980127 /* Main.storyboard */; };
 		780E461E1E5DF87B00980127 /* CJUIKitDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E461D1E5DF87B00980127 /* CJUIKitDemoTests.m */; };
 		780E46291E5DF87B00980127 /* CJUIKitDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E46281E5DF87B00980127 /* CJUIKitDemoUITests.m */; };
-		783A4A19219BC73500CBF4FC /* NSObject+CJSharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 783A4A18219BC73500CBF4FC /* NSObject+CJSharedInstance.m */; };
-		78542E2425B9CA0D00ABE1E5 /* TextSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78542E2325B9CA0C00ABE1E5 /* TextSizeViewController.m */; };
-		78542E2A25B9DB6B00ABE1E5 /* TextSizeCompareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78542E2925B9DB6B00ABE1E5 /* TextSizeCompareView.m */; };
 		7861852C21D3630B004B71FF /* AppCommon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7861852B21D3630B004B71FF /* AppCommon.xcassets */; };
 		7868276021AE926700FCCDE5 /* AppAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7868275F21AE926700FCCDE5 /* AppAssets.xcassets */; };
 		7868278121AF02E000FCCDE5 /* bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7868278021AF02E000FCCDE5 /* bg@2x.jpg */; };
 		789C447421F05D4B00181144 /* UIImageTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C447321F05D4B00181144 /* UIImageTestCase.m */; };
-		78A99268257958CB00B54E30 /* UIScrollView+CJTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A99267257958CB00B54E30 /* UIScrollView+CJTouch.m */; };
-		78F406AB25A8C803004971D1 /* StringHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F406A925A8C803004971D1 /* StringHomeViewController.m */; };
-		78F55FFA248818E000B7B27A /* AttributedStringViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F55FF9248818DF00B7B27A /* AttributedStringViewController2.m */; };
-		805598B51FF5D612009DC61C /* ValidateStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 805598B31FF5D612009DC61C /* ValidateStringViewController.m */; };
 		80D49F8B20BE7EE0003F642C /* CJDataUtilTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D49F8A20BE7EE0003F642C /* CJDataUtilTest.m */; };
 		80D49F8F20BE8574003F642C /* TestCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D49F8E20BE8574003F642C /* TestCityModel.m */; };
-		80FF91341FC5668700E437CF /* NSDictionary+CJConsoleLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF90DC1FC5668600E437CF /* NSDictionary+CJConsoleLog.m */; };
-		80FF91351FC5668700E437CF /* NSArray+CJConsoleLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF90DD1FC5668600E437CF /* NSArray+CJConsoleLog.m */; };
-		80FF91931FC5682B00E437CF /* TypeConvertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF91741FC5682A00E437CF /* TypeConvertViewController.xib */; };
-		80FF91941FC5682B00E437CF /* TypeConvertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91751FC5682A00E437CF /* TypeConvertViewController.m */; };
 		80FF91951FC5682B00E437CF /* FoundationHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91771FC5682A00E437CF /* FoundationHomeViewController.m */; };
-		80FF91961FC5682B00E437CF /* AttributedStringViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF917A1FC5682A00E437CF /* AttributedStringViewController.xib */; };
-		80FF91971FC5682B00E437CF /* EncryptStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF917B1FC5682A00E437CF /* EncryptStringViewController.m */; };
-		80FF91981FC5682B00E437CF /* AttributedStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF917C1FC5682A00E437CF /* AttributedStringViewController.m */; };
-		80FF91991FC5682B00E437CF /* EncryptStringViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF917D1FC5682A00E437CF /* EncryptStringViewController.xib */; };
-		80FF919A1FC5682B00E437CF /* DateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91811FC5682A00E437CF /* DateViewController.m */; };
-		80FF919B1FC5682B00E437CF /* DateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF91821FC5682A00E437CF /* DateViewController.xib */; };
 		9702123B2CFA283400C62F50 /* TestSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9702123A2CFA283400C62F50 /* TestSwift.swift */; };
 		9715E8A83006867E008FA653 /* cjTextField_clear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9715E8A03006867E008FA653 /* cjTextField_clear@2x.png */; };
 		9715E8A93006867E008FA653 /* cjTextField_clear@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9715E8A13006867E008FA653 /* cjTextField_clear@3x.png */; };
@@ -47,17 +29,10 @@
 		9715E8B0300686BD008FA653 /* CJDemoDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9715E8AE300686BD008FA653 /* CJDemoDatePickerView.m */; };
 		9715E8B330068705008FA653 /* UITextViewCQHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9715E8B230068705008FA653 /* UITextViewCQHelper.m */; };
 		972C69532D000AF700E53720 /* TSDateFormatterUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972C69522D000AF700E53720 /* TSDateFormatterUtil.swift */; };
-		975487A025A9943000DD7080 /* CMaxSubStringViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 9754879D25A9942F00DD7080 /* CMaxSubStringViewController1.m */; };
-		975487A125A9943000DD7080 /* CMaxSubStringViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 9754879E25A9943000DD7080 /* CMaxSubStringViewController2.m */; };
-		975487AA25A997CF00DD7080 /* DChangeStringViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 975487A825A997CF00DD7080 /* DChangeStringViewController1.m */; };
-		975487B025A99F8B00DD7080 /* BRangeSubStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 975487AF25A99F8B00DD7080 /* BRangeSubStringViewController.m */; };
-		975487B625A9A06300DD7080 /* StringForInputHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 975487B425A9A06200DD7080 /* StringForInputHomeViewController.m */; };
 		97578AAC25590E9300249AD6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578AAB25590E9300249AD6 /* MainViewController.m */; };
 		97578AB225590F7100249AD6 /* UIWindow+RootSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578AB125590F7100249AD6 /* UIWindow+RootSetting.m */; };
-		976794E9258093EF002FD0C7 /* AStringLengthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976794E7258093EE002FD0C7 /* AStringLengthViewController.m */; };
 		97824E0E2D27CB45001DD4E7 /* TSFeedAdInsertUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97824E0D2D27CB45001DD4E7 /* TSFeedAdInsertUtil.swift */; };
 		97824E122D27DE09001DD4E7 /* TSInsertFeedHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97824E102D27DE09001DD4E7 /* TSInsertFeedHomeViewController.m */; };
-		97EB21DA25ABFEC2008CDC13 /* BIndexSubStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EB21D925ABFEC2008CDC13 /* BIndexSubStringViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,9 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1562F38123FD2FC70009FCEA /* APPUIKitSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPUIKitSetting.m; sourceTree = "<group>"; };
 		1562F38223FD2FC70009FCEA /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		1562F38423FD2FC70009FCEA /* APPUIKitSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPUIKitSetting.h; sourceTree = "<group>"; };
 		1562F38623FD2FC70009FCEA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3132573BFCFBEA8B4F3BB86F /* Pods-CJUIKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemo/Pods-CJUIKitDemo.release.xcconfig"; sourceTree = "<group>"; };
 		68D73B38201AA01727123963 /* Pods-CJUIKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemo/Pods-CJUIKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -94,47 +67,16 @@
 		780E46241E5DF87B00980127 /* CJUIKitDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CJUIKitDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		780E46281E5DF87B00980127 /* CJUIKitDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJUIKitDemoUITests.m; sourceTree = "<group>"; };
 		780E462A1E5DF87B00980127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		783A4A17219BC73500CBF4FC /* NSObject+CJSharedInstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+CJSharedInstance.h"; sourceTree = "<group>"; };
-		783A4A18219BC73500CBF4FC /* NSObject+CJSharedInstance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CJSharedInstance.m"; sourceTree = "<group>"; };
-		78542E2225B9CA0C00ABE1E5 /* TextSizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextSizeViewController.h; sourceTree = "<group>"; };
-		78542E2325B9CA0C00ABE1E5 /* TextSizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextSizeViewController.m; sourceTree = "<group>"; };
-		78542E2825B9DB6B00ABE1E5 /* TextSizeCompareView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextSizeCompareView.h; sourceTree = "<group>"; };
-		78542E2925B9DB6B00ABE1E5 /* TextSizeCompareView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextSizeCompareView.m; sourceTree = "<group>"; };
 		7861852B21D3630B004B71FF /* AppCommon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppCommon.xcassets; sourceTree = "<group>"; };
 		7868275F21AE926700FCCDE5 /* AppAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppAssets.xcassets; sourceTree = "<group>"; };
 		7868278021AF02E000FCCDE5 /* bg@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg@2x.jpg"; sourceTree = "<group>"; };
 		789C447321F05D4B00181144 /* UIImageTestCase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIImageTestCase.m; sourceTree = "<group>"; };
-		78A99266257958CB00B54E30 /* UIScrollView+CJTouch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+CJTouch.h"; sourceTree = "<group>"; };
-		78A99267257958CB00B54E30 /* UIScrollView+CJTouch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+CJTouch.m"; sourceTree = "<group>"; };
-		78F406A925A8C803004971D1 /* StringHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringHomeViewController.m; sourceTree = "<group>"; };
-		78F406AA25A8C803004971D1 /* StringHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringHomeViewController.h; sourceTree = "<group>"; };
-		78F55FF8248818DF00B7B27A /* AttributedStringViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributedStringViewController2.h; sourceTree = "<group>"; };
-		78F55FF9248818DF00B7B27A /* AttributedStringViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributedStringViewController2.m; sourceTree = "<group>"; };
 		80270BBC1FABFE57001429F0 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		805598B21FF5D612009DC61C /* ValidateStringViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ValidateStringViewController.h; sourceTree = "<group>"; };
-		805598B31FF5D612009DC61C /* ValidateStringViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ValidateStringViewController.m; sourceTree = "<group>"; };
 		80D49F8A20BE7EE0003F642C /* CJDataUtilTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJDataUtilTest.m; sourceTree = "<group>"; };
 		80D49F8D20BE8574003F642C /* TestCityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestCityModel.h; sourceTree = "<group>"; };
 		80D49F8E20BE8574003F642C /* TestCityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCityModel.m; sourceTree = "<group>"; };
-		80FF90DC1FC5668600E437CF /* NSDictionary+CJConsoleLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+CJConsoleLog.m"; sourceTree = "<group>"; };
-		80FF90DD1FC5668600E437CF /* NSArray+CJConsoleLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+CJConsoleLog.m"; sourceTree = "<group>"; };
-		80FF90DE1FC5668600E437CF /* NSDictionary+CJConsoleLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+CJConsoleLog.h"; sourceTree = "<group>"; };
-		80FF90DF1FC5668600E437CF /* NSArray+CJConsoleLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+CJConsoleLog.h"; sourceTree = "<group>"; };
-		80FF90F21FC5668600E437CF /* CJFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJFoundation.h; sourceTree = "<group>"; };
 		80FF91721FC5682A00E437CF /* FoundationHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoundationHomeViewController.h; sourceTree = "<group>"; };
-		80FF91741FC5682A00E437CF /* TypeConvertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TypeConvertViewController.xib; sourceTree = "<group>"; };
-		80FF91751FC5682A00E437CF /* TypeConvertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeConvertViewController.m; sourceTree = "<group>"; };
-		80FF91761FC5682A00E437CF /* TypeConvertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeConvertViewController.h; sourceTree = "<group>"; };
 		80FF91771FC5682A00E437CF /* FoundationHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoundationHomeViewController.m; sourceTree = "<group>"; };
-		80FF91791FC5682A00E437CF /* AttributedStringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributedStringViewController.h; sourceTree = "<group>"; };
-		80FF917A1FC5682A00E437CF /* AttributedStringViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttributedStringViewController.xib; sourceTree = "<group>"; };
-		80FF917B1FC5682A00E437CF /* EncryptStringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptStringViewController.m; sourceTree = "<group>"; };
-		80FF917C1FC5682A00E437CF /* AttributedStringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributedStringViewController.m; sourceTree = "<group>"; };
-		80FF917D1FC5682A00E437CF /* EncryptStringViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EncryptStringViewController.xib; sourceTree = "<group>"; };
-		80FF917E1FC5682A00E437CF /* EncryptStringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptStringViewController.h; sourceTree = "<group>"; };
-		80FF91801FC5682A00E437CF /* DateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateViewController.h; sourceTree = "<group>"; };
-		80FF91811FC5682A00E437CF /* DateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateViewController.m; sourceTree = "<group>"; };
-		80FF91821FC5682A00E437CF /* DateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateViewController.xib; sourceTree = "<group>"; };
 		8387796C9091D0E618AB7637 /* Pods_CJUIKitDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CJUIKitDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		970212392CFA283400C62F50 /* CJUIKitDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CJUIKitDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		9702123A2CFA283400C62F50 /* TestSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSwift.swift; sourceTree = "<group>"; };
@@ -151,27 +93,13 @@
 		9715E8B130068705008FA653 /* UITextViewCQHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UITextViewCQHelper.h; sourceTree = "<group>"; };
 		9715E8B230068705008FA653 /* UITextViewCQHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UITextViewCQHelper.m; sourceTree = "<group>"; };
 		972C69522D000AF700E53720 /* TSDateFormatterUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSDateFormatterUtil.swift; sourceTree = "<group>"; };
-		9754879C25A9942F00DD7080 /* CMaxSubStringViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMaxSubStringViewController2.h; sourceTree = "<group>"; };
-		9754879D25A9942F00DD7080 /* CMaxSubStringViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMaxSubStringViewController1.m; sourceTree = "<group>"; };
-		9754879E25A9943000DD7080 /* CMaxSubStringViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMaxSubStringViewController2.m; sourceTree = "<group>"; };
-		9754879F25A9943000DD7080 /* CMaxSubStringViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMaxSubStringViewController1.h; sourceTree = "<group>"; };
-		975487A825A997CF00DD7080 /* DChangeStringViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DChangeStringViewController1.m; sourceTree = "<group>"; };
-		975487A925A997CF00DD7080 /* DChangeStringViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DChangeStringViewController1.h; sourceTree = "<group>"; };
-		975487AE25A99F8B00DD7080 /* BRangeSubStringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRangeSubStringViewController.h; sourceTree = "<group>"; };
-		975487AF25A99F8B00DD7080 /* BRangeSubStringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRangeSubStringViewController.m; sourceTree = "<group>"; };
-		975487B425A9A06200DD7080 /* StringForInputHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringForInputHomeViewController.m; sourceTree = "<group>"; };
-		975487B525A9A06200DD7080 /* StringForInputHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringForInputHomeViewController.h; sourceTree = "<group>"; };
 		97578AAA25590E9300249AD6 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		97578AAB25590E9300249AD6 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		97578AB025590F7100249AD6 /* UIWindow+RootSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+RootSetting.h"; sourceTree = "<group>"; };
 		97578AB125590F7100249AD6 /* UIWindow+RootSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+RootSetting.m"; sourceTree = "<group>"; };
-		976794E7258093EE002FD0C7 /* AStringLengthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AStringLengthViewController.m; sourceTree = "<group>"; };
-		976794E8258093EF002FD0C7 /* AStringLengthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AStringLengthViewController.h; sourceTree = "<group>"; };
 		97824E0D2D27CB45001DD4E7 /* TSFeedAdInsertUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSFeedAdInsertUtil.swift; sourceTree = "<group>"; };
 		97824E0F2D27DE09001DD4E7 /* TSInsertFeedHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSInsertFeedHomeViewController.h; sourceTree = "<group>"; };
 		97824E102D27DE09001DD4E7 /* TSInsertFeedHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSInsertFeedHomeViewController.m; sourceTree = "<group>"; };
-		97EB21D825ABFEC2008CDC13 /* BIndexSubStringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIndexSubStringViewController.h; sourceTree = "<group>"; };
-		97EB21D925ABFEC2008CDC13 /* BIndexSubStringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIndexSubStringViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,10 +140,6 @@
 				97578AB125590F7100249AD6 /* UIWindow+RootSetting.m */,
 				97578AAA25590E9300249AD6 /* MainViewController.h */,
 				97578AAB25590E9300249AD6 /* MainViewController.m */,
-				78A99266257958CB00B54E30 /* UIScrollView+CJTouch.h */,
-				78A99267257958CB00B54E30 /* UIScrollView+CJTouch.m */,
-				1562F38423FD2FC70009FCEA /* APPUIKitSetting.h */,
-				1562F38123FD2FC70009FCEA /* APPUIKitSetting.m */,
 				970212392CFA283400C62F50 /* CJUIKitDemo-Bridging-Header.h */,
 			);
 			path = AppDelegate;
@@ -249,7 +173,6 @@
 				1562F38023FD2FC70009FCEA /* AppDelegate */,
 				9715E8A73006867E008FA653 /* CommonUI */,
 				80FF8F0A1FC5649E00E437CF /* Modules */,
-				80FF90D71FC5668600E437CF /* CJFoundation */,
 				789A19681E61B87D008081E3 /* Resources */,
 				780E46031E5DF87B00980127 /* Supporting Files */,
 			);
@@ -288,26 +211,6 @@
 			path = CJUIKitDemoUITests;
 			sourceTree = "<group>";
 		};
-		783A4A16219BC71700CBF4FC /* NSObject */ = {
-			isa = PBXGroup;
-			children = (
-				783A4A17219BC73500CBF4FC /* NSObject+CJSharedInstance.h */,
-				783A4A18219BC73500CBF4FC /* NSObject+CJSharedInstance.m */,
-			);
-			path = NSObject;
-			sourceTree = "<group>";
-		};
-		78542E2125B9C9E800ABE1E5 /* TextSize */ = {
-			isa = PBXGroup;
-			children = (
-				78542E2225B9CA0C00ABE1E5 /* TextSizeViewController.h */,
-				78542E2325B9CA0C00ABE1E5 /* TextSizeViewController.m */,
-				78542E2825B9DB6B00ABE1E5 /* TextSizeCompareView.h */,
-				78542E2925B9DB6B00ABE1E5 /* TextSizeCompareView.m */,
-			);
-			path = TextSize;
-			sourceTree = "<group>";
-		};
 		789A19681E61B87D008081E3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,27 +219,6 @@
 				7868275F21AE926700FCCDE5 /* AppAssets.xcassets */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		78F4072125A8F9AF004971D1 /* StringForInputLimit */ = {
-			isa = PBXGroup;
-			children = (
-				976794E8258093EF002FD0C7 /* AStringLengthViewController.h */,
-				976794E7258093EE002FD0C7 /* AStringLengthViewController.m */,
-				975487AE25A99F8B00DD7080 /* BRangeSubStringViewController.h */,
-				975487AF25A99F8B00DD7080 /* BRangeSubStringViewController.m */,
-				97EB21D825ABFEC2008CDC13 /* BIndexSubStringViewController.h */,
-				97EB21D925ABFEC2008CDC13 /* BIndexSubStringViewController.m */,
-				9754879F25A9943000DD7080 /* CMaxSubStringViewController1.h */,
-				9754879D25A9942F00DD7080 /* CMaxSubStringViewController1.m */,
-				9754879C25A9942F00DD7080 /* CMaxSubStringViewController2.h */,
-				9754879E25A9943000DD7080 /* CMaxSubStringViewController2.m */,
-				975487A925A997CF00DD7080 /* DChangeStringViewController1.h */,
-				975487A825A997CF00DD7080 /* DChangeStringViewController1.m */,
-				975487B525A9A06200DD7080 /* StringForInputHomeViewController.h */,
-				975487B425A9A06200DD7080 /* StringForInputHomeViewController.m */,
-			);
-			path = StringForInputLimit;
 			sourceTree = "<group>";
 		};
 		80D49F8C20BE852A003F642C /* Models */ = {
@@ -356,80 +238,14 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		80FF90D71FC5668600E437CF /* CJFoundation */ = {
-			isa = PBXGroup;
-			children = (
-				783A4A16219BC71700CBF4FC /* NSObject */,
-				80FF90DB1FC5668600E437CF /* CJConsoleLog */,
-				80FF90F21FC5668600E437CF /* CJFoundation.h */,
-			);
-			name = CJFoundation;
-			path = ../../CJFoundation;
-			sourceTree = "<group>";
-		};
-		80FF90DB1FC5668600E437CF /* CJConsoleLog */ = {
-			isa = PBXGroup;
-			children = (
-				80FF90DF1FC5668600E437CF /* NSArray+CJConsoleLog.h */,
-				80FF90DD1FC5668600E437CF /* NSArray+CJConsoleLog.m */,
-				80FF90DE1FC5668600E437CF /* NSDictionary+CJConsoleLog.h */,
-				80FF90DC1FC5668600E437CF /* NSDictionary+CJConsoleLog.m */,
-			);
-			path = CJConsoleLog;
-			sourceTree = "<group>";
-		};
 		80FF91711FC5682A00E437CF /* DemosFoundation */ = {
 			isa = PBXGroup;
 			children = (
 				80FF91721FC5682A00E437CF /* FoundationHomeViewController.h */,
 				80FF91771FC5682A00E437CF /* FoundationHomeViewController.m */,
 				97824E112D27DE09001DD4E7 /* Insert */,
-				80FF917F1FC5682A00E437CF /* NSDate */,
-				80FF91781FC5682A00E437CF /* NSString */,
-				80FF91731FC5682A00E437CF /* TypeConvert */,
 			);
 			path = DemosFoundation;
-			sourceTree = "<group>";
-		};
-		80FF91731FC5682A00E437CF /* TypeConvert */ = {
-			isa = PBXGroup;
-			children = (
-				80FF91761FC5682A00E437CF /* TypeConvertViewController.h */,
-				80FF91751FC5682A00E437CF /* TypeConvertViewController.m */,
-				80FF91741FC5682A00E437CF /* TypeConvertViewController.xib */,
-			);
-			path = TypeConvert;
-			sourceTree = "<group>";
-		};
-		80FF91781FC5682A00E437CF /* NSString */ = {
-			isa = PBXGroup;
-			children = (
-				78F406AA25A8C803004971D1 /* StringHomeViewController.h */,
-				78F406A925A8C803004971D1 /* StringHomeViewController.m */,
-				78542E2125B9C9E800ABE1E5 /* TextSize */,
-				78F4072125A8F9AF004971D1 /* StringForInputLimit */,
-				80FF91791FC5682A00E437CF /* AttributedStringViewController.h */,
-				80FF917C1FC5682A00E437CF /* AttributedStringViewController.m */,
-				80FF917A1FC5682A00E437CF /* AttributedStringViewController.xib */,
-				78F55FF8248818DF00B7B27A /* AttributedStringViewController2.h */,
-				78F55FF9248818DF00B7B27A /* AttributedStringViewController2.m */,
-				80FF917E1FC5682A00E437CF /* EncryptStringViewController.h */,
-				80FF917B1FC5682A00E437CF /* EncryptStringViewController.m */,
-				80FF917D1FC5682A00E437CF /* EncryptStringViewController.xib */,
-				805598B21FF5D612009DC61C /* ValidateStringViewController.h */,
-				805598B31FF5D612009DC61C /* ValidateStringViewController.m */,
-			);
-			path = NSString;
-			sourceTree = "<group>";
-		};
-		80FF917F1FC5682A00E437CF /* NSDate */ = {
-			isa = PBXGroup;
-			children = (
-				80FF91801FC5682A00E437CF /* DateViewController.h */,
-				80FF91811FC5682A00E437CF /* DateViewController.m */,
-				80FF91821FC5682A00E437CF /* DateViewController.xib */,
-			);
-			path = NSDate;
 			sourceTree = "<group>";
 		};
 		9715E8A23006867E008FA653 /* CJDemoDateTextField */ = {
@@ -624,11 +440,7 @@
 				7868276021AE926700FCCDE5 /* AppAssets.xcassets in Resources */,
 				9715E8A83006867E008FA653 /* cjTextField_clear@2x.png in Resources */,
 				9715E8A93006867E008FA653 /* cjTextField_clear@3x.png in Resources */,
-				80FF91991FC5682B00E437CF /* EncryptStringViewController.xib in Resources */,
-				80FF91961FC5682B00E437CF /* AttributedStringViewController.xib in Resources */,
-				80FF91931FC5682B00E437CF /* TypeConvertViewController.xib in Resources */,
 				7868278121AF02E000FCCDE5 /* bg@2x.jpg in Resources */,
-				80FF919B1FC5682B00E437CF /* DateViewController.xib in Resources */,
 				780E460E1E5DF87B00980127 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -678,15 +490,10 @@
 				"${BUILT_PRODUCTS_DIR}/CJBaseHelper/CJBaseHelper.framework",
 				"${BUILT_PRODUCTS_DIR}/CJBaseUIKit/CJBaseUIKit.framework",
 				"${BUILT_PRODUCTS_DIR}/CJDataVientianeSDK-Swift/CJDataVientianeSDK_Swift.framework",
-				"${BUILT_PRODUCTS_DIR}/CJFile/CJFile.framework",
 				"${BUILT_PRODUCTS_DIR}/CJFoundation/CJFoundation.framework",
-				"${BUILT_PRODUCTS_DIR}/CJFoundation-Swift/CJFoundation_Swift.framework",
-				"${BUILT_PRODUCTS_DIR}/CJPopupView/CJPopupView.framework",
 				"${BUILT_PRODUCTS_DIR}/CQDemoKit/CQDemoKit.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
-				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
-				"${BUILT_PRODUCTS_DIR}/Shimmer/Shimmer.framework",
 				"${BUILT_PRODUCTS_DIR}/UINavigation-SXFixSpace/UINavigation_SXFixSpace.framework",
 				"${BUILT_PRODUCTS_DIR}/YYText/YYText.framework",
 			);
@@ -695,15 +502,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CJBaseHelper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CJBaseUIKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CJDataVientianeSDK_Swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CJFile.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CJFoundation.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CJFoundation_Swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CJPopupView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CQDemoKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Shimmer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UINavigation_SXFixSpace.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYText.framework",
 			);
@@ -719,41 +521,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				975487B025A99F8B00DD7080 /* BRangeSubStringViewController.m in Sources */,
 				9715E8B330068705008FA653 /* UITextViewCQHelper.m in Sources */,
 				97578AB225590F7100249AD6 /* UIWindow+RootSetting.m in Sources */,
 				97824E0E2D27CB45001DD4E7 /* TSFeedAdInsertUtil.swift in Sources */,
 				9715E8AA3006867E008FA653 /* CJDemoDateTextField.m in Sources */,
 				9715E8AB3006867E008FA653 /* CJDemoDateLabel.m in Sources */,
 				9715E8AC3006867E008FA653 /* CQSubStringUtil.m in Sources */,
-				975487B625A9A06300DD7080 /* StringForInputHomeViewController.m in Sources */,
-				97EB21DA25ABFEC2008CDC13 /* BIndexSubStringViewController.m in Sources */,
-				783A4A19219BC73500CBF4FC /* NSObject+CJSharedInstance.m in Sources */,
-				80FF91341FC5668700E437CF /* NSDictionary+CJConsoleLog.m in Sources */,
-				1562F38723FD2FC70009FCEA /* APPUIKitSetting.m in Sources */,
-				975487A025A9943000DD7080 /* CMaxSubStringViewController1.m in Sources */,
 				9715E8B0300686BD008FA653 /* CJDemoDatePickerView.m in Sources */,
-				78F406AB25A8C803004971D1 /* StringHomeViewController.m in Sources */,
-				975487A125A9943000DD7080 /* CMaxSubStringViewController2.m in Sources */,
 				972C69532D000AF700E53720 /* TSDateFormatterUtil.swift in Sources */,
 				97578AAC25590E9300249AD6 /* MainViewController.m in Sources */,
 				80FF91951FC5682B00E437CF /* FoundationHomeViewController.m in Sources */,
-				80FF919A1FC5682B00E437CF /* DateViewController.m in Sources */,
-				78F55FFA248818E000B7B27A /* AttributedStringViewController2.m in Sources */,
-				975487AA25A997CF00DD7080 /* DChangeStringViewController1.m in Sources */,
-				78A99268257958CB00B54E30 /* UIScrollView+CJTouch.m in Sources */,
-				805598B51FF5D612009DC61C /* ValidateStringViewController.m in Sources */,
-				80FF91971FC5682B00E437CF /* EncryptStringViewController.m in Sources */,
-				80FF91981FC5682B00E437CF /* AttributedStringViewController.m in Sources */,
 				780E46051E5DF87B00980127 /* main.m in Sources */,
-				78542E2A25B9DB6B00ABE1E5 /* TextSizeCompareView.m in Sources */,
 				9702123B2CFA283400C62F50 /* TestSwift.swift in Sources */,
-				80FF91941FC5682B00E437CF /* TypeConvertViewController.m in Sources */,
-				80FF91351FC5668700E437CF /* NSArray+CJConsoleLog.m in Sources */,
-				78542E2425B9CA0D00ABE1E5 /* TextSizeViewController.m in Sources */,
 				1562F38923FD2FC70009FCEA /* AppDelegate.m in Sources */,
 				97824E122D27DE09001DD4E7 /* TSInsertFeedHomeViewController.m in Sources */,
-				976794E9258093EF002FD0C7 /* AStringLengthViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

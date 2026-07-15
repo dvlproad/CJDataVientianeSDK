@@ -13,10 +13,6 @@
 
 #import <UINavigation_SXFixSpace/UINavigationSXFixSpace.h>
 
-#import <CJFoundation/NSString+CJCut.h>
-#import <CJFoundation/NSString+CJAttributedString.h>
-
-#import "APPUIKitSetting.h"
 #import "CQSubStringUtil.h"
 
 @interface AppDelegate ()
@@ -27,46 +23,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    NSInteger i = -1000;
-    NSString *iString = [[NSString alloc] initWithFormat:@"%zd", i];
-    NSLog(@"iString = %@", iString);
-    
-    
-//    [[UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[[UISearchBar class]]] setTintColor:[UIColor redColor]];
-//    [[UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[[UISearchBar class]]] setTitle:@"取消"];
-    
-    NSDictionary *dic = @{@"pushType": @(304),
-                          @"msg": @"员工姓名 您好！您的 健康证 将于3天后，即2019-05-01 到期，为避免因证件到期，导致不能排班，请及时办理新的证件，并在员工APP进行提交更新。XXX感谢有你！"
-                          };
-    NSError *parseError = nil;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&parseError];
-    NSString *dicString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    NSLog(@"dicString = %@", dicString);
     
     [CQSubStringUtil substringExceptRange:NSMakeRange(1, 0) forString:@"1234567890"];
     [CQSubStringUtil substringExceptRange:NSMakeRange(1, 1) forString:@"1234567890"];
     [CQSubStringUtil substringExceptRange:NSMakeRange(1, 9) forString:@"1234567890"];
     
-    
-    void (^block1)(void) = ^{
-        NSLog(@"block1");
-    };
-    NSLog(@"%@", [block1 class]);
-
-    int age = 1;
-    void (^block2)(void) = ^{
-        NSLog(@"block2:%d",age);
-    };
-    NSLog(@"%@", [block2 class]);
-    
-    
-    int age2 = 2;
-    NSLog(@"%@",[^{
-        NSLog(@"block3:%d",age2);
-    } class]);
-    
-    // 设置所有UIKit的主题
-    [APPUIKitSetting configAppThemeUIKit];
     
     //[[IQKeyboardManager sharedManager].disabledToolbarClasses addObject:NSClassFromString(@"DateViewController")]; //已写在对应的类里了
     [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
@@ -78,47 +39,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window settingRoot];
     
-    // Override point for customization after application launch.
-    [self configureDefaultNavigationBarAppearance];
-    [self adjustDevice];
-    
     return YES;
 }
-
-- (void)adjustDevice
-{
-//    if (@available(iOS 11.0, *)) {
-//        [UIScrollView appearance].contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-//        [UITableView appearance].contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-//        [UICollectionView appearance].contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-//        [UIWebView appearance].scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-//        
-//        [UITableView appearance].estimatedRowHeight = 0;
-//        [UITableView appearance].estimatedSectionHeaderHeight = 0;
-//        [UITableView appearance].estimatedSectionFooterHeight = 0;
-//    } else {
-//        // Fallback on earlier versions
-//    }
-}
-
-
-///配置导航栏
-- (void)configureDefaultNavigationBarAppearance {
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    
-    //改变导航栏背景色
-    [[UINavigationBar appearance] setBarTintColor:[UIColor redColor]];
-    
-    //改变导航栏的字体
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],
-                                                           NSFontAttributeName:[UIFont systemFontOfSize:21]}];
-}
-
-- (void)configureDefaultBarButtonItemAppearance {
-    [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]} forState:UIControlStateNormal];
-    [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]} forState:UIControlStateHighlighted];
-}
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

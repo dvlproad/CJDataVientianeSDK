@@ -1,99 +1,34 @@
 PODS:
-  - CJBaseHelper (0.1.9):
-    - CJBaseHelper/AppInfoCJHelper (= 0.1.9)
-    - CJBaseHelper/AuthorizationCJHelper (= 0.1.9)
-    - CJBaseHelper/DeviceCJHelper (= 0.1.9)
-    - CJBaseHelper/HookCJHelper (= 0.1.9)
-    - CJBaseHelper/NSCalendarCJHelper (= 0.1.9)
-    - CJBaseHelper/NSDateFormatterCJHelper (= 0.1.9)
-    - CJBaseHelper/NSObjectCJHelper (= 0.1.9)
-    - CJBaseHelper/NSOperationQueueCJHelper (= 0.1.9)
-    - CJBaseHelper/ServerCJHelper (= 0.1.9)
-    - CJBaseHelper/UIViewControllerCJHelper (= 0.1.9)
-    - CJBaseHelper/WebCJHelper (= 0.1.9)
-  - CJBaseHelper/AppInfoCJHelper (0.1.9)
-  - CJBaseHelper/AuthorizationCJHelper (0.1.9)
-  - CJBaseHelper/DeviceCJHelper (0.1.9)
-  - CJBaseHelper/HookCJHelper (0.1.9)
-  - CJBaseHelper/NSCalendarCJHelper (0.1.9)
-  - CJBaseHelper/NSDateFormatterCJHelper (0.1.9)
-  - CJBaseHelper/NSObjectCJHelper (0.1.9)
-  - CJBaseHelper/NSOperationQueueCJHelper (0.1.9)
-  - CJBaseHelper/ServerCJHelper (0.1.9)
-  - CJBaseHelper/UIViewControllerCJHelper (0.1.9)
-  - CJBaseHelper/WebCJHelper (0.1.9)
-  - CJBaseUIKit (0.8.0):
-    - CJBaseUIKit/CJBaseTableViewCell (= 0.8.0)
-    - CJBaseUIKit/CJBaseTableViewHeaderFooterView (= 0.8.0)
-    - CJBaseUIKit/CJSlider (= 0.8.0)
-    - CJBaseUIKit/CJUIKitConstant (= 0.8.0)
-    - CJBaseUIKit/UIButton (= 0.8.0)
-    - CJBaseUIKit/UIColor (= 0.8.0)
-    - CJBaseUIKit/UIImage (= 0.8.0)
-    - CJBaseUIKit/UILabel (= 0.8.0)
-    - CJBaseUIKit/UINavigationBar (= 0.8.0)
-    - CJBaseUIKit/UIScrollView (= 0.8.0)
-    - CJBaseUIKit/UITextField (= 0.8.0)
-    - CJBaseUIKit/UITextHeightCenterCJHelper (= 0.8.0)
-    - CJBaseUIKit/UITextInputCJHelper (= 0.8.0)
-    - CJBaseUIKit/UITextView (= 0.8.0)
-    - CJBaseUIKit/UIToolbar (= 0.8.0)
-    - CJBaseUIKit/UIView (= 0.8.0)
-    - CJBaseUIKit/UIViewController (= 0.8.0)
-    - CJBaseUIKit/UIWindow (= 0.8.0)
-  - CJBaseUIKit/CJBaseTableViewCell (0.8.0):
-    - CJBaseUIKit/UIButton
-  - CJBaseUIKit/CJBaseTableViewHeaderFooterView (0.8.0)
-  - CJBaseUIKit/CJSlider (0.8.0)
-  - CJBaseUIKit/CJUIKitConstant (0.8.0)
-  - CJBaseUIKit/UIButton (0.8.0)
-  - CJBaseUIKit/UIColor (0.8.0)
-  - CJBaseUIKit/UIImage (0.8.0)
-  - CJBaseUIKit/UILabel (0.8.0)
-  - CJBaseUIKit/UINavigationBar (0.8.0)
-  - CJBaseUIKit/UIScrollView (0.8.0):
-    - CJBaseUIKit/UIScrollView/CJKeyboardAvoiding (= 0.8.0)
-  - CJBaseUIKit/UIScrollView/CJKeyboardAvoiding (0.8.0)
-  - CJBaseUIKit/UITextField (0.8.0)
-  - CJBaseUIKit/UITextHeightCenterCJHelper (0.8.0)
-  - CJBaseUIKit/UITextInputCJHelper (0.8.0)
-  - CJBaseUIKit/UITextView (0.8.0):
-    - CJBaseUIKit/UITextHeightCenterCJHelper
-  - CJBaseUIKit/UIToolbar (0.8.0):
+  - CJBaseHelper/NSCalendarCJHelper (0.1.8)
+  - CJBaseHelper/NSDateFormatterCJHelper (0.1.8)
+  - CJBaseHelper/NSObjectCJHelper (0.1.8)
+  - CJBaseUIKit/UIButton (0.8.1)
+  - CJBaseUIKit/UIColor (0.8.1)
+  - CJBaseUIKit/UIImage (0.8.1)
+  - CJBaseUIKit/UITextField (0.8.1)
+  - CJBaseUIKit/UITextInputCJHelper (0.8.1)
+  - CJBaseUIKit/UIToolbar (0.8.1):
     - CJBaseUIKit/UIImage
-  - CJBaseUIKit/UIView (0.8.0):
-    - CJBaseUIKit/UIView/CJAddCorner (= 0.8.0)
-    - CJBaseUIKit/UIView/CJAnimation (= 0.8.0)
-    - CJBaseUIKit/UIView/CJAutoMoveUp (= 0.8.0)
-    - CJBaseUIKit/UIView/CJDragAction (= 0.8.0)
-    - CJBaseUIKit/UIView/CJGestureRecognizer (= 0.8.0)
-    - CJBaseUIKit/UIView/CJShakeAction (= 0.8.0)
-  - CJBaseUIKit/UIView/CJAddCorner (0.8.0)
-  - CJBaseUIKit/UIView/CJAnimation (0.8.0)
-  - CJBaseUIKit/UIView/CJAutoMoveUp (0.8.0)
-  - CJBaseUIKit/UIView/CJDragAction (0.8.0)
-  - CJBaseUIKit/UIView/CJGestureRecognizer (0.8.0)
-  - CJBaseUIKit/UIView/CJShakeAction (0.8.0)
-  - CJBaseUIKit/UIViewController (0.8.0)
-  - CJBaseUIKit/UIWindow (0.8.0)
+  - CJBaseUIKit/UIView (0.8.1):
+    - CJBaseUIKit/UIView/CJAddCorner (= 0.8.1)
+    - CJBaseUIKit/UIView/CJAnimation (= 0.8.1)
+    - CJBaseUIKit/UIView/CJAutoMoveUp (= 0.8.1)
+    - CJBaseUIKit/UIView/CJDragAction (= 0.8.1)
+    - CJBaseUIKit/UIView/CJGestureRecognizer (= 0.8.1)
+    - CJBaseUIKit/UIView/CJShakeAction (= 0.8.1)
+  - CJBaseUIKit/UIView/CJAddCorner (0.8.1)
+  - CJBaseUIKit/UIView/CJAnimation (0.8.1)
+  - CJBaseUIKit/UIView/CJAutoMoveUp (0.8.1)
+  - CJBaseUIKit/UIView/CJDragAction (0.8.1)
+  - CJBaseUIKit/UIView/CJGestureRecognizer (0.8.1)
+  - CJBaseUIKit/UIView/CJShakeAction (0.8.1)
   - CJDataVientianeSDK-Swift (0.0.1):
     - CJDataVientianeSDK-Swift/Date (= 0.0.1)
     - CJDataVientianeSDK-Swift/Insert (= 0.0.1)
   - CJDataVientianeSDK-Swift/Date (0.0.1)
   - CJDataVientianeSDK-Swift/Insert (0.0.1)
-  - CJFile/CJFileManager (0.0.9)
-  - CJFile/CJFileModel (0.0.9)
-  - CJFoundation (0.1.3):
-    - CJFoundation/NSDictionary (= 0.1.3)
-    - CJFoundation/NSJSONSerialization (= 0.1.3)
-    - CJFoundation/NSString (= 0.1.3)
-  - CJFoundation-Swift (0.1.1):
-    - CJFoundation-Swift/Base (= 0.1.1)
-  - CJFoundation-Swift/Base (0.1.1)
-  - CJFoundation/NSDictionary (0.1.3)
-  - CJFoundation/NSJSONSerialization (0.1.3)
-  - CJFoundation/NSString (0.1.3)
-  - CJPopupView/CJPopoverView (2.1.0)
+  - CJFoundation/NSJSONSerialization (0.1.5)
+  - CJFoundation/NSString (0.1.5)
   - CQDemoKit/BaseUIKit (0.7.1):
     - Masonry
   - CQDemoKit/BaseUtil (0.7.1)
@@ -134,72 +69,58 @@ PODS:
   - CQDemoKit/Helper (0.7.1)
   - IQKeyboardManager (6.5.6)
   - Masonry (1.1.0)
-  - MJExtension (3.0.17)
-  - Shimmer (1.0.2)
   - UINavigation-SXFixSpace (1.2.4)
   - YYText (1.0.7)
 
 DEPENDENCIES:
-  - CJBaseHelper (from `../../../Github/CJUIKit`)
-  - CJBaseUIKit (from `../../../Github/CJUIKit`)
+  - CJBaseHelper/NSCalendarCJHelper
+  - CJBaseHelper/NSDateFormatterCJHelper
+  - CJBaseHelper/NSObjectCJHelper
+  - CJBaseUIKit/UIButton
+  - CJBaseUIKit/UIColor
+  - CJBaseUIKit/UITextField
+  - CJBaseUIKit/UITextInputCJHelper
+  - CJBaseUIKit/UIToolbar
+  - CJBaseUIKit/UIView
   - CJDataVientianeSDK-Swift (from `../`)
-  - CJFile/CJFileManager
-  - CJFile/CJFileModel
-  - CJFoundation (from `../../../Github/CJUIKit`)
-  - CJFoundation-Swift (from `../`)
-  - CJPopupView/CJPopoverView
-  - CQDemoKit/BaseUIKit (~> 0.7.1)
-  - CQDemoKit/BaseUtil (~> 0.7.1)
-  - CQDemoKit/BaseVC (~> 0.7.1)
-  - CQDemoKit/Demo_Resource (~> 0.7.1)
-  - CQDemoKit/Demo_RipeView (~> 0.7.1)
+  - CJFoundation/NSJSONSerialization
+  - CJFoundation/NSString
+  - CQDemoKit/BaseUIKit
+  - CQDemoKit/BaseUtil
+  - CQDemoKit/BaseVC
+  - CQDemoKit/Demo_Resource
+  - CQDemoKit/Demo_RipeView
   - IQKeyboardManager
   - Masonry
-  - MJExtension (~> 3.0.13)
-  - Shimmer (~> 1.0.2)
   - UINavigation-SXFixSpace
   - YYText (~> 1.0.7)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - CJFile
-    - CJPopupView
+    - CJBaseHelper
+    - CJBaseUIKit
+    - CJFoundation
     - CQDemoKit
     - IQKeyboardManager
     - Masonry
-    - MJExtension
-    - Shimmer
     - UINavigation-SXFixSpace
     - YYText
 
 EXTERNAL SOURCES:
-  CJBaseHelper:
-    :path: "../../../Github/CJUIKit"
-  CJBaseUIKit:
-    :path: "../../../Github/CJUIKit"
   CJDataVientianeSDK-Swift:
-    :path: "../"
-  CJFoundation:
-    :path: "../../../Github/CJUIKit"
-  CJFoundation-Swift:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CJBaseHelper: 8080ddf39b5edd71798d5a45a3e03a5484522e2c
-  CJBaseUIKit: 602e0a4b614670d04a5236ff230e940174c8ad41
+  CJBaseHelper: 9a903eb83edd4e831e39c5112c6940e2559b79b7
+  CJBaseUIKit: 1445f55a4c9f942351fcd1964694f32196472837
   CJDataVientianeSDK-Swift: 202f7c52e557f037c8aa1f0d9e8b131631a4b600
-  CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
-  CJFoundation: 816d2d20aa9444a5d0f01da4c747b14d6cc51aef
-  CJFoundation-Swift: ee85ffcaf2d0031cc55fec3e46abbd86cb7597e7
-  CJPopupView: c7685f6a0225a89c72d97ea946f2816b5442abaf
+  CJFoundation: e170ae85eff487b91ce5ac7c711bfbc3ec5d9919
   CQDemoKit: d3c8f63f39f685299711194a65bb2f6ec11bc947
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MJExtension: 74ec83124a68891619fb7ba9c5c811bbf1691076
-  Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
   UINavigation-SXFixSpace: 10f223253ebff2ceefa26694e23b7694269763c4
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 924ddbb5641849041f7caf94f3b4b6f466a71a7e
+PODFILE CHECKSUM: fdb3d47f172ec7a5432dab475760f001cffe0b12
 
 COCOAPODS: 1.16.2

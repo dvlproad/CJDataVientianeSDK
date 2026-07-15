@@ -8,11 +8,6 @@
 
 #import "FoundationHomeViewController.h"
 
-// String
-#import "StringHomeViewController.h"
-
-#import "DateViewController.h"
-#import "TypeConvertViewController.h"
 #import "TSInsertFeedHomeViewController.h"
 
 #import "CJUIKitDemo-Swift.h"
@@ -35,31 +30,11 @@
     self.title = NSLocalizedString(@"Home首页", nil);
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
-    //NSString
-    {
-        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
-        sectionDataModel.theme = @"NSString相关";
-        {
-            CQDMModuleModel *NSStringModule = [[CQDMModuleModel alloc] init];
-            NSStringModule.title = @"String";
-            NSStringModule.classEntry = [StringHomeViewController class];
-            [sectionDataModel.values addObject:NSStringModule];
-        }
-        
-        [sectionDataModels addObject:sectionDataModel];
-    }
-    
     
     //NSDate
     {
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"NSDate相关";
-        {
-            CQDMModuleModel *NSDateModule = [[CQDMModuleModel alloc] init];
-            NSDateModule.title = @"NSDate";
-            NSDateModule.classEntry = [DateViewController class];
-            [sectionDataModel.values addObject:NSDateModule];
-        }
         {
             CQDMModuleModel *dateModule = [[CQDMModuleModel alloc] init];
             dateModule.title = @"NSDate指定日期的日期数据";
@@ -192,21 +167,6 @@
             dateModule.title = @"广告流FeedAd插入相关";
             dateModule.classEntry = [TSInsertFeedHomeViewController class];
             [sectionDataModel.values addObject:dateModule];
-        }
-        
-        [sectionDataModels addObject:sectionDataModel];
-    }
-    
-    //Json-Model类型转换
-    {
-        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
-        sectionDataModel.theme = @"Json-Model类型转换相关";
-        {
-            //TypeConvert
-            CQDMModuleModel *TypeConvertModule = [[CQDMModuleModel alloc] init];
-            TypeConvertModule.title = @"TypeConvertModule（类型转换）";
-            TypeConvertModule.classEntry = [TypeConvertViewController class];
-            [sectionDataModel.values addObject:TypeConvertModule];
         }
         
         [sectionDataModels addObject:sectionDataModel];

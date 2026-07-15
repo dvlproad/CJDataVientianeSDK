@@ -7,13 +7,21 @@
 //
 
 import Foundation
-import CJFoundation_Swift
 import CJDataVientianeSDK_Swift
 import CQDemoKit
 
+public struct DateUtil {
+    @discardableResult
+    public static func xx_dateToString(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        return formatter.string(from: date)
+    }
+}
+
 class TestSwift1: NSObject {
     func test() {
-        CJFoundation_Swift.DateUtil.xx_dateToString(date: Date())
+        DateUtil.xx_dateToString(date: Date())
 //        CJFoundation_Swift.DateUtil.xx_dateToString(date: Date())
 //        let str = CJFoundation_Swift.DateUtil.xx_dateToString(date: Date())
 //        print(str)

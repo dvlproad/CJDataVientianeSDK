@@ -30,34 +30,22 @@ source 'https://github.com/CocoaPods/Specs.git'
 inhibit_all_warnings! #inhibit_warnings参数能够有效的抑制CocoaPods引入的第三方代码库产生的warning。
 
 target 'CJUIKitDemo' do
-  pod 'CQDemoKit',    '~> 0.7.1',   :subspecs => ['BaseVC', 'BaseUIKit', 'BaseUtil', 'Demo_RipeView', 'Demo_Resource']
+  pod 'CQDemoKit',   :subspecs => ['BaseVC', 'BaseUIKit', 'BaseUtil', 'Demo_RipeView', 'Demo_Resource']
   
     pod 'Masonry'
 
-    pod 'Shimmer', '~> 1.0.2' #fackBook的闪光动画
-
-    pod 'CJPopupView/CJPopoverView'
-
-    # 基本的第三方库
-    pod 'MJExtension', '~> 3.0.13'
-
     pod 'YYText', '~> 1.0.7'
 
-    pod 'CJBaseUIKit',          :path => '../../../Github/CJUIKit'
-    pod 'CJFoundation',         :path => '../../../Github/CJUIKit'
-    pod 'CJBaseHelper',         :path => '../../../Github/CJUIKit'
-#    pod 'CJBaseUIKit', :subspecs => ['UIColor', 'UIButton', 'UITextField', 'CJToast', 'CJAlert']
+#    pod 'CJFoundation',         :path => '../../../Github/CJUIKit'
+    pod 'CJBaseUIKit', :subspecs => ['UIColor', 'UIButton', 'UITextField', 'UITextInputCJHelper', 'UIView', 'UIToolbar']
 #    pod 'CJBaseUtil', :subspecs => ['CJLog']
-#    pod 'CJFoundation', :subspecs => ['NSString']
-#    pod 'CJBaseHelper', :subspecs => ['NSObjectCJHelper', 'AuthorizationCJHelper']
+    pod 'CJFoundation', :subspecs => ['NSString', 'NSJSONSerialization']
+    pod 'CJBaseHelper', :subspecs => ['NSObjectCJHelper', 'NSDateFormatterCJHelper', 'NSCalendarCJHelper']
 #    pod 'CJBaseUtil',   :subspecs => ['CJDataUtil']
-    pod 'CJFile',   :subspecs => ['CJFileModel', 'CJFileManager']
     
     pod 'IQKeyboardManager'
     pod 'UINavigation-SXFixSpace'
     
-#    pod 'SwiftExtraCJHelper',   :path => '../'
-    pod 'CJFoundation-Swift',   :path => '../'
     pod 'CJDataVientianeSDK-Swift',   :path => '../'
 end
 

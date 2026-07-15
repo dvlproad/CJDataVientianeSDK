@@ -10,7 +10,6 @@
 #endif
 #endif
 
-#import "NSDictionary+CJConvert.h"
 #import "NSJSONSerialization+CJCategory.h"
 #import "NSString+CJAttributedString.h"
 #import "NSString+CJCategory.h"
