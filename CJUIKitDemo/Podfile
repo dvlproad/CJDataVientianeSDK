@@ -1,4 +1,4 @@
-platform :ios, '9.0'
+platform :ios, '11.0'
 use_frameworks!
 inhibit_all_warnings!
 # pod的本地索引文件：~/Library/Caches/CocoaPods/search_index.json
@@ -30,22 +30,15 @@ source 'https://github.com/CocoaPods/Specs.git'
 inhibit_all_warnings! #inhibit_warnings参数能够有效的抑制CocoaPods引入的第三方代码库产生的warning。
 
 target 'CJUIKitDemo' do
-  pod 'CQDemoKit',   :subspecs => ['BaseVC', 'BaseUIKit', 'BaseUtil', 'Demo_RipeView', 'Demo_Resource']
+    pod 'CQDemoKit',   :subspecs => ['BaseVC']
   
     pod 'Masonry'
 
-    pod 'YYText', '~> 1.0.7'
-
-#    pod 'CJFoundation',         :path => '../../../Github/CJUIKit'
-    pod 'CJBaseUIKit', :subspecs => ['UIColor', 'UIButton', 'UITextField', 'UITextInputCJHelper', 'UIView', 'UIToolbar']
-#    pod 'CJBaseUtil', :subspecs => ['CJLog']
-    pod 'CJFoundation', :subspecs => ['NSString', 'NSJSONSerialization']
-    pod 'CJBaseHelper', :subspecs => ['NSObjectCJHelper', 'NSDateFormatterCJHelper', 'NSCalendarCJHelper']
-#    pod 'CJBaseUtil',   :subspecs => ['CJDataUtil']
-    
     pod 'IQKeyboardManager'
     pod 'UINavigation-SXFixSpace'
     
+    pod 'TSDemo_DataVientiane',       :path => '../'
+    pod 'CJDataVientianeSDK',         :path => '../'
     pod 'CJDataVientianeSDK-Swift',   :path => '../'
 end
 

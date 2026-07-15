@@ -1,126 +1,126 @@
 PODS:
-  - CJBaseHelper/NSCalendarCJHelper (0.1.8)
-  - CJBaseHelper/NSDateFormatterCJHelper (0.1.8)
-  - CJBaseHelper/NSObjectCJHelper (0.1.8)
-  - CJBaseUIKit/UIButton (0.8.1)
-  - CJBaseUIKit/UIColor (0.8.1)
-  - CJBaseUIKit/UIImage (0.8.1)
-  - CJBaseUIKit/UITextField (0.8.1)
-  - CJBaseUIKit/UITextInputCJHelper (0.8.1)
-  - CJBaseUIKit/UIToolbar (0.8.1):
-    - CJBaseUIKit/UIImage
-  - CJBaseUIKit/UIView (0.8.1):
-    - CJBaseUIKit/UIView/CJAddCorner (= 0.8.1)
-    - CJBaseUIKit/UIView/CJAnimation (= 0.8.1)
-    - CJBaseUIKit/UIView/CJAutoMoveUp (= 0.8.1)
-    - CJBaseUIKit/UIView/CJDragAction (= 0.8.1)
-    - CJBaseUIKit/UIView/CJGestureRecognizer (= 0.8.1)
-    - CJBaseUIKit/UIView/CJShakeAction (= 0.8.1)
-  - CJBaseUIKit/UIView/CJAddCorner (0.8.1)
-  - CJBaseUIKit/UIView/CJAnimation (0.8.1)
-  - CJBaseUIKit/UIView/CJAutoMoveUp (0.8.1)
-  - CJBaseUIKit/UIView/CJDragAction (0.8.1)
-  - CJBaseUIKit/UIView/CJGestureRecognizer (0.8.1)
-  - CJBaseUIKit/UIView/CJShakeAction (0.8.1)
+  - CJBaseUIKit/UIButton (0.9.0)
+  - CJBaseUIKit/UIColor (0.9.0)
+  - CJBaseUIKit/UITextField (0.9.0)
+  - CJDataVientianeSDK (0.0.3):
+    - CJDataVientianeSDK/CJSubStringUtil (= 0.0.3)
+    - CJDataVientianeSDK/FormatValidate (= 0.0.3)
+    - CJDataVientianeSDK/NSCalendarCJHelper (= 0.0.3)
+    - CJDataVientianeSDK/TextLength (= 0.0.3)
+    - CJDataVientianeSDK/TextSize (= 0.0.3)
+    - CJDataVientianeSDK/UITextInputHeightCJHelper (= 0.0.3)
+    - CJDataVientianeSDK/UITextInputLimitCJHelper (= 0.0.3)
   - CJDataVientianeSDK-Swift (0.0.1):
     - CJDataVientianeSDK-Swift/Date (= 0.0.1)
     - CJDataVientianeSDK-Swift/Insert (= 0.0.1)
   - CJDataVientianeSDK-Swift/Date (0.0.1)
   - CJDataVientianeSDK-Swift/Insert (0.0.1)
-  - CJFoundation/NSJSONSerialization (0.1.5)
-  - CJFoundation/NSString (0.1.5)
-  - CQDemoKit/BaseUIKit (0.7.1):
+  - CJDataVientianeSDK/CJSubStringUtil (0.0.3)
+  - CJDataVientianeSDK/FormatValidate (0.0.3)
+  - CJDataVientianeSDK/NSCalendarCJHelper (0.0.3)
+  - CJDataVientianeSDK/TextLength (0.0.3)
+  - CJDataVientianeSDK/TextSize (0.0.3)
+  - CJDataVientianeSDK/UITextInputHeightCJHelper (0.0.3)
+  - CJDataVientianeSDK/UITextInputLimitCJHelper (0.0.3):
+    - CJDataVientianeSDK/CJSubStringUtil
+  - CQDemoKit/BaseUIKit (0.9.5):
     - Masonry
-  - CQDemoKit/BaseUtil (0.7.1)
-  - CQDemoKit/BaseVC (0.7.1):
-    - CQDemoKit/BaseVC/Base (= 0.7.1)
-    - CQDemoKit/BaseVC/Collection (= 0.7.1)
-    - CQDemoKit/BaseVC/ScrollView (= 0.7.1)
-    - CQDemoKit/BaseVC/TabBar (= 0.7.1)
-    - CQDemoKit/BaseVC/TableView (= 0.7.1)
-    - CQDemoKit/BaseVC/TextView (= 0.7.1)
-    - CQDemoKit/Helper
-  - CQDemoKit/BaseVC/Base (0.7.1):
+  - CQDemoKit/BaseUtil (0.9.5)
+  - CQDemoKit/BaseVC (0.9.5):
+    - CQDemoKit/BaseVC/Base (= 0.9.5)
+    - CQDemoKit/BaseVC/Collection (= 0.9.5)
+    - CQDemoKit/BaseVC/ScrollView (= 0.9.5)
+    - CQDemoKit/BaseVC/TabBar (= 0.9.5)
+    - CQDemoKit/BaseVC/TableView (= 0.9.5)
+    - CQDemoKit/BaseVC/ValidateMethod (= 0.9.5)
+  - CQDemoKit/BaseVC/Base (0.9.5):
     - CQDemoKit/BaseUIKit
-    - CQDemoKit/Helper
     - Masonry
-  - CQDemoKit/BaseVC/Collection (0.7.1):
+  - CQDemoKit/BaseVC/Collection (0.9.5):
     - CQDemoKit/BaseVC/Base
-    - CQDemoKit/Helper
-  - CQDemoKit/BaseVC/ScrollView (0.7.1):
+  - CQDemoKit/BaseVC/ScrollView (0.9.5):
     - CQDemoKit/BaseVC/Base
+  - CQDemoKit/BaseVC/TabBar (0.9.5):
     - CQDemoKit/Helper
-  - CQDemoKit/BaseVC/TabBar (0.7.1):
-    - CQDemoKit/Helper
-  - CQDemoKit/BaseVC/TableView (0.7.1):
+  - CQDemoKit/BaseVC/TableView (0.9.5):
     - CQDemoKit/BaseVC/Base
-    - CQDemoKit/Helper
-  - CQDemoKit/BaseVC/TextView (0.7.1):
+  - CQDemoKit/BaseVC/ValidateMethod (0.9.5):
     - CQDemoKit/BaseUtil
     - CQDemoKit/BaseVC/Base
+  - CQDemoKit/Demo_Resource (0.9.5):
+    - CQDemoKit/Demo_Resource/GitUtil (= 0.9.5)
+    - CQDemoKit/Demo_Resource/ImageModel (= 0.9.5)
+    - CQDemoKit/Demo_Resource/InFramework (= 0.9.5)
+    - CQDemoKit/Demo_Resource/RandomUtil (= 0.9.5)
+    - CQDemoKit/Demo_Resource/ResourceInfoUtil (= 0.9.5)
+    - CQDemoKit/Demo_Resource/SandboxFileUtil (= 0.9.5)
+    - CQDemoKit/Demo_Resource/SandboxPathUtil (= 0.9.5)
+    - CQDemoKit/Demo_Resource/SandboxPhotoUtil (= 0.9.5)
+  - CQDemoKit/Demo_Resource/GitUtil (0.9.5)
+  - CQDemoKit/Demo_Resource/ImageModel (0.9.5)
+  - CQDemoKit/Demo_Resource/InFramework (0.9.5)
+  - CQDemoKit/Demo_Resource/RandomUtil (0.9.5)
+  - CQDemoKit/Demo_Resource/ResourceInfoUtil (0.9.5)
+  - CQDemoKit/Demo_Resource/SandboxFileUtil (0.9.5):
+    - CQDemoKit/Demo_Resource/SandboxPathUtil
     - CQDemoKit/Helper
-  - CQDemoKit/Demo_Resource (0.7.1):
-    - CQDemoKit/BaseUIKit
-    - CQDemoKit/Helper
-  - CQDemoKit/Demo_RipeView (0.7.1):
-    - CQDemoKit/BaseUIKit
-    - CQDemoKit/BaseUtil
+  - CQDemoKit/Demo_Resource/SandboxPathUtil (0.9.5):
+    - CQDemoKit/Demo_Resource/ResourceInfoUtil
+  - CQDemoKit/Demo_Resource/SandboxPhotoUtil (0.9.5):
+    - CQDemoKit/Demo_Resource/ResourceInfoUtil
+  - CQDemoKit/Helper (0.9.5)
+  - CQDemoResource/Core (0.2.8):
     - CQDemoKit/Demo_Resource
-  - CQDemoKit/Helper (0.7.1)
-  - IQKeyboardManager (6.5.6)
+  - CQDemoResource/Images (0.2.8):
+    - CQDemoResource/Core
+  - IQKeyboardManager (6.5.19)
   - Masonry (1.1.0)
+  - TSDemo_DataVientiane (0.0.1):
+    - CJBaseUIKit/UIButton
+    - CJBaseUIKit/UIColor
+    - CJBaseUIKit/UITextField
+    - CJDataVientianeSDK
+    - CQDemoKit/BaseVC
+    - CQDemoResource/Images
   - UINavigation-SXFixSpace (1.2.4)
-  - YYText (1.0.7)
 
 DEPENDENCIES:
-  - CJBaseHelper/NSCalendarCJHelper
-  - CJBaseHelper/NSDateFormatterCJHelper
-  - CJBaseHelper/NSObjectCJHelper
-  - CJBaseUIKit/UIButton
-  - CJBaseUIKit/UIColor
-  - CJBaseUIKit/UITextField
-  - CJBaseUIKit/UITextInputCJHelper
-  - CJBaseUIKit/UIToolbar
-  - CJBaseUIKit/UIView
+  - CJDataVientianeSDK (from `../`)
   - CJDataVientianeSDK-Swift (from `../`)
-  - CJFoundation/NSJSONSerialization
-  - CJFoundation/NSString
-  - CQDemoKit/BaseUIKit
-  - CQDemoKit/BaseUtil
   - CQDemoKit/BaseVC
-  - CQDemoKit/Demo_Resource
-  - CQDemoKit/Demo_RipeView
   - IQKeyboardManager
   - Masonry
+  - TSDemo_DataVientiane (from `../`)
   - UINavigation-SXFixSpace
-  - YYText (~> 1.0.7)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - CJBaseHelper
     - CJBaseUIKit
-    - CJFoundation
     - CQDemoKit
+    - CQDemoResource
     - IQKeyboardManager
     - Masonry
     - UINavigation-SXFixSpace
-    - YYText
 
 EXTERNAL SOURCES:
+  CJDataVientianeSDK:
+    :path: "../"
   CJDataVientianeSDK-Swift:
+    :path: "../"
+  TSDemo_DataVientiane:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CJBaseHelper: 9a903eb83edd4e831e39c5112c6940e2559b79b7
-  CJBaseUIKit: 1445f55a4c9f942351fcd1964694f32196472837
+  CJBaseUIKit: 082b23d89703a9ff17f6b17f33c23569c2e67581
+  CJDataVientianeSDK: e1299887b9e84a2e6e137660bf48593b0d95e7ad
   CJDataVientianeSDK-Swift: 202f7c52e557f037c8aa1f0d9e8b131631a4b600
-  CJFoundation: e170ae85eff487b91ce5ac7c711bfbc3ec5d9919
-  CQDemoKit: d3c8f63f39f685299711194a65bb2f6ec11bc947
-  IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
+  CQDemoKit: 441b90f6e92054453834a23b05cab9ba58291b77
+  CQDemoResource: c1c3390e9785e78ced1b7c1b25ef724cba224324
+  IQKeyboardManager: c8665b3396bd0b79402b4c573eac345a31c7d485
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  TSDemo_DataVientiane: 4def71b05cb90cca4df7b5b8d2d62ac275a25533
   UINavigation-SXFixSpace: 10f223253ebff2ceefa26694e23b7694269763c4
-  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: fdb3d47f172ec7a5432dab475760f001cffe0b12
+PODFILE CHECKSUM: 4972ea442dbfd0d68223ecdcd0f4a3f3b7417c03
 
 COCOAPODS: 1.16.2

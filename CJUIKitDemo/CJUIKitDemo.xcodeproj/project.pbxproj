@@ -21,12 +21,7 @@
 		80D49F8F20BE8574003F642C /* TestCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D49F8E20BE8574003F642C /* TestCityModel.m */; };
 		80FF91951FC5682B00E437CF /* FoundationHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91771FC5682A00E437CF /* FoundationHomeViewController.m */; };
 		9702123B2CFA283400C62F50 /* TestSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9702123A2CFA283400C62F50 /* TestSwift.swift */; };
-		9715E8A83006867E008FA653 /* cjTextField_clear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9715E8A03006867E008FA653 /* cjTextField_clear@2x.png */; };
-		9715E8A93006867E008FA653 /* cjTextField_clear@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9715E8A13006867E008FA653 /* cjTextField_clear@3x.png */; };
-		9715E8AA3006867E008FA653 /* CJDemoDateTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9715E89F3006867E008FA653 /* CJDemoDateTextField.m */; };
-		9715E8AB3006867E008FA653 /* CJDemoDateLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9715E89D3006867E008FA653 /* CJDemoDateLabel.m */; };
 		9715E8AC3006867E008FA653 /* CQSubStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 9715E8A43006867E008FA653 /* CQSubStringUtil.m */; };
-		9715E8B0300686BD008FA653 /* CJDemoDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9715E8AE300686BD008FA653 /* CJDemoDatePickerView.m */; };
 		9715E8B330068705008FA653 /* UITextViewCQHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9715E8B230068705008FA653 /* UITextViewCQHelper.m */; };
 		972C69532D000AF700E53720 /* TSDateFormatterUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972C69522D000AF700E53720 /* TSDateFormatterUtil.swift */; };
 		97578AAC25590E9300249AD6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578AAB25590E9300249AD6 /* MainViewController.m */; };
@@ -80,16 +75,8 @@
 		8387796C9091D0E618AB7637 /* Pods_CJUIKitDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CJUIKitDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		970212392CFA283400C62F50 /* CJUIKitDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CJUIKitDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		9702123A2CFA283400C62F50 /* TestSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSwift.swift; sourceTree = "<group>"; };
-		9715E89C3006867E008FA653 /* CJDemoDateLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJDemoDateLabel.h; sourceTree = "<group>"; };
-		9715E89D3006867E008FA653 /* CJDemoDateLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJDemoDateLabel.m; sourceTree = "<group>"; };
-		9715E89E3006867E008FA653 /* CJDemoDateTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJDemoDateTextField.h; sourceTree = "<group>"; };
-		9715E89F3006867E008FA653 /* CJDemoDateTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJDemoDateTextField.m; sourceTree = "<group>"; };
-		9715E8A03006867E008FA653 /* cjTextField_clear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjTextField_clear@2x.png"; sourceTree = "<group>"; };
-		9715E8A13006867E008FA653 /* cjTextField_clear@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjTextField_clear@3x.png"; sourceTree = "<group>"; };
 		9715E8A33006867E008FA653 /* CQSubStringUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQSubStringUtil.h; sourceTree = "<group>"; };
 		9715E8A43006867E008FA653 /* CQSubStringUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQSubStringUtil.m; sourceTree = "<group>"; };
-		9715E8AD300686BD008FA653 /* CJDemoDatePickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJDemoDatePickerView.h; sourceTree = "<group>"; };
-		9715E8AE300686BD008FA653 /* CJDemoDatePickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJDemoDatePickerView.m; sourceTree = "<group>"; };
 		9715E8B130068705008FA653 /* UITextViewCQHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UITextViewCQHelper.h; sourceTree = "<group>"; };
 		9715E8B230068705008FA653 /* UITextViewCQHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UITextViewCQHelper.m; sourceTree = "<group>"; };
 		972C69522D000AF700E53720 /* TSDateFormatterUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSDateFormatterUtil.swift; sourceTree = "<group>"; };
@@ -248,19 +235,6 @@
 			path = DemosFoundation;
 			sourceTree = "<group>";
 		};
-		9715E8A23006867E008FA653 /* CJDemoDateTextField */ = {
-			isa = PBXGroup;
-			children = (
-				9715E89C3006867E008FA653 /* CJDemoDateLabel.h */,
-				9715E89D3006867E008FA653 /* CJDemoDateLabel.m */,
-				9715E89E3006867E008FA653 /* CJDemoDateTextField.h */,
-				9715E89F3006867E008FA653 /* CJDemoDateTextField.m */,
-				9715E8A03006867E008FA653 /* cjTextField_clear@2x.png */,
-				9715E8A13006867E008FA653 /* cjTextField_clear@3x.png */,
-			);
-			path = CJDemoDateTextField;
-			sourceTree = "<group>";
-		};
 		9715E8A53006867E008FA653 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,20 +257,9 @@
 		9715E8A73006867E008FA653 /* CommonUI */ = {
 			isa = PBXGroup;
 			children = (
-				9715E8AF300686BD008FA653 /* CJDemoDatePickerView */,
-				9715E8A23006867E008FA653 /* CJDemoDateTextField */,
 				9715E8A63006867E008FA653 /* TextField */,
 			);
 			path = CommonUI;
-			sourceTree = "<group>";
-		};
-		9715E8AF300686BD008FA653 /* CJDemoDatePickerView */ = {
-			isa = PBXGroup;
-			children = (
-				9715E8AD300686BD008FA653 /* CJDemoDatePickerView.h */,
-				9715E8AE300686BD008FA653 /* CJDemoDatePickerView.m */,
-			);
-			path = CJDemoDatePickerView;
 			sourceTree = "<group>";
 		};
 		97824E112D27DE09001DD4E7 /* Insert */ = {
@@ -438,8 +401,6 @@
 			files = (
 				7861852C21D3630B004B71FF /* AppCommon.xcassets in Resources */,
 				7868276021AE926700FCCDE5 /* AppAssets.xcassets in Resources */,
-				9715E8A83006867E008FA653 /* cjTextField_clear@2x.png in Resources */,
-				9715E8A93006867E008FA653 /* cjTextField_clear@3x.png in Resources */,
 				7868278121AF02E000FCCDE5 /* bg@2x.jpg in Resources */,
 				780E460E1E5DF87B00980127 /* Main.storyboard in Resources */,
 			);
@@ -487,27 +448,27 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CJUIKitDemo/Pods-CJUIKitDemo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/CJBaseHelper/CJBaseHelper.framework",
 				"${BUILT_PRODUCTS_DIR}/CJBaseUIKit/CJBaseUIKit.framework",
+				"${BUILT_PRODUCTS_DIR}/CJDataVientianeSDK/CJDataVientianeSDK.framework",
 				"${BUILT_PRODUCTS_DIR}/CJDataVientianeSDK-Swift/CJDataVientianeSDK_Swift.framework",
-				"${BUILT_PRODUCTS_DIR}/CJFoundation/CJFoundation.framework",
 				"${BUILT_PRODUCTS_DIR}/CQDemoKit/CQDemoKit.framework",
+				"${BUILT_PRODUCTS_DIR}/CQDemoResource/CQDemoResource.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/TSDemo_DataVientiane/TSDemo_DataVientiane.framework",
 				"${BUILT_PRODUCTS_DIR}/UINavigation-SXFixSpace/UINavigation_SXFixSpace.framework",
-				"${BUILT_PRODUCTS_DIR}/YYText/YYText.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CJBaseHelper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CJBaseUIKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CJDataVientianeSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CJDataVientianeSDK_Swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CJFoundation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CQDemoKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CQDemoResource.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TSDemo_DataVientiane.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UINavigation_SXFixSpace.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYText.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -524,10 +485,7 @@
 				9715E8B330068705008FA653 /* UITextViewCQHelper.m in Sources */,
 				97578AB225590F7100249AD6 /* UIWindow+RootSetting.m in Sources */,
 				97824E0E2D27CB45001DD4E7 /* TSFeedAdInsertUtil.swift in Sources */,
-				9715E8AA3006867E008FA653 /* CJDemoDateTextField.m in Sources */,
-				9715E8AB3006867E008FA653 /* CJDemoDateLabel.m in Sources */,
 				9715E8AC3006867E008FA653 /* CQSubStringUtil.m in Sources */,
-				9715E8B0300686BD008FA653 /* CJDemoDatePickerView.m in Sources */,
 				972C69532D000AF700E53720 /* TSDateFormatterUtil.swift in Sources */,
 				97578AAC25590E9300249AD6 /* MainViewController.m in Sources */,
 				80FF91951FC5682B00E437CF /* FoundationHomeViewController.m in Sources */,

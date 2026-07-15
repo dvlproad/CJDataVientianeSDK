@@ -1,0 +1,6 @@
+framework module CJDataVientianeSDK {
+  umbrella header "CJDataVientianeSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

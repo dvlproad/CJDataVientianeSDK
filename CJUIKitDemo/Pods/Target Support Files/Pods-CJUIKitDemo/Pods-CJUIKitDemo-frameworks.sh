@@ -176,26 +176,26 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/CJBaseHelper/CJBaseHelper.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJBaseUIKit/CJBaseUIKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CJDataVientianeSDK/CJDataVientianeSDK.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJDataVientianeSDK-Swift/CJDataVientianeSDK_Swift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/CJFoundation/CJFoundation.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CQDemoKit/CQDemoKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CQDemoResource/CQDemoResource.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/TSDemo_DataVientiane/TSDemo_DataVientiane.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/UINavigation-SXFixSpace/UINavigation_SXFixSpace.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/YYText/YYText.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/CJBaseHelper/CJBaseHelper.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJBaseUIKit/CJBaseUIKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CJDataVientianeSDK/CJDataVientianeSDK.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJDataVientianeSDK-Swift/CJDataVientianeSDK_Swift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/CJFoundation/CJFoundation.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CQDemoKit/CQDemoKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CQDemoResource/CQDemoResource.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/TSDemo_DataVientiane/TSDemo_DataVientiane.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/UINavigation-SXFixSpace/UINavigation_SXFixSpace.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/YYText/YYText.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

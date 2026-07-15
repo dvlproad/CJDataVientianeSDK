@@ -1,0 +1,6 @@
+framework module TSDemo_DataVientiane {
+  umbrella header "TSDemo_DataVientiane-umbrella.h"
+
+  export *
+  module * { export * }
+}
