@@ -1,7 +1,7 @@
 import UIKit
 import CQDemoKit
 
-@objc class TSDateFindEqualLunarDateViewController: CJUIKitBaseBigTextViewController {
+@objc class TSDateFindEqualLunarDateViewController: CQTSLongBaseAutoTestMethodViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ import CQDemoKit
         ]
 
         for date in dates {
-            let model = CJDealTextModel()
+            let model = CQTSAutoTestMethodModel()
             model.text = date.text
             model.actionTitle = "找相等日期"
             model.hopeResultText = date.expected

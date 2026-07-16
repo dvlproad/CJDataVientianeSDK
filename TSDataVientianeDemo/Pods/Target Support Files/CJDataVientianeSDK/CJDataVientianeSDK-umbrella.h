@@ -10,6 +10,9 @@
 #endif
 #endif
 
+#import "CJDecimalUtil+Distance.h"
+#import "CJDecimalUtil+Money.h"
+#import "CJDecimalUtil.h"
 #import "CJSubStringUtil.h"
 #import "NSString+CJFormatValidate.h"
 #import "CJDateModel.h"

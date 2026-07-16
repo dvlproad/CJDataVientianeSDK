@@ -1,6 +1,6 @@
 //
 //  ValidateStringViewController.m
-//  TSDataVientianeDemo
+//  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/12/29.
 //  Copyright © 2017年 dvlproad. All rights reserved.
@@ -41,7 +41,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"字符串验证";
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入要验证的值";
             dealTextModel.text = @"18012345678";
             dealTextModel.hopeResultText = @"YES";

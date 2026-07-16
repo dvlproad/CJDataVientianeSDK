@@ -1,7 +1,7 @@
 import UIKit
 import CQDemoKit
 
-@objc class TSDateCalendarDaysViewController: CJUIKitBaseBigTextViewController {
+@objc class TSDateCalendarDaysViewController: CQTSLongBaseAutoTestMethodViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ import CQDemoKit
         ]
 
         for data in lunarData {
-            let model = CJDealTextModel()
+            let model = CQTSAutoTestMethodModel()
             model.text = data.text
             model.actionTitle = "农历月天数"
             model.hopeResultText = "\(data.months)个月\(data.days)天"
@@ -55,7 +55,7 @@ import CQDemoKit
         ]
 
         for data in solarData {
-            let model = CJDealTextModel()
+            let model = CQTSAutoTestMethodModel()
             model.text = data.text
             model.actionTitle = "公历月天数"
             model.hopeResultText = "\(data.months)个月\(data.days)天"

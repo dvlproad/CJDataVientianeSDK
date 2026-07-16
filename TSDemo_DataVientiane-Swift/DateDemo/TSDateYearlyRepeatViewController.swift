@@ -2,7 +2,7 @@ import UIKit
 import CJDataVientianeSDK_Swift
 import CQDemoKit
 
-@objc class TSDateYearlyRepeatViewController: CJUIKitBaseBigTextViewController {
+@objc class TSDateYearlyRepeatViewController: CQTSLongBaseAutoTestMethodViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ import CQDemoKit
         ]
 
         for date in solarDates1 {
-            let model = CJDealTextModel()
+            let model = CQTSAutoTestMethodModel()
             model.text = date.text
             model.actionTitle = "公历按年"
             model.hopeResultText = date.expected
@@ -53,7 +53,7 @@ import CQDemoKit
         ]
 
         for date in solarDates2 {
-            let model = CJDealTextModel()
+            let model = CQTSAutoTestMethodModel()
             model.text = date.text
             model.actionTitle = "公历闰年按年"
             model.hopeResultText = date.expected
@@ -84,7 +84,7 @@ import CQDemoKit
         ]
 
         for date in lunarDates {
-            let model = CJDealTextModel()
+            let model = CQTSAutoTestMethodModel()
             model.text = date.text
             model.actionTitle = "农历按年"
             model.hopeResultText = date.expected

@@ -1,7 +1,7 @@
 import UIKit
 import CQDemoKit
 
-@objc class TSDateLeapMonthViewController: CJUIKitBaseBigTextViewController {
+@objc class TSDateLeapMonthViewController: CQTSLongBaseAutoTestMethodViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,7 @@ import CQDemoKit
         ]
 
         for date in dates {
-            let model = CJDealTextModel()
+            let model = CQTSAutoTestMethodModel()
             model.text = date.text
             model.actionTitle = "闰月信息"
             model.hopeResultText = date.expected

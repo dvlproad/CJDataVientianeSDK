@@ -1,7 +1,7 @@
 import UIKit
 import CQDemoKit
 
-@objc class TSDate24HourConvertViewController: CJUIKitBaseBigTextViewController {
+@objc class TSDate24HourConvertViewController: CQTSLongBaseAutoTestMethodViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -14,7 +14,7 @@ import CQDemoKit
         section.theme = "24小时制/12小时制时间还原"
 
         // 24→12还原
-        let model1 = CJDealTextModel()
+        let model1 = CQTSAutoTestMethodModel()
         model1.text = "2023-05-10 00:00:00"
         model1.actionTitle = "24→12还原"
         model1.hopeResultText = "还原成功: 2023-05-10 00:00:00"
@@ -29,7 +29,7 @@ import CQDemoKit
         section.values.add(model1)
 
         // 12→24还原
-        let model2 = CJDealTextModel()
+        let model2 = CQTSAutoTestMethodModel()
         model2.text = "2023-05-10 12:00:00 AM"
         model2.actionTitle = "12→24还原"
         model2.hopeResultText = "还原成功: 2023-05-10 00:00:00"

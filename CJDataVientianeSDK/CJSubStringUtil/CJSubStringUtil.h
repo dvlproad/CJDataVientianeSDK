@@ -1,6 +1,6 @@
 //
 //  CJSubStringUtil.h
-//  TSDataVientianeDemo
+//  CJUIKitDemo
 //
 //  Created by ciyouzen on 2021/1/9.
 //  Copyright © 2021 dvlproad. All rights reserved.

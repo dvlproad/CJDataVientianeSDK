@@ -2,7 +2,7 @@ import UIKit
 import CJDataVientianeSDK_Swift
 import CQDemoKit
 
-@objc class TSDateLunarStringViewController: CJUIKitBaseBigTextViewController {
+@objc class TSDateLunarStringViewController: CQTSLongBaseAutoTestMethodViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ import CQDemoKit
         ]
 
         for date in dates {
-            let model = CJDealTextModel()
+            let model = CQTSAutoTestMethodModel()
             model.text = date.text
             model.actionTitle = "农历字符串"
             model.hopeResultText = date.expected
