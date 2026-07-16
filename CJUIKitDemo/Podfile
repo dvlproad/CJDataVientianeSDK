@@ -38,6 +38,7 @@ target 'CJUIKitDemo' do
     pod 'UINavigation-SXFixSpace'
     
     pod 'TSDemo_DataVientiane',       :path => '../'
+    pod 'TSDemo_DataVientiane-Swift', :path => '../'
     pod 'CJDataVientianeSDK',         :path => '../'
     pod 'CJDataVientianeSDK-Swift',   :path => '../'
 end

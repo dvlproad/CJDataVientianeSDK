@@ -7,16 +7,15 @@
 //
 
 #import "UIWindow+RootSetting.h"
-#import "MainViewController.h"
-//#import "TSListDemo-Swift.h"
+#import <TSDemo_DataVientiane_Swift/TSDemo_DataVientiane_Swift-Swift.h>
 
 @implementation UIWindow (RootSetting)
 
 - (void)settingRoot {
     [self setBackgroundColor:[UIColor whiteColor]];
     // 只直接测试某个页面
-//    UIViewController *rootViewController = [[UINavigationController alloc] initWithRootViewController:[[NSClassFromString(@"TSLayoutPriorityViewController") alloc] init]];
-    UIViewController *rootViewController = [[MainViewController alloc] init];
+    //UIViewController *rootViewController = [[UINavigationController alloc] initWithRootViewController:[[NSClassFromString(@"TSDateHomeViewController") alloc] init]];
+    UIViewController *rootViewController = [[TSDataVientianeMainViewController alloc] init];
     
     self.rootViewController = rootViewController;
     [self makeKeyAndVisible];

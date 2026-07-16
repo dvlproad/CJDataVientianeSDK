@@ -1,0 +1,6 @@
+framework module TSDemo_DataVientiane_Swift {
+  umbrella header "TSDemo_DataVientiane-Swift-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,8 +1,8 @@
-	#验证方法1：pod lib lint TSDemo_DataVientiane.podspec --sources='https://github.com/CocoaPods/Specs.git,https://gitee.com/dvlproad/dvlproadSpecs' --allow-warnings --use-libraries --verbose
-  #验证方法2：pod lib lint TSDemo_DataVientiane.podspec --sources=cocoapods,gitee-dvlproad-dvlproadspecs --allow-warnings --use-libraries --verbose
-  #提交方法： pod repo push gitee-dvlproad-dvlproadspecs TSDemo_DataVientiane.podspec --sources=cocoapods,gitee-dvlproad-dvlproadspecs --allow-warnings --use-libraries --verbose
+	#验证方法1：pod lib lint TSDemo_DataVientiane-Swift.podspec --sources='https://github.com/CocoaPods/Specs.git,https://gitee.com/dvlproad/dvlproadSpecs' --allow-warnings --use-libraries --verbose
+  #验证方法2：pod lib lint TSDemo_DataVientiane-Swift.podspec --sources=cocoapods,gitee-dvlproad-dvlproadspecs --allow-warnings --use-libraries --verbose
+  #提交方法： pod repo push gitee-dvlproad-dvlproadspecs TSDemo_DataVientiane-Swift.podspec --sources=cocoapods,gitee-dvlproad-dvlproadspecs --allow-warnings --use-libraries --verbose
 Pod::Spec.new do |s|
-  s.name         = "TSDemo_DataVientiane"
+  s.name         = "TSDemo_DataVientiane-Swift"
   s.version      = "0.0.1"
   s.summary      = "数据万象 DataVientiane 的演示示例"
   s.homepage     = "https://gitee.com/dvlproad/CJUIKit.git"
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.description  = <<-DESC
  				          -、演示示例
 
-                   A longer description of TSDemo_DataVientiane in Markdown format.
+                   A longer description of TSDemo_DataVientiane-Swift in Markdown format.
 
                    * Think: Why did you write this? What is the focus? What does it do?
                    * CocoaPods will be using this to generate tags, and improve search results.
@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "9.0"
  
-  s.source       = { :git => "https://gitee.com/dvlproad/CJUIKit.git", :tag => "TSDemo_DataVientiane_0.0.1" }
+  s.source       = { :git => "https://gitee.com/dvlproad/CJUIKit.git", :tag => "TSDemo_DataVientiane-Swift_0.0.1" }
   #s.source_files  = "CJDemoCommon/*.{h,m}"
   #s.source_files = "CJChat/TestOSChinaPod.{h,m}"
 
@@ -43,16 +43,18 @@ Pod::Spec.new do |s|
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
 
-  # TSDemo_DataVientiane
-  s.source_files = "TSDemo_DataVientiane/**/*.{h,m}"
+
+  # TSDemo_DataVientiane-Swift
+  s.source_files = "TSDemo_DataVientiane-Swift/**/*.{swift}"
   s.resource_bundle = {
-    'TSDemo_DataVientiane' => ['TSDemo_DataVientiane/**/*.xcassets', 'TSDemo_DataVientiane/**/*.{xib,png,jpg}'] # TSDemo_DataVientiane 为生成boudle的名称，可以随便起，但要记住，库里要用
+    'TSDemo_DataVientiane-Swift' => ['TSDemo_DataVientiane-Swift/**/*.xcassets', 'TSDemo_DataVientiane-Swift/**/*.{xib,png,jpg}'] # TSDemo_DataVientiane-Swift 为生成boudle的名称，可以随便起，但要记住，库里要用
   }
   #多个依赖就写多行
+  s.dependency 'TSDemo_DataVientiane'
   s.dependency 'CQDemoKit/BaseVC'
   s.dependency 'CQDemoResource/Images'
 
-  s.dependency 'CJDataVientianeSDK'
+  s.dependency 'CJDataVientianeSDK-Swift'
   s.dependency 'CJBaseUIKit/UITextField'
   s.dependency 'CJBaseUIKit/UIColor'
   s.dependency 'CJBaseUIKit/UIButton'

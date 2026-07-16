@@ -13,8 +13,6 @@
 
 #import <UINavigation_SXFixSpace/UINavigationSXFixSpace.h>
 
-#import "CQSubStringUtil.h"
-
 @interface AppDelegate ()
 
 @end
@@ -23,11 +21,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    [CQSubStringUtil substringExceptRange:NSMakeRange(1, 0) forString:@"1234567890"];
-    [CQSubStringUtil substringExceptRange:NSMakeRange(1, 1) forString:@"1234567890"];
-    [CQSubStringUtil substringExceptRange:NSMakeRange(1, 9) forString:@"1234567890"];
-    
     
     //[[IQKeyboardManager sharedManager].disabledToolbarClasses addObject:NSClassFromString(@"DateViewController")]; //已写在对应的类里了
     [IQKeyboardManager sharedManager].enableAutoToolbar = NO;

@@ -1,0 +1,39 @@
+{
+  "name": "TSDemo_DataVientiane-Swift",
+  "version": "0.0.1",
+  "summary": "数据万象 DataVientiane 的演示示例",
+  "homepage": "https://gitee.com/dvlproad/CJUIKit.git",
+  "license": {
+    "type": "Copyright",
+    "text": "              © 2008-2016 dvlproad. All rights reserved.\n"
+  },
+  "authors": {
+    "dvlproad": ""
+  },
+  "description": "-、演示示例\n\n                   A longer description of TSDemo_DataVientiane-Swift in Markdown format.\n\n                   * Think: Why did you write this? What is the focus? What does it do?\n                   * CocoaPods will be using this to generate tags, and improve search results.\n                   * Try to keep it short, snappy and to the point.\n                   * Finally, don't worry about the indent, CocoaPods strips it!",
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source": {
+    "git": "https://gitee.com/dvlproad/CJUIKit.git",
+    "tag": "TSDemo_DataVientiane-Swift_0.0.1"
+  },
+  "frameworks": "UIKit",
+  "requires_arc": true,
+  "source_files": "TSDemo_DataVientiane-Swift/**/*.{swift}",
+  "resource_bundles": {
+    "TSDemo_DataVientiane-Swift": [
+      "TSDemo_DataVientiane-Swift/**/*.xcassets",
+      "TSDemo_DataVientiane-Swift/**/*.{xib,png,jpg}"
+    ]
+  },
+  "dependencies": {
+    "TSDemo_DataVientiane": [],
+    "CQDemoKit/BaseVC": [],
+    "CQDemoResource/Images": [],
+    "CJDataVientianeSDK-Swift": [],
+    "CJBaseUIKit/UITextField": [],
+    "CJBaseUIKit/UIColor": [],
+    "CJBaseUIKit/UIButton": []
+  }
+}

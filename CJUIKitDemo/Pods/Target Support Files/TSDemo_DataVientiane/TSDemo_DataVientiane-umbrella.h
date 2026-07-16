@@ -24,7 +24,6 @@
 #import "CMaxSubStringViewController2.h"
 #import "DChangeStringViewController1.h"
 #import "StringForInputHomeViewController.h"
-#import "TSDataVientianeMainViewController.h"
 
 FOUNDATION_EXPORT double TSDemo_DataVientianeVersionNumber;
 FOUNDATION_EXPORT const unsigned char TSDemo_DataVientianeVersionString[];

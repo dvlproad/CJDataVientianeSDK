@@ -19,15 +19,7 @@
 		789C447421F05D4B00181144 /* UIImageTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C447321F05D4B00181144 /* UIImageTestCase.m */; };
 		80D49F8B20BE7EE0003F642C /* CJDataUtilTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D49F8A20BE7EE0003F642C /* CJDataUtilTest.m */; };
 		80D49F8F20BE8574003F642C /* TestCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D49F8E20BE8574003F642C /* TestCityModel.m */; };
-		80FF91951FC5682B00E437CF /* FoundationHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91771FC5682A00E437CF /* FoundationHomeViewController.m */; };
-		9702123B2CFA283400C62F50 /* TestSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9702123A2CFA283400C62F50 /* TestSwift.swift */; };
-		9715E8AC3006867E008FA653 /* CQSubStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 9715E8A43006867E008FA653 /* CQSubStringUtil.m */; };
-		9715E8B330068705008FA653 /* UITextViewCQHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9715E8B230068705008FA653 /* UITextViewCQHelper.m */; };
-		972C69532D000AF700E53720 /* TSDateFormatterUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972C69522D000AF700E53720 /* TSDateFormatterUtil.swift */; };
-		97578AAC25590E9300249AD6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578AAB25590E9300249AD6 /* MainViewController.m */; };
 		97578AB225590F7100249AD6 /* UIWindow+RootSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578AB125590F7100249AD6 /* UIWindow+RootSetting.m */; };
-		97824E0E2D27CB45001DD4E7 /* TSFeedAdInsertUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97824E0D2D27CB45001DD4E7 /* TSFeedAdInsertUtil.swift */; };
-		97824E122D27DE09001DD4E7 /* TSInsertFeedHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97824E102D27DE09001DD4E7 /* TSInsertFeedHomeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,23 +62,10 @@
 		80D49F8A20BE7EE0003F642C /* CJDataUtilTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJDataUtilTest.m; sourceTree = "<group>"; };
 		80D49F8D20BE8574003F642C /* TestCityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestCityModel.h; sourceTree = "<group>"; };
 		80D49F8E20BE8574003F642C /* TestCityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCityModel.m; sourceTree = "<group>"; };
-		80FF91721FC5682A00E437CF /* FoundationHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoundationHomeViewController.h; sourceTree = "<group>"; };
-		80FF91771FC5682A00E437CF /* FoundationHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoundationHomeViewController.m; sourceTree = "<group>"; };
 		8387796C9091D0E618AB7637 /* Pods_CJUIKitDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CJUIKitDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		970212392CFA283400C62F50 /* CJUIKitDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CJUIKitDemo-Bridging-Header.h"; sourceTree = "<group>"; };
-		9702123A2CFA283400C62F50 /* TestSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSwift.swift; sourceTree = "<group>"; };
-		9715E8A33006867E008FA653 /* CQSubStringUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQSubStringUtil.h; sourceTree = "<group>"; };
-		9715E8A43006867E008FA653 /* CQSubStringUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQSubStringUtil.m; sourceTree = "<group>"; };
-		9715E8B130068705008FA653 /* UITextViewCQHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UITextViewCQHelper.h; sourceTree = "<group>"; };
-		9715E8B230068705008FA653 /* UITextViewCQHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UITextViewCQHelper.m; sourceTree = "<group>"; };
-		972C69522D000AF700E53720 /* TSDateFormatterUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSDateFormatterUtil.swift; sourceTree = "<group>"; };
-		97578AAA25590E9300249AD6 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		97578AAB25590E9300249AD6 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		97578AB025590F7100249AD6 /* UIWindow+RootSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+RootSetting.h"; sourceTree = "<group>"; };
 		97578AB125590F7100249AD6 /* UIWindow+RootSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+RootSetting.m"; sourceTree = "<group>"; };
-		97824E0D2D27CB45001DD4E7 /* TSFeedAdInsertUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSFeedAdInsertUtil.swift; sourceTree = "<group>"; };
-		97824E0F2D27DE09001DD4E7 /* TSInsertFeedHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSInsertFeedHomeViewController.h; sourceTree = "<group>"; };
-		97824E102D27DE09001DD4E7 /* TSInsertFeedHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSInsertFeedHomeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,13 +99,8 @@
 			children = (
 				1562F38223FD2FC70009FCEA /* AppDelegate.h */,
 				1562F38623FD2FC70009FCEA /* AppDelegate.m */,
-				9702123A2CFA283400C62F50 /* TestSwift.swift */,
-				97824E0D2D27CB45001DD4E7 /* TSFeedAdInsertUtil.swift */,
-				972C69522D000AF700E53720 /* TSDateFormatterUtil.swift */,
 				97578AB025590F7100249AD6 /* UIWindow+RootSetting.h */,
 				97578AB125590F7100249AD6 /* UIWindow+RootSetting.m */,
-				97578AAA25590E9300249AD6 /* MainViewController.h */,
-				97578AAB25590E9300249AD6 /* MainViewController.m */,
 				970212392CFA283400C62F50 /* CJUIKitDemo-Bridging-Header.h */,
 			);
 			path = AppDelegate;
@@ -158,8 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				1562F38023FD2FC70009FCEA /* AppDelegate */,
-				9715E8A73006867E008FA653 /* CommonUI */,
-				80FF8F0A1FC5649E00E437CF /* Modules */,
 				789A19681E61B87D008081E3 /* Resources */,
 				780E46031E5DF87B00980127 /* Supporting Files */,
 			);
@@ -215,60 +187,6 @@
 				80D49F8E20BE8574003F642C /* TestCityModel.m */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		80FF8F0A1FC5649E00E437CF /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-				80FF91711FC5682A00E437CF /* DemosFoundation */,
-			);
-			path = Modules;
-			sourceTree = "<group>";
-		};
-		80FF91711FC5682A00E437CF /* DemosFoundation */ = {
-			isa = PBXGroup;
-			children = (
-				80FF91721FC5682A00E437CF /* FoundationHomeViewController.h */,
-				80FF91771FC5682A00E437CF /* FoundationHomeViewController.m */,
-				97824E112D27DE09001DD4E7 /* Insert */,
-			);
-			path = DemosFoundation;
-			sourceTree = "<group>";
-		};
-		9715E8A53006867E008FA653 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				9715E8A33006867E008FA653 /* CQSubStringUtil.h */,
-				9715E8A43006867E008FA653 /* CQSubStringUtil.m */,
-				9715E8B130068705008FA653 /* UITextViewCQHelper.h */,
-				9715E8B230068705008FA653 /* UITextViewCQHelper.m */,
-			);
-			path = Helper;
-			sourceTree = "<group>";
-		};
-		9715E8A63006867E008FA653 /* TextField */ = {
-			isa = PBXGroup;
-			children = (
-				9715E8A53006867E008FA653 /* Helper */,
-			);
-			path = TextField;
-			sourceTree = "<group>";
-		};
-		9715E8A73006867E008FA653 /* CommonUI */ = {
-			isa = PBXGroup;
-			children = (
-				9715E8A63006867E008FA653 /* TextField */,
-			);
-			path = CommonUI;
-			sourceTree = "<group>";
-		};
-		97824E112D27DE09001DD4E7 /* Insert */ = {
-			isa = PBXGroup;
-			children = (
-				97824E0F2D27DE09001DD4E7 /* TSInsertFeedHomeViewController.h */,
-				97824E102D27DE09001DD4E7 /* TSInsertFeedHomeViewController.m */,
-			);
-			path = Insert;
 			sourceTree = "<group>";
 		};
 		E75FB8B4AF71C8FE7F95B93C /* Pods */ = {
@@ -456,6 +374,7 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/TSDemo_DataVientiane/TSDemo_DataVientiane.framework",
+				"${BUILT_PRODUCTS_DIR}/TSDemo_DataVientiane-Swift/TSDemo_DataVientiane_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/UINavigation-SXFixSpace/UINavigation_SXFixSpace.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -468,6 +387,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TSDemo_DataVientiane.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TSDemo_DataVientiane_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UINavigation_SXFixSpace.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,17 +402,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9715E8B330068705008FA653 /* UITextViewCQHelper.m in Sources */,
 				97578AB225590F7100249AD6 /* UIWindow+RootSetting.m in Sources */,
-				97824E0E2D27CB45001DD4E7 /* TSFeedAdInsertUtil.swift in Sources */,
-				9715E8AC3006867E008FA653 /* CQSubStringUtil.m in Sources */,
-				972C69532D000AF700E53720 /* TSDateFormatterUtil.swift in Sources */,
-				97578AAC25590E9300249AD6 /* MainViewController.m in Sources */,
-				80FF91951FC5682B00E437CF /* FoundationHomeViewController.m in Sources */,
 				780E46051E5DF87B00980127 /* main.m in Sources */,
-				9702123B2CFA283400C62F50 /* TestSwift.swift in Sources */,
 				1562F38923FD2FC70009FCEA /* AppDelegate.m in Sources */,
-				97824E122D27DE09001DD4E7 /* TSInsertFeedHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -700,7 +612,6 @@
 		780E46311E5DF87B00980127 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = CJUIKitDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -713,7 +624,6 @@
 		780E46321E5DF87B00980127 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = CJUIKitDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -726,7 +636,6 @@
 		780E46341E5DF87B00980127 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = CJUIKitDemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dvlproad.CJUIKitDemoUITests;
@@ -738,7 +647,6 @@
 		780E46351E5DF87B00980127 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = CJUIKitDemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dvlproad.CJUIKitDemoUITests;

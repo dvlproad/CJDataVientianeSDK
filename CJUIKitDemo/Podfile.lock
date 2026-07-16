@@ -82,6 +82,14 @@ PODS:
     - CJDataVientianeSDK
     - CQDemoKit/BaseVC
     - CQDemoResource/Images
+  - TSDemo_DataVientiane-Swift (0.0.1):
+    - CJBaseUIKit/UIButton
+    - CJBaseUIKit/UIColor
+    - CJBaseUIKit/UITextField
+    - CJDataVientianeSDK-Swift
+    - CQDemoKit/BaseVC
+    - CQDemoResource/Images
+    - TSDemo_DataVientiane
   - UINavigation-SXFixSpace (1.2.4)
 
 DEPENDENCIES:
@@ -91,6 +99,7 @@ DEPENDENCIES:
   - IQKeyboardManager
   - Masonry
   - TSDemo_DataVientiane (from `../`)
+  - TSDemo_DataVientiane-Swift (from `../`)
   - UINavigation-SXFixSpace
 
 SPEC REPOS:
@@ -109,6 +118,8 @@ EXTERNAL SOURCES:
     :path: "../"
   TSDemo_DataVientiane:
     :path: "../"
+  TSDemo_DataVientiane-Swift:
+    :path: "../"
 
 SPEC CHECKSUMS:
   CJBaseUIKit: 082b23d89703a9ff17f6b17f33c23569c2e67581
@@ -118,9 +129,10 @@ SPEC CHECKSUMS:
   CQDemoResource: c1c3390e9785e78ced1b7c1b25ef724cba224324
   IQKeyboardManager: c8665b3396bd0b79402b4c573eac345a31c7d485
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  TSDemo_DataVientiane: 4def71b05cb90cca4df7b5b8d2d62ac275a25533
+  TSDemo_DataVientiane: 1ef1882d54735395eb9bf3a39662737ac4dafc1e
+  TSDemo_DataVientiane-Swift: 5090c4adca0ad9febdca7455826af4565246f719
   UINavigation-SXFixSpace: 10f223253ebff2ceefa26694e23b7694269763c4
 
-PODFILE CHECKSUM: 4972ea442dbfd0d68223ecdcd0f4a3f3b7417c03
+PODFILE CHECKSUM: 22321c629df7cbb499a4f1281f44d87d9fec3bca
 
 COCOAPODS: 1.16.2

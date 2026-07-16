@@ -184,6 +184,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/TSDemo_DataVientiane/TSDemo_DataVientiane.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/TSDemo_DataVientiane-Swift/TSDemo_DataVientiane_Swift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/UINavigation-SXFixSpace/UINavigation_SXFixSpace.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -195,6 +196,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/TSDemo_DataVientiane/TSDemo_DataVientiane.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/TSDemo_DataVientiane-Swift/TSDemo_DataVientiane_Swift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/UINavigation-SXFixSpace/UINavigation_SXFixSpace.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
