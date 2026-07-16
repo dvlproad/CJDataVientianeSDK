@@ -1,0 +1,6 @@
+framework module Pods_TSDataVientianeDemo {
+  umbrella header "Pods-TSDataVientianeDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}

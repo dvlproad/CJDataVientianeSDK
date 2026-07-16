@@ -1,0 +1,704 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1562F38923FD2FC70009FCEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F38623FD2FC70009FCEA /* AppDelegate.m */; };
+		780E46051E5DF87B00980127 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E46041E5DF87B00980127 /* main.m */; };
+		780E460E1E5DF87B00980127 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 780E460C1E5DF87B00980127 /* Main.storyboard */; };
+		780E461E1E5DF87B00980127 /* CJUIKitDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E461D1E5DF87B00980127 /* CJUIKitDemoTests.m */; };
+		780E46291E5DF87B00980127 /* CJUIKitDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E46281E5DF87B00980127 /* CJUIKitDemoUITests.m */; };
+		7861852C21D3630B004B71FF /* AppCommon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7861852B21D3630B004B71FF /* AppCommon.xcassets */; };
+		7868276021AE926700FCCDE5 /* AppAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7868275F21AE926700FCCDE5 /* AppAssets.xcassets */; };
+		7868278121AF02E000FCCDE5 /* bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7868278021AF02E000FCCDE5 /* bg@2x.jpg */; };
+		789C447421F05D4B00181144 /* UIImageTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C447321F05D4B00181144 /* UIImageTestCase.m */; };
+		80D49F8B20BE7EE0003F642C /* CJDataUtilTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D49F8A20BE7EE0003F642C /* CJDataUtilTest.m */; };
+		80D49F8F20BE8574003F642C /* TestCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D49F8E20BE8574003F642C /* TestCityModel.m */; };
+		97578AB225590F7100249AD6 /* UIWindow+RootSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578AB125590F7100249AD6 /* UIWindow+RootSetting.m */; };
+		EC2E5D3E7F163520CEEF641D /* Pods_TSDataVientianeDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED3C2F76023D586AB7A0169 /* Pods_TSDataVientianeDemo.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		780E461A1E5DF87B00980127 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 780E45F81E5DF87B00980127 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 780E45FF1E5DF87B00980127;
+			remoteInfo = CJUIKitDemo;
+		};
+		780E46251E5DF87B00980127 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 780E45F81E5DF87B00980127 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 780E45FF1E5DF87B00980127;
+			remoteInfo = CJUIKitDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1562F38223FD2FC70009FCEA /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1562F38623FD2FC70009FCEA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3132573BFCFBEA8B4F3BB86F /* Pods-CJUIKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemo/Pods-CJUIKitDemo.release.xcconfig"; sourceTree = "<group>"; };
+		3CFFAAC007FA646A94917ECA /* Pods-TSDataVientianeDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSDataVientianeDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-TSDataVientianeDemo/Pods-TSDataVientianeDemo.release.xcconfig"; sourceTree = "<group>"; };
+		68D73B38201AA01727123963 /* Pods-CJUIKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemo/Pods-CJUIKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		780E46001E5DF87B00980127 /* TSDataVientianeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TSDataVientianeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		780E46041E5DF87B00980127 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		780E460D1E5DF87B00980127 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		780E46141E5DF87B00980127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		780E46191E5DF87B00980127 /* TSDataVientianeDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TSDataVientianeDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		780E461D1E5DF87B00980127 /* CJUIKitDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJUIKitDemoTests.m; sourceTree = "<group>"; };
+		780E461F1E5DF87B00980127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		780E46241E5DF87B00980127 /* TSDataVientianeDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TSDataVientianeDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		780E46281E5DF87B00980127 /* CJUIKitDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJUIKitDemoUITests.m; sourceTree = "<group>"; };
+		780E462A1E5DF87B00980127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7861852B21D3630B004B71FF /* AppCommon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppCommon.xcassets; sourceTree = "<group>"; };
+		7868275F21AE926700FCCDE5 /* AppAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppAssets.xcassets; sourceTree = "<group>"; };
+		7868278021AF02E000FCCDE5 /* bg@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg@2x.jpg"; sourceTree = "<group>"; };
+		789C447321F05D4B00181144 /* UIImageTestCase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIImageTestCase.m; sourceTree = "<group>"; };
+		80270BBC1FABFE57001429F0 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		80D49F8A20BE7EE0003F642C /* CJDataUtilTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJDataUtilTest.m; sourceTree = "<group>"; };
+		80D49F8D20BE8574003F642C /* TestCityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestCityModel.h; sourceTree = "<group>"; };
+		80D49F8E20BE8574003F642C /* TestCityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCityModel.m; sourceTree = "<group>"; };
+		970212392CFA283400C62F50 /* TSDataVientianeDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TSDataVientianeDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		97578AB025590F7100249AD6 /* UIWindow+RootSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+RootSetting.h"; sourceTree = "<group>"; };
+		97578AB125590F7100249AD6 /* UIWindow+RootSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+RootSetting.m"; sourceTree = "<group>"; };
+		9ED3C2F76023D586AB7A0169 /* Pods_TSDataVientianeDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TSDataVientianeDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CABE573FFCCE145362A2E586 /* Pods-TSDataVientianeDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSDataVientianeDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TSDataVientianeDemo/Pods-TSDataVientianeDemo.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		780E45FD1E5DF87B00980127 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC2E5D3E7F163520CEEF641D /* Pods_TSDataVientianeDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		780E46161E5DF87B00980127 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		780E46211E5DF87B00980127 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1562F38023FD2FC70009FCEA /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				1562F38223FD2FC70009FCEA /* AppDelegate.h */,
+				1562F38623FD2FC70009FCEA /* AppDelegate.m */,
+				97578AB025590F7100249AD6 /* UIWindow+RootSetting.h */,
+				97578AB125590F7100249AD6 /* UIWindow+RootSetting.m */,
+				970212392CFA283400C62F50 /* TSDataVientianeDemo-Bridging-Header.h */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		780E45F71E5DF87B00980127 = {
+			isa = PBXGroup;
+			children = (
+				780E46021E5DF87B00980127 /* TSDataVientianeDemo */,
+				780E461C1E5DF87B00980127 /* TSDataVientianeTests */,
+				780E46271E5DF87B00980127 /* TSDataVientianeUITests */,
+				780E46011E5DF87B00980127 /* Products */,
+				E75FB8B4AF71C8FE7F95B93C /* Pods */,
+				FD668169D5A770806E672CEE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		780E46011E5DF87B00980127 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				780E46001E5DF87B00980127 /* TSDataVientianeDemo.app */,
+				780E46191E5DF87B00980127 /* TSDataVientianeDemoTests.xctest */,
+				780E46241E5DF87B00980127 /* TSDataVientianeDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		780E46021E5DF87B00980127 /* TSDataVientianeDemo */ = {
+			isa = PBXGroup;
+			children = (
+				1562F38023FD2FC70009FCEA /* AppDelegate */,
+				789A19681E61B87D008081E3 /* Resources */,
+				780E46031E5DF87B00980127 /* Supporting Files */,
+			);
+			path = TSDataVientianeDemo;
+			sourceTree = "<group>";
+		};
+		780E46031E5DF87B00980127 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				780E46141E5DF87B00980127 /* Info.plist */,
+				780E460C1E5DF87B00980127 /* Main.storyboard */,
+				780E46041E5DF87B00980127 /* main.m */,
+				80270BBC1FABFE57001429F0 /* PrefixHeader.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		780E461C1E5DF87B00980127 /* TSDataVientianeTests */ = {
+			isa = PBXGroup;
+			children = (
+				780E461D1E5DF87B00980127 /* CJUIKitDemoTests.m */,
+				80D49F8A20BE7EE0003F642C /* CJDataUtilTest.m */,
+				789C447321F05D4B00181144 /* UIImageTestCase.m */,
+				80D49F8C20BE852A003F642C /* Models */,
+				780E461F1E5DF87B00980127 /* Info.plist */,
+			);
+			path = TSDataVientianeTests;
+			sourceTree = "<group>";
+		};
+		780E46271E5DF87B00980127 /* TSDataVientianeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				780E46281E5DF87B00980127 /* CJUIKitDemoUITests.m */,
+				780E462A1E5DF87B00980127 /* Info.plist */,
+			);
+			path = TSDataVientianeUITests;
+			sourceTree = "<group>";
+		};
+		789A19681E61B87D008081E3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7868278021AF02E000FCCDE5 /* bg@2x.jpg */,
+				7861852B21D3630B004B71FF /* AppCommon.xcassets */,
+				7868275F21AE926700FCCDE5 /* AppAssets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		80D49F8C20BE852A003F642C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				80D49F8D20BE8574003F642C /* TestCityModel.h */,
+				80D49F8E20BE8574003F642C /* TestCityModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E75FB8B4AF71C8FE7F95B93C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				68D73B38201AA01727123963 /* Pods-CJUIKitDemo.debug.xcconfig */,
+				3132573BFCFBEA8B4F3BB86F /* Pods-CJUIKitDemo.release.xcconfig */,
+				CABE573FFCCE145362A2E586 /* Pods-TSDataVientianeDemo.debug.xcconfig */,
+				3CFFAAC007FA646A94917ECA /* Pods-TSDataVientianeDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FD668169D5A770806E672CEE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9ED3C2F76023D586AB7A0169 /* Pods_TSDataVientianeDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		780E45FF1E5DF87B00980127 /* TSDataVientianeDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 780E462D1E5DF87B00980127 /* Build configuration list for PBXNativeTarget "TSDataVientianeDemo" */;
+			buildPhases = (
+				16923FCFE087A4DBE468460F /* [CP] Check Pods Manifest.lock */,
+				780E45FC1E5DF87B00980127 /* Sources */,
+				780E45FD1E5DF87B00980127 /* Frameworks */,
+				780E45FE1E5DF87B00980127 /* Resources */,
+				DA092F1EE4C8F929439A8966 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TSDataVientianeDemo;
+			productName = CJUIKitDemo;
+			productReference = 780E46001E5DF87B00980127 /* TSDataVientianeDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		780E46181E5DF87B00980127 /* TSDataVientianeDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 780E46301E5DF87B00980127 /* Build configuration list for PBXNativeTarget "TSDataVientianeDemoTests" */;
+			buildPhases = (
+				780E46151E5DF87B00980127 /* Sources */,
+				780E46161E5DF87B00980127 /* Frameworks */,
+				780E46171E5DF87B00980127 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				780E461B1E5DF87B00980127 /* PBXTargetDependency */,
+			);
+			name = TSDataVientianeDemoTests;
+			productName = CJUIKitDemoTests;
+			productReference = 780E46191E5DF87B00980127 /* TSDataVientianeDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		780E46231E5DF87B00980127 /* TSDataVientianeDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 780E46331E5DF87B00980127 /* Build configuration list for PBXNativeTarget "TSDataVientianeDemoUITests" */;
+			buildPhases = (
+				780E46201E5DF87B00980127 /* Sources */,
+				780E46211E5DF87B00980127 /* Frameworks */,
+				780E46221E5DF87B00980127 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				780E46261E5DF87B00980127 /* PBXTargetDependency */,
+			);
+			name = TSDataVientianeDemoUITests;
+			productName = CJUIKitDemoUITests;
+			productReference = 780E46241E5DF87B00980127 /* TSDataVientianeDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		780E45F81E5DF87B00980127 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = dvlproad;
+				TargetAttributes = {
+					780E45FF1E5DF87B00980127 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = XF866W89WA;
+						LastSwiftMigration = 1520;
+						ProvisioningStyle = Automatic;
+					};
+					780E46181E5DF87B00980127 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 780E45FF1E5DF87B00980127;
+					};
+					780E46231E5DF87B00980127 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 780E45FF1E5DF87B00980127;
+					};
+				};
+			};
+			buildConfigurationList = 780E45FB1E5DF87B00980127 /* Build configuration list for PBXProject "TSDataVientianeDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				en,
+				Base,
+			);
+			mainGroup = 780E45F71E5DF87B00980127;
+			productRefGroup = 780E46011E5DF87B00980127 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				780E45FF1E5DF87B00980127 /* TSDataVientianeDemo */,
+				780E46181E5DF87B00980127 /* TSDataVientianeDemoTests */,
+				780E46231E5DF87B00980127 /* TSDataVientianeDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		780E45FE1E5DF87B00980127 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7861852C21D3630B004B71FF /* AppCommon.xcassets in Resources */,
+				7868276021AE926700FCCDE5 /* AppAssets.xcassets in Resources */,
+				7868278121AF02E000FCCDE5 /* bg@2x.jpg in Resources */,
+				780E460E1E5DF87B00980127 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		780E46171E5DF87B00980127 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		780E46221E5DF87B00980127 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		16923FCFE087A4DBE468460F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TSDataVientianeDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA092F1EE4C8F929439A8966 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TSDataVientianeDemo/Pods-TSDataVientianeDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CJBaseUIKit/CJBaseUIKit.framework",
+				"${BUILT_PRODUCTS_DIR}/CJDataVientianeSDK/CJDataVientianeSDK.framework",
+				"${BUILT_PRODUCTS_DIR}/CJDataVientianeSDK-Swift/CJDataVientianeSDK_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/CQDemoKit/CQDemoKit.framework",
+				"${BUILT_PRODUCTS_DIR}/CQDemoResource/CQDemoResource.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/TSDemo_DataVientiane/TSDemo_DataVientiane.framework",
+				"${BUILT_PRODUCTS_DIR}/TSDemo_DataVientiane-Swift/TSDemo_DataVientiane_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/UINavigation-SXFixSpace/UINavigation_SXFixSpace.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CJBaseUIKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CJDataVientianeSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CJDataVientianeSDK_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CQDemoKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CQDemoResource.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TSDemo_DataVientiane.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TSDemo_DataVientiane_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UINavigation_SXFixSpace.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TSDataVientianeDemo/Pods-TSDataVientianeDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		780E45FC1E5DF87B00980127 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97578AB225590F7100249AD6 /* UIWindow+RootSetting.m in Sources */,
+				780E46051E5DF87B00980127 /* main.m in Sources */,
+				1562F38923FD2FC70009FCEA /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		780E46151E5DF87B00980127 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80D49F8F20BE8574003F642C /* TestCityModel.m in Sources */,
+				789C447421F05D4B00181144 /* UIImageTestCase.m in Sources */,
+				80D49F8B20BE7EE0003F642C /* CJDataUtilTest.m in Sources */,
+				780E461E1E5DF87B00980127 /* CJUIKitDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		780E46201E5DF87B00980127 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				780E46291E5DF87B00980127 /* CJUIKitDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		780E461B1E5DF87B00980127 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 780E45FF1E5DF87B00980127 /* TSDataVientianeDemo */;
+			targetProxy = 780E461A1E5DF87B00980127 /* PBXContainerItemProxy */;
+		};
+		780E46261E5DF87B00980127 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 780E45FF1E5DF87B00980127 /* TSDataVientianeDemo */;
+			targetProxy = 780E46251E5DF87B00980127 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		780E460C1E5DF87B00980127 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				780E460D1E5DF87B00980127 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		780E462B1E5DF87B00980127 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		780E462C1E5DF87B00980127 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		780E462E1E5DF87B00980127 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CABE573FFCCE145362A2E586 /* Pods-TSDataVientianeDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XF866W89WA;
+				GCC_PREFIX_HEADER = TSDataVientianeDemo/PrefixHeader.pch;
+				INFOPLIST_FILE = TSDataVientianeDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.test;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "TSDataVientianeDemo/AppDelegate/TSDataVientianeDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		780E462F1E5DF87B00980127 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CFFAAC007FA646A94917ECA /* Pods-TSDataVientianeDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XF866W89WA;
+				GCC_PREFIX_HEADER = TSDataVientianeDemo/PrefixHeader.pch;
+				INFOPLIST_FILE = TSDataVientianeDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.test;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "TSDataVientianeDemo/AppDelegate/TSDataVientianeDemo-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		780E46311E5DF87B00980127 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TSDataVientianeDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dvlproad.TSDataVientianeDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TSDataVientianeDemo.app/TSDataVientianeDemo";
+			};
+			name = Debug;
+		};
+		780E46321E5DF87B00980127 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TSDataVientianeDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dvlproad.TSDataVientianeDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TSDataVientianeDemo.app/TSDataVientianeDemo";
+			};
+			name = Release;
+		};
+		780E46341E5DF87B00980127 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TSDataVientianeDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dvlproad.TSDataVientianeDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TSDataVientianeDemo;
+			};
+			name = Debug;
+		};
+		780E46351E5DF87B00980127 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TSDataVientianeDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dvlproad.TSDataVientianeDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TSDataVientianeDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		780E45FB1E5DF87B00980127 /* Build configuration list for PBXProject "TSDataVientianeDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				780E462B1E5DF87B00980127 /* Debug */,
+				780E462C1E5DF87B00980127 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		780E462D1E5DF87B00980127 /* Build configuration list for PBXNativeTarget "TSDataVientianeDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				780E462E1E5DF87B00980127 /* Debug */,
+				780E462F1E5DF87B00980127 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		780E46301E5DF87B00980127 /* Build configuration list for PBXNativeTarget "TSDataVientianeDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				780E46311E5DF87B00980127 /* Debug */,
+				780E46321E5DF87B00980127 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		780E46331E5DF87B00980127 /* Build configuration list for PBXNativeTarget "TSDataVientianeDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				780E46341E5DF87B00980127 /* Debug */,
+				780E46351E5DF87B00980127 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 780E45F81E5DF87B00980127 /* Project object */;
+}
